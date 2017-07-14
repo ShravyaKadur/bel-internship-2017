@@ -10,6 +10,14 @@ IgniteWorkspace contains all code and the IgniteDocumentation.docx contains the 
 * QueryMessages.class contains SQL queries performed using SqlQuery class on the cache data.
 * QueryMessages2.class contains queries with **SqlFieldsQuery** class.
                       
-                      
-                      
+#### Part 2
 
+This section focuses on Kafka-Ignite connect.
+
+* **logs** contains all logs of Kafka, to debug errors faced while connecting. 
+* **myconfig** contains the configured connector properties.                      
+* **Dependencies** contains the classpath and the list of JARs used to connect without encountering errors.
+
+#### Part 3
+
+This section focuses on collating the above 2 parts.
