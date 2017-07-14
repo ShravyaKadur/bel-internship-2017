@@ -1,0 +1,10 @@
+export CLASSPATH=/opt/apache-ignite-fabric-2.0.0-bin/libs/optional/ignite-kafka/ignite-kafka-2.0.0.jar:$CLASSPATH
+export CLASSPATH=/opt/apache-ignite-fabric-2.0.0-bin/libs/ignite-core-2.0.0.jar:$CLASSPATH
+export CLASSPATH=/opt/apache-ignite-fabric-2.0.0-bin/libs/ignite-spring/ignite-spring-2.0.0.jar:$CLASSPATH
+export CLASSPATH=/opt/apache-ignite-fabric-2.0.0-bin/benchmarks/libs/cache-api-1.0.0.jar:$CLASSPATH
+export CLASSPATH=/opt/apache-ignite-fabric-2.0.0-bin/benchmarks/libs/spring-aop-4.1.0.RELEASE.jar:$CLASSPATH
+export CLASSPATH=/opt/apache-ignite-fabric-2.0.0-bin/benchmarks/libs/spring-beans-4.1.0.RELEASE.jar:$CLASSPATH
+export CLASSPATH=/opt/apache-ignite-fabric-2.0.0-bin/benchmarks/libs/spring-context-4.1.0.RELEASE.jar:$CLASSPATH
+export CLASSPATH=/opt/apache-ignite-fabric-2.0.0-bin/benchmarks/libs/spring-core-4.1.0.RELEASE.jar:$CLASSPATH
+export CLASSPATH=/opt/apache-ignite-fabric-2.0.0-bin/benchmarks/libs/spring-expression-4.1.0.RELEASE.jar:$CLASSPATH
+export CLASSPATH=/opt/apache-ignite-fabric-2.0.0-bin/benchmarks/libs/commons-logging-1.1.1.jar:$CLASSPATH
