@@ -2,7 +2,7 @@
 
 #### Part 1
 
-IgniteWorkspace and IgniteDocumentation.docx make up the first section of the project.
+Generating a million messages and performing queries on them through Ignite make up the first section of the project.
 
 IgniteWorkspace contains all code and the IgniteDocumentation.docx contains the documentation.
 * Contains all main Java classes. 
@@ -14,6 +14,7 @@ IgniteWorkspace contains all code and the IgniteDocumentation.docx contains the 
 
 This section focuses on Kafka-Ignite connect.
 
+KafkaConnectDocumentation.docx contains the documentation for this part.
 * **logs** contains all logs of Kafka, to debug errors faced while connecting. 
 * **myconfig** contains the configured connector properties.                      
 * **Dependencies** contains the classpath and the list of JARs used to connect without encountering errors.
