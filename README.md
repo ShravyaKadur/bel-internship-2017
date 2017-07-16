@@ -24,3 +24,5 @@ KafkaConnectDocumentation.docx contains the documentation for this part.
 This section focuses on collating the above 2 parts.
 
 More specifically, it loads the Messages generated in Part 1 into a CSV file, passes each Message from there to a UDP port. Kafka then reads from this port and stores it in its broker. This data is finally streamed to Ignite cache via KafkaConnect and queries are performed on it.
+
+P.S. Final documentation yet to be added.
