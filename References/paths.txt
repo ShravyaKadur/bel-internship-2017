@@ -1,0 +1,2 @@
+/opt/apache-ignite-fabric-2.0.0-bin/benchmarks/sources/src/main/java/org/apache/ignite/yardstick/cache/model
+/opt/apache-ignite-fabric-2.0.0-bin/docs/javadoc/org/apache/ignite/cache

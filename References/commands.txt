@@ -1,0 +1,159 @@
+
+ 1846  cd /opt/kafka_2.11-0.9.0.0/
+ 1847  bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+ 1848  bin/kafka-topics.sh --list --zookeeper localhost:2181
+ 1849  bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
+ 1850  bin/kafka-console-consumemer.sh --zookeeper localhost:2181 --topic test --from-beginning
+ 1851  bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic test --from-beginning
+ 1852  bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
+ 1853  jps
+ 1854  cd
+ 1855  cd Downloads/
+ 1856  unzip apache-ignite-fabric-2.0.0-bin.zip 
+ 1857  ls
+ 1858  sudo mv apache-ignite-fabric-2.0.0-bin /opt/
+ 1859  cd /opt
+ 1860  ls
+ 1861  cd apache-ignite-fabric-2.0.0-bin/
+ 1862  ls
+ 1863  bin/ignite.sh examples/config/example-ignite.xml 
+ 1864  jps
+ 1865  cd ~/BEL/
+ 1866  history > term2
+ 1867  echo $IGNITE_HOME
+ 1868  cd /opt/apache-ignite-fabric-2.0.0-bin/
+ 1869  cd /opt/apache-ignite-fabric-2.0.0-bin/
+ 1870  bin/ignite.sh examples/config/example-ignite.xml 
+ 1871  cd /opt/apache-ignite-fabric-2.0.0-bin/
+ 1872  mysql -u root -p
+ 1873  cd /opt/apache-ignite-fabric-2.0.0-bin/
+ 1874  bin/ignite.sh examples/config/example-ignite.xml 
+ 1875  cd /opt/kafka_2.11-0.10.0.1/
+ 1876  bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic Hello-Kafka
+ 1877  bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic Hello-Kafka --from-beginning
+ 1878  echo $CLASSPATH
+ 1879  cd
+ 1880  gedit .bashrc
+ 1881  source .bashrc
+ 1882  echo $CLASSPATH
+ 1883  cd /opt/kafka_2.11-0.10.0.1/
+ 1884  clear
+ 1885  bin/connect-standalone.sh myconfig/connect-standalone.properties myconfig/ignite-connector.properties
+ 1886  echo $CLASSPATH
+ 1887  bin/connect-standalone.sh myconfig/connect-standalone.properties myconfig/ignite-connector.properties
+ 1888  bin/connect-standalone.sh myconfig/connect-standalone.properties myconfig/ignite-connector.properties /opt/apache-ignite-fabric-2.0.0-bin/libs/optional/ignite-kafka/ignite-kafka-2.0.0.jar 
+ 1889  jps
+ 1890  clear
+ 1891  bin/connect-standalone.sh myconfig/connect-standalone.properties myconfig/ignite-connector.properties /opt/apache-ignite-fabric-2.0.0-bin/libs/optional/ignite-kafka/ignite-kafka-2.0.0.jar 
+ 1892  bin/connect-standalone.sh myconfig/connect-standalone.properties myconfig/ignite-connector.properties
+ 1893  /opt/apache-ignite-fabric-2.0.0-bin/examples/config/
+ 1894  clear
+ 1895  bin/connect-standalone.sh myconfig/connect-standalone.properties myconfig/ignite-connector.properties
+ 1896  bin/connect-standalone.sh myconfig/connect-standalone.properties /opt/apache-ignite-fabric-2.0.0-bin/examples/config/ignite-connector.properties 
+ 1897  scala
+ 1898  sudo apt-get install scala
+ 1899  scala
+ 1900  clear
+ 1901  cd Downloads/
+ 1902  ls
+ 1903  tar -zxf kafka_2.11-0.10.0.1.tgz 
+ 1904  cd /opt
+ 1905  rm ir kafka_2.11-0.9.0.0/
+ 1906  sudo rm -r kafka_2.11-0.9.0.0/
+ 1907  ls
+ 1908  cd
+ 1909  cd Downloads/
+ 1910  sudo mv kafka_2.11-0.10.0.1 /opt/
+ 1911  cd /opt
+ 1912  ls
+ 1913  cd kafka_2.11-0.10.0.1/
+ 1914  jps
+ 1915  bin/kafka-server-start.sh config/server.properties 
+ 1916  ls
+ 1917  bin/kafka-server-start.sh config/server.properties 
+ 1918  bin/kafka-server-stop.sh config/server.properties 
+ 1919  jps
+ 1920  bin/kafka-console-producer.sh --broker-list localhost:9092 --topic testTopic1 --property parse.key=true --property key.separator=,
+ 1921  cd /opt/zookeeper-3.4.10/
+ 1922  ls
+ 1923  bin/zkServer.sh start
+ 1924  jps
+ 1925  bin/zkCli.sh
+ 1926  bin/zookeeper-server-start.sh config/server.properties
+ 1927  cd bin
+ 1928  ls
+ 1929  cd ../config
+ 1930  cd ..
+ 1931  cd conf
+ 1932  ls
+ 1933  cd conf
+ 1934  cd ..
+ 1935  ls
+ 1936  jps
+ 1937  cd /opt/kafka_2.11-0.10.0.1/
+ 1938  bin/connect-standalone.sh myconfig/connect-standalone.properties myconfig/ignite-connector.properties
+ 1939  echo $CLASSPATH
+ 1940  bin/connect-standalone.sh myconfig/connect-standalone.properties myconfig/ignite-connector.properties
+ 1941  bin/kafka-console-consumer.sh --zookeeper localhost:2181 —topic Hel 
+ 1942  bin/kafka-console-consumer.sh --zookeeper localhost:2181 —topic Hello-Kafka 
+ 1943  bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic mytopic --from-beginning
+ 1944  clear
+ 1945  bin/kafka-console-consumer.sh --zookeeper localhost:9092 --topic mytopic --from-beginning
+ 1946  jps
+ 1947  clear
+ 1948  bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic mytopic
+ 1949  bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic mytopic --from-beginning
+ 1950  bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic test --from-beginning
+ 1951  bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic Hello-Kafka --from-beginning
+ 1952  bin/kafka-console-producer.sh --broker-list localhost:9092 --topic Hello-Kafka
+ 1953  bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic Hello-Kafka --from-beginning
+ 1954  bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic mytopic --from-beginning
+ 1955  bin/kafka-console-consumer.sh --zookeeper localhost:9092 --topic mytopic --from-beginning
+ 1956  bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic mytopic --from-beginning
+ 1957  bin/kafka-console-consumer.sh --zookeeper localhost:35352 --topic test --from-beginning
+ 1958  bin/kafka-console-consumer.sh --zookeeper localhost:35352 --topic mytopic --from-beginning
+ 1959  clear
+ 1960  bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic mytopic --from-beginning
+ 1961  /opt/zookeeper-3.4.10/
+ 1962  cd /opt/zookeeper-3.4.10/
+ 1963  bin/zkServer.sh start
+ 1964  jps
+ 1965  bin/zkCli.sh
+ 1966  sudo mv ~/Downloads/udp-kafka-bridge-assembly-0.1.jar /opt/
+ 1967  cd ..
+ 1968  touch bridge.conf
+ 1969  sudo gedit bridge.conf
+ 1970  java -Dconfig.file=bridge.conf -jar udp-kafka-bridge-assembly-0.1.jar 
+ 1971  sudojava -Dconfig.file=bridge.conf -jar udp-kafka-bridge-assembly-0.1.jar 
+ 1972  sudo java -Dconfig.file=bridge.conf -jar udp-kafka-bridge-assembly-0.1.jar 
+ 1973  java -Dconfig.file=bridge.conf -jar udp-kafka-bridge-assembly-0.1.jar 
+ 1974  sudo java -Dconfig.file=bridge.conf -jar udp-kafka-bridge-assembly-0.1.jar 
+ 1975  ls -l
+ 1976  ls -l logs/
+ 1977  sudo chmod +777 logs/udp-kafka-bridge.log 
+ 1978  ls -l logs/
+ 1979  java -Dconfig.file=bridge.conf -jar udp-kafka-bridge-assembly-0.1.jar 
+ 1980  sudo gedit bridge.conf
+ 1981  java -Dconfig.file=bridge.conf -jar udp-kafka-bridge-assembly-0.1.jar 
+ 1982  cd ~/Downloads/
+ 1983  gedit bridge.conf
+ 1984  java -Dconfig.file=bridge.conf -jar udp-kafka-bridge-assembly-0.1.jar
+ 1985  java -Dbind.host=127.0.0.1 -Dbind.port=35352 -Dtopic=mytopic -Dkafka.metadata.broker.list=localhost:9092 -Dkafka.serializer.class=kafka.serializer.StringEncoder -Dkafka.compression.codec=1 -Dkafka.producer.type=async -jar udp-kafka-bridge-assembly-0.1.jar
+ 1986  java -Dbind.host=127.0.0.1 -Dbind.porort=35352 -Dtopic=mytopic -Dkafka.metadata.broker.list=localhost:9092 -Dkafka.serializer.class=kafka.serializer.StringEncoder -Dkafka.compression.codec=1 -Dkafka.producer.type=async -jar udp-kafka-bridge-assembly-0.1.jar
+ 1987  cd /opt/
+ 1988  clear
+ 1989  java -Dconfig.file=bridge.conf -jar udp-kafka-bridge-assembly-0.1.jar
+ 1990  sudo mv ~/Downloads/opencsv-3.10.jar /opt/
+ 1991  ls ~
+ 1992  java -Dconfig.file=bridge.conf -jar udp-kafka-bridge-assembly-0.1.jar
+ 1993  cd /opt/kafka_2.11-0.10.0.1/
+ 1994  bin/kafka-console-producer.sh --broker-list localhost:9092 --topic testTopic1 --property parse.key=true --property key.separator=,
+ 1995  sudo gedit /etc/environment
+ 1996  cd /opt/apache-ignite-fabric-2.0.0-bin/examples/config/
+ 1997  clear
+ 1998  cd
+ 1999  cd /opt/apache-ignite-fabric-2.0.0-bin/
+ 2000  bin/ignite.sh examples/config/example-ignite.xml
+ 2001  gedit .bashrc
+ 2002  cd /opt/kafka_2.11-0.10.0.1/
+ 2003  history > cmds

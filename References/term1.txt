@@ -1,0 +1,142 @@
+
+ 1999  java -version
+ 2000  echo $JAVA_HOME
+ 2001  cd /usr
+ 2002  ls
+ 2003  cd ..
+ 2004  ls
+ 2005  cd
+ 2006  cd Downloads/
+ 2007  tar -zxf jdk-8u131-linux-x64.tar.gz 
+ 2008  su
+ 2009  cd /opt
+ 2010  ls
+ 2011  mkdir jdk
+ 2012  sudo mkdir jdk
+ 2013  ls
+ 2014  cd 
+ 2015  cd Downloads/
+ 2016  ls
+ 2017  mv jdk1.8.0_131 /opt/jdk/
+ 2018  sudo mv jdk1.8.0_131 /opt/jdk/
+ 2019  ls
+ 2020  cd /usr
+ 2021  ls
+ 2022  export JAVA_HOME=/opt/jdk/jdk1.8.0_131
+ 2023  echo $JAVA_HOME
+ 2024  cd /opt/jdk/
+ 2025  ls
+ 2026  cd
+ 2027  source ~/.bashrc
+ 2028  echo $JAVA_HOME
+ 2029  gedit .bashrc
+ 2030  source ~/.bashrc
+ 2031  echo $JAVA_HOME
+ 2032  java -version
+ 2033  update-alternatives
+ 2034  ls /usr/bin
+ 2035  ls /usr/bin/java
+ 2036  cd /usr/bin/
+ 2037  ls j*
+ 2038  cd java
+ 2039  update-alternatives --install /usr/bin/java /opt/jdk/jdk1.8.0_131/bin/java 100
+ 2040  update-alternatives --install /usr/bin/java java /opt/jdk/jdk1.8.0_131/bin/java 100
+ 2041  sudo update-alternatives --install /usr/bin/java java /opt/jdk/jdk1.8.0_131/bin/java 100
+ 2042  java -version
+ 2043  source ~/.bashrc
+ 2044  java -version
+ 2045  source ~/.bashrc
+ 2046  java -version
+ 2047  gedit .bashrc
+ 2048  cd
+ 2049  gedit .bashrc
+ 2050  echo $PATH
+ 2051  export PATH=$PATH:$JAVA_HOME/bin
+ 2052  source ~/.bashrc
+ 2053  java -version
+ 2054  gedit .bashrc
+ 2055  source ~/.bashrc
+ 2056  sudo update-alternatives --install /usr/bin/java java /opt/jdk/jdk1.8.0_131/bin/java 100
+ 2057  java -version
+ 2058  echo $PATH
+ 2059  java -version
+ 2060  sudo update-alternatives --install /usr/bin/javac javac /opt/jdk/jdk1.8.0_131/bin/javac 100
+ 2061  sudo update-alternatives --config java
+ 2062  sudo update-alternatives --config javac
+ 2063  java -version
+ 2064  clear
+ 2065  cd Downloads/
+ 2066  tar -zxf zookeeper-3.4.10.tar.gz 
+ 2067  ls
+ 2068  sudo mv zookeeper-3.4.10 /opt/
+ 2069  ls
+ 2070  cd /opt
+ 2071  ls
+ 2072  cd zookeeper-3.4.10/
+ 2073  ls
+ 2074  mkdir data
+ 2075  cd conf
+ 2076  ls
+ 2077  gedit zoo.cfg
+ 2078  clear
+ 2079  cd
+ 2080  bin/zkServer.sh start
+ 2081  zkServer.sh start
+ 2082  cd /opt/zookeeper-3.4.10/
+ 2083  bin/zkServer.sh start
+ 2084  bin/zkCli.sh 
+ 2085  bin/zkServer.sh stop
+ 2086  clear
+ 2087  cd 
+ 2088  Dow
+ 2089  Downloads/
+ 2090  cd Downloads/
+ 2091  ls
+ 2092  tar -zxf kafka_2.11-0.9.0.0.tgz 
+ 2093  ls
+ 2094  sudo mv kafka_2.11-0.9.0.0 /opt/
+ 2095  cd
+ 2096  cd /opt/bin
+ 2097  cd /opt/kafka_2.11-0.9.0.0/bin/
+ 2098  ls
+ 2099  kafka-server-start.sh config/server.properties
+ 2100  cd ..
+ 2101  bin/kafka-server-start.sh config/server.properties
+ 2102  bin/zkServer.sh start
+ 2103  bin/kafka-server-start.sh config/server.properties
+ 2104  clear
+ 2105  cd ..
+ 2106  cd zookeeper-3.4.10/
+ 2107  bin/zkServer.sh start
+ 2108  cd ../kafka_2.11-0.9.0.0/
+ 2109  bin/kafka-server-start.sh config/server.properties
+ 2110  bin/kafka-server-stop.sh config/server.properties
+ 2111  jps
+ 2112  bin/zkServer.sh stop
+ 2113  cd ../zookeeper-3.4.10/
+ 2114  bin/zkServer.sh stop
+ 2115  jps
+ 2116  bin/zookeeper-server-start.sh config/zookeeper.properties
+ 2117  bin/zkServer.sh start
+ 2118  cd ../kafka_2.11-0.9.0.0/
+ 2119  bin/kafka-server-start.sh config/server.properties
+ 2120  bin/zkCli.sh 
+ 2121  cd ../zookeeper-3.4.10/
+ 2122  bin/zkCli.sh 
+ 2123  cd ../kafka_2.11-0.9.0.0/
+ 2124  bin/kafka-server-start.sh
+ 2125  bin/kafka-server-start.sh config/server.properties
+ 2126  cd ..
+ 2127  clear
+ 2128  export IGNITE_HOME=/opt/apache-ignite-fabric-2.0.0-bin/
+ 2129  cd apache-ignite-fabric-2.0.0-bin/
+ 2130  bin/ignite.sh examples/config/example-ignite.xml 
+ 2131  jps
+ 2132  cd ../zookeeper-3.4.10/
+ 2133  bin/zkServer.sh stop
+ 2134  jps
+ 2135  hist
+ 2136  his
+ 2137  history
+ 2138  cd ~/BEL/
+ 2139  history > term1

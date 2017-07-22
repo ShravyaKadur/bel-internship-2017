@@ -1,0 +1,23 @@
+
+ 1998  jps
+ 1999  cd /opt/kafka_2.11-0.9.0.0/
+ 2000  bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+ 2001  bin/kafka-topics.sh --list --zookeeper localhost:2181
+ 2002  bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
+ 2003  bin/kafka-console-consumemer.sh --zookeeper localhost:2181 --topic test --from-beginning
+ 2004  bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic test --from-beginning
+ 2005  bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
+ 2006  jps
+ 2007  cd
+ 2008  cd Downloads/
+ 2009  unzip apache-ignite-fabric-2.0.0-bin.zip 
+ 2010  ls
+ 2011  sudo mv apache-ignite-fabric-2.0.0-bin /opt/
+ 2012  cd /opt
+ 2013  ls
+ 2014  cd apache-ignite-fabric-2.0.0-bin/
+ 2015  ls
+ 2016  bin/ignite.sh examples/config/example-ignite.xml 
+ 2017  jps
+ 2018  cd ~/BEL/
+ 2019  history > term2
