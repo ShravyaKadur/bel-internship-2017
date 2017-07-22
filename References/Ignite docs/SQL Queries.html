@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://apacheignite.readme.io/v1.3/docs/sql-queries -->
+<html ng-app="hub" class="ng-scope gr__apacheignite_readme_io"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="readme-deploy" content="0a76ad4a2ae68a6f7b480e04f93f1d2d4fab9046"><meta name="readme-version" content="1.3"><script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://d2wy8f7a9ursnm.cloudfront.net/bugsnag-3.min.js" data-apikey="8593a4bcc5e114a9e5a28c4adcc73374"></script><title>SQL Queries</title><meta name="description" content="Apache Ignite is a memory-centric platform that combines a distributed SQL database with a key-value data grid that is ACID-compliant and horizontally scalable and includes compute, machine learning and streaming capabilities."><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta property="og:title" content="What is Ignite"><meta property="og:description" content="In-Memory Data Fabric"><link href="https://files.readme.io/tbZLB0TKRcuZ0jeLhg5O_apache-ignite_250x250.png" rel="shortcut icon" type="image/x-icon"><link rel="canonical" href="https://apacheignite.gridgain.org/v1.3/docs"><!-- Application styles--><link rel="stylesheet" href="./SQL Queries_files/bundle-hub2.css"><!-- Custom CSS--><style>a {
+  color: #ec1c24;
+}
+a:hover {
+  color: #950d12;
+}
+a.text-muted:hover {
+  color: #ec1c24;
+}
+.btn.btn-primary {
+  background-color: #ec1c24;
+}
+.btn.btn-primary:hover {
+  background-color: #950d12;
+}
+.theme-line #hub-landing-top h2 {
+  color: #ec1c24;
+}
+#hub-landing-top .btn:hover {
+  color: #ec1c24;
+}
+.theme-line #hub-landing-top .btn:hover {
+  color: #fff;
+}
+.theme-solid header#hub-header #header-top {
+  background-color: #ec1c24;
+}
+.theme-solid.header-gradient header#hub-header #header-top {
+  background: linear-gradient(to bottom, #ec1c24, #ad0e15);
+}
+.theme-solid.header-custom header#hub-header #header-top {
+  background-image: url("undefined");
+}
+.theme-line header#hub-header #header-top {
+  border-bottom-color: #ec1c24;
+}
+.theme-line header#hub-header #header-top .btn {
+  background-color: #ec1c24;
+}
+header#hub-header #header-top #header-logo {
+  width: 96px;
+  height: 40px;
+  margin-top: 0px;
+  background-image: url("https://files.readme.io/QL8bAJF8T72zRehEoy2w_apache-ignite_600x250.png");
+}
+nav#hub-sidebar ul a.active {
+  background-color: #ec1c24;
+}
+#hub-subheader-parent #hub-subheader .hub-subheader-breadcrumbs .dropdown-menu a:hover {
+  background-color: #ec1c24;
+}
+.discussion .submit-vote.submit-vote-parent.voted a.submit-vote-button {
+  background-color: #ec1c24;
+}
+section#hub-discuss .discussion a .discuss-body h4 {
+  color: #ec1c24;
+}
+section#hub-discuss .discussion a:hover .discuss-body h4 {
+  color: #950d12;
+}
+#hub-subheader-parent #hub-subheader.sticky-header.sticky {
+  border-bottom-color: #ec1c24;
+}
+#hub-subheader-parent #hub-subheader.sticky-header.sticky .search-box {
+  border-bottom-color: #ec1c24;
+}
+#hub-search-results h3 em {
+  color: #ec1c24;
+}
+.main_background,
+.tag-item {
+  background: #ec1c24 !important;
+}
+.main_background:hover {
+  background: #950d12 !important;
+}
+.main_color {
+  color: #ec1c24 !important;
+}
+.main_color_hover:hover {
+  color: #ec1c24 !important;
+}
+section#hub-discuss h1 {
+  color: #ec1c24;
+}
+#hub-reference .hub-api .api-manager .param-table .param-item .param-item-info .param-item-table .param-item-input textarea:focus,
+#hub-reference .hub-api .api-manager .param-table .param-item .param-item-info .param-item-table .param-item-input input[type="text"]:focus,
+#hub-reference .hub-api .api-manager .param-table .param-item .param-item-info .param-item-table .param-item-input input[type="number"]:focus {
+  border: 1px solid #ec1c24;
+}
+#hub-reference .hub-api .api-definition .api-try-it-out.active {
+  border-color: #ec1c24;
+  background-color: #ec1c24;
+}
+#hub-reference .hub-api .api-definition .api-try-it-out.active:hover {
+  background-color: #950d12;
+  border-color: #950d12;
+}
+#hub-reference .hub-api .api-definition .api-try-it-out:hover {
+  border-color: #ec1c24;
+  color: #ec1c24;
+}
+#hub-reference .hub-reference .hub-reference-section .hub-reference-left header .hub-reference-edit:hover {
+  color: #ec1c24;
+}
+</style><!-- TODO: Escape!--><style id="customCSS">
+</style><style type="text/css">/** initial setup **/
+.nano {
+  position : relative;
+  width    : 100%;
+  height   : 100%;
+  overflow : hidden;
+}
+.nano > .nano-content {
+  position      : absolute;
+  overflow      : scroll;
+  overflow-x    : hidden;
+  top           : 0;
+  right         : 0;
+  bottom        : 0;
+  left          : 0;
+}
+.nano > .nano-content:focus {
+  outline: thin dotted;
+}
+.nano > .nano-content::-webkit-scrollbar {
+  display: none;
+}
+.has-scrollbar > .nano-content::-webkit-scrollbar {
+  display: block;
+}
+.nano > .nano-pane {
+  background : rgba(0,0,0,.25);
+  position   : absolute;
+  width      : 10px;
+  right      : 0;
+  top        : 0;
+  bottom     : 0;
+  visibility : hidden\9; /* Target only IE7 and IE8 with this hack */
+  opacity    : .01;
+  -webkit-transition    : .2s;
+  -moz-transition       : .2s;
+  -o-transition         : .2s;
+  transition            : .2s;
+  -moz-border-radius    : 5px;
+  -webkit-border-radius : 5px;
+  border-radius         : 5px;
+}
+.nano > .nano-pane > .nano-slider {
+  background: #444;
+  background: rgba(0,0,0,.5);
+  position              : relative;
+  margin                : 0 1px;
+  -moz-border-radius    : 3px;
+  -webkit-border-radius : 3px;
+  border-radius         : 3px;
+}
+.nano:hover > .nano-pane, .nano-pane.active, .nano-pane.flashed {
+  visibility : visible\9; /* Target only IE7 and IE8 with this hack */
+  opacity    : 0.99;
+}
+</style><style type="text/css">.ns-popover-list-theme {
+  box-sizing: border-box;
+  border: solid 1px #d2d2d2;
+  border-radius: 3px;
+  z-index: 100;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2); }
+  .ns-popover-list-theme ul, .ns-popover-list-theme .list {
+    padding: 0;
+    margin: 0.625rem 0;
+    display: block; }
+  .ns-popover-list-theme li, .ns-popover-list-theme .list-item {
+    list-style-type: none; }
+    .ns-popover-list-theme li a, .ns-popover-list-theme .list-item a {
+      padding: 0.1875rem 0.625rem;
+      display: block; }
+      .ns-popover-list-theme li a:hover, .ns-popover-list-theme .list-item a:hover {
+        background-color: #f5f5f5; }
+
+.ns-popover-tooltip-theme {
+  box-sizing: border-box;
+  z-index: 100;
+  background-color: transparent; }
+  .ns-popover-tooltip-theme .ns-popover-tooltip {
+    box-sizing: border-box;
+    border: solid 1px #d2d2d2;
+    border-radius: 3px;
+    background-color: #fff;
+    padding: 0.5625rem 0.875rem;
+    max-width: 20rem;
+    font-size: 0.875rem;
+    -webkit-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+    margin: 10px; }
+    .ns-popover-tooltip-theme .ns-popover-tooltip ul {
+      padding: 0;
+      margin: 0.625rem 0;
+      display: block; }
+    .ns-popover-tooltip-theme .ns-popover-tooltip li {
+      list-style-type: none; }
+      .ns-popover-tooltip-theme .ns-popover-tooltip li a {
+        padding: 0.1875rem 0.625rem;
+        display: block; }
+        .ns-popover-tooltip-theme .ns-popover-tooltip li a:hover {
+          background-color: #f5f5f5; }
+  .ns-popover-tooltip-theme.ns-popover-bottom-placement .triangle {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: solid 11px;
+    border-color: transparent;
+    position: absolute;
+    border-bottom-color: #d2d2d2;
+    left: 50%;
+    top: -11px;
+    margin-left: -11px; }
+    .ns-popover-tooltip-theme.ns-popover-bottom-placement .triangle:after {
+      content: " ";
+      display: block;
+      width: 0;
+      height: 0;
+      border: solid 10px;
+      border-color: transparent;
+      position: absolute; }
+    .ns-popover-tooltip-theme.ns-popover-bottom-placement .triangle:after {
+      border-bottom-color: #fff;
+      border-top-width: 0;
+      top: 1px;
+      margin-left: -10px; }
+  .ns-popover-tooltip-theme.ns-popover-top-placement .triangle {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: solid 11px;
+    border-color: transparent;
+    position: absolute;
+    border-top-color: #d2d2d2;
+    left: 50%;
+    bottom: -11px;
+    margin-left: -11px; }
+    .ns-popover-tooltip-theme.ns-popover-top-placement .triangle:after {
+      content: " ";
+      display: block;
+      width: 0;
+      height: 0;
+      border: solid 10px;
+      border-color: transparent;
+      position: absolute; }
+    .ns-popover-tooltip-theme.ns-popover-top-placement .triangle:after {
+      border-top-color: #fff;
+      border-bottom-width: 0;
+      bottom: 1px;
+      margin-left: -10px; }
+  .ns-popover-tooltip-theme.ns-popover-right-placement .triangle {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: solid 11px;
+    border-color: transparent;
+    position: absolute;
+    border-right-color: #d2d2d2;
+    top: 50%;
+    left: -11px;
+    margin-top: -11px; }
+    .ns-popover-tooltip-theme.ns-popover-right-placement .triangle:after {
+      content: " ";
+      display: block;
+      width: 0;
+      height: 0;
+      border: solid 10px;
+      border-color: transparent;
+      position: absolute; }
+    .ns-popover-tooltip-theme.ns-popover-right-placement .triangle:after {
+      border-right-color: #fff;
+      border-left-width: 0;
+      left: 1px;
+      bottom: -10px; }
+  .ns-popover-tooltip-theme.ns-popover-left-placement .triangle {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: solid 11px;
+    border-color: transparent;
+    position: absolute;
+    border-left-color: #d2d2d2;
+    top: 50%;
+    right: -11px;
+    margin-top: -11px; }
+    .ns-popover-tooltip-theme.ns-popover-left-placement .triangle:after {
+      content: " ";
+      display: block;
+      width: 0;
+      height: 0;
+      border: solid 10px;
+      border-color: transparent;
+      position: absolute; }
+    .ns-popover-tooltip-theme.ns-popover-left-placement .triangle:after {
+      border-left-color: #fff;
+      border-right-width: 0;
+      right: 1px;
+      bottom: -10px; }
+  .ns-popover-tooltip-theme.ns-popover-left-align .ns-popover-tooltip {
+    margin-left: 0; }
+  .ns-popover-tooltip-theme.ns-popover-right-align .ns-popover-tooltip {
+    margin-right: 0; }
+  .ns-popover-tooltip-theme.ns-popover-top-align .ns-popover-tooltip {
+    margin-top: 0; }
+  .ns-popover-tooltip-theme.ns-popover-bottom-align .ns-popover-tooltip {
+    margin-bottom: 0; }
+</style><style type="text/css">.ns-popover-list-theme {
+  box-sizing: border-box;
+  border: solid 1px #d2d2d2;
+  border-radius: 3px;
+  z-index: 100;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+}
+.ns-popover-list-theme ul,
+.ns-popover-list-theme .list {
+  padding: 0;
+  margin: 0.625rem 0;
+  display: block;
+}
+.ns-popover-list-theme li,
+.ns-popover-list-theme .list-item {
+  list-style-type: none;
+}
+.ns-popover-list-theme li a,
+.ns-popover-list-theme .list-item a {
+  padding: 0.1875rem 0.625rem;
+  display: block;
+}
+.ns-popover-list-theme li a:hover,
+.ns-popover-list-theme .list-item a:hover {
+  background-color: #f5f5f5;
+}
+.ns-popover-tooltip-theme {
+  box-sizing: border-box;
+  z-index: 100;
+  background-color: transparent;
+}
+.ns-popover-tooltip-theme .ns-popover-tooltip {
+  box-sizing: border-box;
+  border: solid 1px #d2d2d2;
+  border-radius: 3px;
+  background-color: #fff;
+  padding: 0.5625rem 0.875rem;
+  max-width: 20rem;
+  font-size: 0.875rem;
+  -webkit-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+  margin: 10px;
+}
+.ns-popover-tooltip-theme .ns-popover-tooltip ul {
+  padding: 0;
+  margin: 0.625rem 0;
+  display: block;
+}
+.ns-popover-tooltip-theme .ns-popover-tooltip li {
+  list-style-type: none;
+}
+.ns-popover-tooltip-theme .ns-popover-tooltip li a {
+  padding: 0.1875rem 0.625rem;
+  display: block;
+}
+.ns-popover-tooltip-theme .ns-popover-tooltip li a:hover {
+  background-color: #f5f5f5;
+}
+.ns-popover-tooltip-theme.ns-popover-bottom-placement .triangle {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 11px;
+  border-color: transparent;
+  position: absolute;
+  border-bottom-color: #d2d2d2;
+  left: 50%;
+  top: -11px;
+  margin-left: -11px;
+}
+.ns-popover-tooltip-theme.ns-popover-bottom-placement .triangle:after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 10px;
+  border-color: transparent;
+  position: absolute;
+}
+.ns-popover-tooltip-theme.ns-popover-bottom-placement .triangle:after {
+  border-bottom-color: #fff;
+  border-top-width: 0;
+  top: 1px;
+  margin-left: -10px;
+}
+.ns-popover-tooltip-theme.ns-popover-top-placement .triangle {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 11px;
+  border-color: transparent;
+  position: absolute;
+  border-top-color: #d2d2d2;
+  left: 50%;
+  bottom: -11px;
+  margin-left: -11px;
+}
+.ns-popover-tooltip-theme.ns-popover-top-placement .triangle:after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 10px;
+  border-color: transparent;
+  position: absolute;
+}
+.ns-popover-tooltip-theme.ns-popover-top-placement .triangle:after {
+  border-top-color: #fff;
+  border-bottom-width: 0;
+  bottom: 1px;
+  margin-left: -10px;
+}
+.ns-popover-tooltip-theme.ns-popover-right-placement .triangle {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 11px;
+  border-color: transparent;
+  position: absolute;
+  border-right-color: #d2d2d2;
+  top: 50%;
+  left: -11px;
+  margin-top: -11px;
+}
+.ns-popover-tooltip-theme.ns-popover-right-placement .triangle:after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 10px;
+  border-color: transparent;
+  position: absolute;
+}
+.ns-popover-tooltip-theme.ns-popover-right-placement .triangle:after {
+  border-right-color: #fff;
+  border-left-width: 0;
+  left: 1px;
+  bottom: -10px;
+}
+.ns-popover-tooltip-theme.ns-popover-left-placement .triangle {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 11px;
+  border-color: transparent;
+  position: absolute;
+  border-left-color: #d2d2d2;
+  top: 50%;
+  right: -11px;
+  margin-top: -11px;
+}
+.ns-popover-tooltip-theme.ns-popover-left-placement .triangle:after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 10px;
+  border-color: transparent;
+  position: absolute;
+}
+.ns-popover-tooltip-theme.ns-popover-left-placement .triangle:after {
+  border-left-color: #fff;
+  border-right-width: 0;
+  right: 1px;
+  bottom: -10px;
+}
+.ns-popover-tooltip-theme.ns-popover-left-align .ns-popover-tooltip {
+  margin-left: 0;
+}
+.ns-popover-tooltip-theme.ns-popover-right-align .ns-popover-tooltip {
+  margin-right: 0;
+}
+.ns-popover-tooltip-theme.ns-popover-top-align .ns-popover-tooltip {
+  margin-top: 0;
+}
+.ns-popover-tooltip-theme.ns-popover-bottom-align .ns-popover-tooltip {
+  margin-bottom: 0;
+}
+</style><style type="text/css">tags-input{display:block}tags-input *,tags-input :after,tags-input :before{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}tags-input .host{position:relative;margin-top:5px;margin-bottom:5px;height:100%}tags-input .host:active{outline:0}tags-input .tags{-moz-appearance:textfield;-webkit-appearance:textfield;padding:1px;overflow:hidden;word-wrap:break-word;cursor:text;background-color:#fff;border:1px solid #a9a9a9;box-shadow:1px 1px 1px 0 #d3d3d3 inset;height:100%}tags-input .tags.focused{outline:0;-webkit-box-shadow:0 0 3px 1px rgba(5,139,242,.6);-moz-box-shadow:0 0 3px 1px rgba(5,139,242,.6);box-shadow:0 0 3px 1px rgba(5,139,242,.6)}tags-input .tags .tag-list{margin:0;padding:0;list-style-type:none}tags-input .tags .tag-item{margin:2px;padding:0 5px;display:inline-block;float:left;font:14px "Helvetica Neue",Helvetica,Arial,sans-serif;height:26px;line-height:25px;border:1px solid #acacac;border-radius:3px;background:-webkit-linear-gradient(top,#f0f9ff 0,#cbebff 47%,#a1dbff 100%);background:linear-gradient(to bottom,#f0f9ff 0,#cbebff 47%,#a1dbff 100%)}tags-input .tags .tag-item.selected{background:-webkit-linear-gradient(top,#febbbb 0,#fe9090 45%,#ff5c5c 100%);background:linear-gradient(to bottom,#febbbb 0,#fe9090 45%,#ff5c5c 100%)}tags-input .tags .tag-item .remove-button{margin:0 0 0 5px;padding:0;border:none;background:0 0;cursor:pointer;vertical-align:middle;font:700 16px Arial,sans-serif;color:#585858}tags-input .tags .tag-item .remove-button:active{color:red}tags-input .tags .input{border:0;outline:0;margin:2px;padding:0;padding-left:5px;float:left;height:26px;font:14px "Helvetica Neue",Helvetica,Arial,sans-serif}tags-input .tags .input.invalid-tag{color:red}tags-input .tags .input::-ms-clear{display:none}tags-input.ng-invalid .tags{-webkit-box-shadow:0 0 3px 1px rgba(255,0,0,.6);-moz-box-shadow:0 0 3px 1px rgba(255,0,0,.6);box-shadow:0 0 3px 1px rgba(255,0,0,.6)}tags-input .autocomplete{margin-top:5px;position:absolute;padding:5px 0;z-index:999;width:100%;background-color:#fff;border:1px solid rgba(0,0,0,.2);-webkit-box-shadow:0 5px 10px rgba(0,0,0,.2);-moz-box-shadow:0 5px 10px rgba(0,0,0,.2);box-shadow:0 5px 10px rgba(0,0,0,.2)}tags-input .autocomplete .suggestion-list{margin:0;padding:0;list-style-type:none}tags-input .autocomplete .suggestion-item{padding:5px 10px;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font:16px "Helvetica Neue",Helvetica,Arial,sans-serif;color:#000;background-color:#fff}tags-input .autocomplete .suggestion-item.selected,tags-input .autocomplete .suggestion-item.selected em{color:#fff;background-color:#0097cf}tags-input .autocomplete .suggestion-item em{font:normal bold 16px "Helvetica Neue",Helvetica,Arial,sans-serif;color:#000;background-color:#fff}</style><style type="text/css">/* Magnific Popup CSS */
+.mfp-bg {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1042;
+  overflow: hidden;
+  position: fixed;
+  background: #0b0b0b;
+  opacity: 0.8;
+  filter: alpha(opacity=80); }
+
+.mfp-wrap {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1043;
+  position: fixed;
+  outline: none !important;
+  -webkit-backface-visibility: hidden; }
+
+.mfp-container {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding: 0 8px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.mfp-container:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle; }
+
+.mfp-align-top .mfp-container:before {
+  display: none; }
+
+.mfp-content {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 auto;
+  text-align: left;
+  z-index: 1045; }
+
+.mfp-inline-holder .mfp-content,
+.mfp-ajax-holder .mfp-content {
+  width: 100%;
+  cursor: auto; }
+
+.mfp-ajax-cur {
+  cursor: progress; }
+
+.mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+  cursor: -moz-zoom-out;
+  cursor: -webkit-zoom-out;
+  cursor: zoom-out; }
+
+.mfp-zoom {
+  cursor: pointer;
+  cursor: -webkit-zoom-in;
+  cursor: -moz-zoom-in;
+  cursor: zoom-in; }
+
+.mfp-auto-cursor .mfp-content {
+  cursor: auto; }
+
+.mfp-close,
+.mfp-arrow,
+.mfp-preloader,
+.mfp-counter {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none; }
+
+.mfp-loading.mfp-figure {
+  display: none; }
+
+.mfp-hide {
+  display: none !important; }
+
+.mfp-preloader {
+  color: #CCC;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  text-align: center;
+  margin-top: -0.8em;
+  left: 8px;
+  right: 8px;
+  z-index: 1044; }
+  .mfp-preloader a {
+    color: #CCC; }
+    .mfp-preloader a:hover {
+      color: #FFF; }
+
+.mfp-s-ready .mfp-preloader {
+  display: none; }
+
+.mfp-s-error .mfp-content {
+  display: none; }
+
+button.mfp-close,
+button.mfp-arrow {
+  overflow: visible;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  display: block;
+  outline: none;
+  padding: 0;
+  z-index: 1046;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+.mfp-close {
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-decoration: none;
+  text-align: center;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  padding: 0 0 18px 10px;
+  color: #FFF;
+  font-style: normal;
+  font-size: 28px;
+  font-family: Arial, Baskerville, monospace; }
+  .mfp-close:hover,
+  .mfp-close:focus {
+    opacity: 1;
+    filter: alpha(opacity=100); }
+  .mfp-close:active {
+    top: 1px; }
+
+.mfp-close-btn-in .mfp-close {
+  color: #333; }
+
+.mfp-image-holder .mfp-close,
+.mfp-iframe-holder .mfp-close {
+  color: #FFF;
+  right: -6px;
+  text-align: right;
+  padding-right: 6px;
+  width: 100%; }
+
+.mfp-counter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #CCC;
+  font-size: 12px;
+  line-height: 18px;
+  white-space: nowrap; }
+
+.mfp-arrow {
+  position: absolute;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  margin: 0;
+  top: 50%;
+  margin-top: -55px;
+  padding: 0;
+  width: 90px;
+  height: 110px;
+  -webkit-tap-highlight-color: transparent; }
+  .mfp-arrow:active {
+    margin-top: -54px; }
+  .mfp-arrow:hover,
+  .mfp-arrow:focus {
+    opacity: 1;
+    filter: alpha(opacity=100); }
+  .mfp-arrow:before,
+  .mfp-arrow:after,
+  .mfp-arrow .mfp-b,
+  .mfp-arrow .mfp-a {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 35px;
+    margin-left: 35px;
+    border: medium inset transparent; }
+  .mfp-arrow:after,
+  .mfp-arrow .mfp-a {
+    border-top-width: 13px;
+    border-bottom-width: 13px;
+    top: 8px; }
+  .mfp-arrow:before,
+  .mfp-arrow .mfp-b {
+    border-top-width: 21px;
+    border-bottom-width: 21px;
+    opacity: 0.7; }
+
+.mfp-arrow-left {
+  left: 0; }
+  .mfp-arrow-left:after,
+  .mfp-arrow-left .mfp-a {
+    border-right: 17px solid #FFF;
+    margin-left: 31px; }
+  .mfp-arrow-left:before,
+  .mfp-arrow-left .mfp-b {
+    margin-left: 25px;
+    border-right: 27px solid #3F3F3F; }
+
+.mfp-arrow-right {
+  right: 0; }
+  .mfp-arrow-right:after,
+  .mfp-arrow-right .mfp-a {
+    border-left: 17px solid #FFF;
+    margin-left: 39px; }
+  .mfp-arrow-right:before,
+  .mfp-arrow-right .mfp-b {
+    border-left: 27px solid #3F3F3F; }
+
+.mfp-iframe-holder {
+  padding-top: 40px;
+  padding-bottom: 40px; }
+  .mfp-iframe-holder .mfp-content {
+    line-height: 0;
+    width: 100%;
+    max-width: 900px; }
+  .mfp-iframe-holder .mfp-close {
+    top: -40px; }
+
+.mfp-iframe-scaler {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  padding-top: 56.25%; }
+  .mfp-iframe-scaler iframe {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    background: #000; }
+
+/* Main image in popup */
+img.mfp-img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  line-height: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 40px 0 40px;
+  margin: 0 auto; }
+
+/* The shadow behind the image */
+.mfp-figure {
+  line-height: 0; }
+  .mfp-figure:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 40px;
+    bottom: 40px;
+    display: block;
+    right: 0;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    background: #444; }
+  .mfp-figure small {
+    color: #BDBDBD;
+    display: block;
+    font-size: 12px;
+    line-height: 14px; }
+  .mfp-figure figure {
+    margin: 0; }
+
+.mfp-bottom-bar {
+  margin-top: -36px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  cursor: auto; }
+
+.mfp-title {
+  text-align: left;
+  line-height: 18px;
+  color: #F3F3F3;
+  word-wrap: break-word;
+  padding-right: 36px; }
+
+.mfp-image-holder .mfp-content {
+  max-width: 100%; }
+
+.mfp-gallery .mfp-image-holder .mfp-figure {
+  cursor: pointer; }
+
+@media screen and (max-width: 800px) and (orientation: landscape), screen and (max-height: 300px) {
+  /**
+       * Remove all paddings around the image on small screen
+       */
+  .mfp-img-mobile .mfp-image-holder {
+    padding-left: 0;
+    padding-right: 0; }
+  .mfp-img-mobile img.mfp-img {
+    padding: 0; }
+  .mfp-img-mobile .mfp-figure:after {
+    top: 0;
+    bottom: 0; }
+  .mfp-img-mobile .mfp-figure small {
+    display: inline;
+    margin-left: 5px; }
+  .mfp-img-mobile .mfp-bottom-bar {
+    background: rgba(0, 0, 0, 0.6);
+    bottom: 0;
+    margin: 0;
+    top: auto;
+    padding: 3px 5px;
+    position: fixed;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+    .mfp-img-mobile .mfp-bottom-bar:empty {
+      padding: 0; }
+  .mfp-img-mobile .mfp-counter {
+    right: 5px;
+    top: 3px; }
+  .mfp-img-mobile .mfp-close {
+    top: 0;
+    right: 0;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    text-align: center;
+    padding: 0; } }
+
+@media all and (max-width: 900px) {
+  .mfp-arrow {
+    -webkit-transform: scale(0.75);
+    transform: scale(0.75); }
+  .mfp-arrow-left {
+    -webkit-transform-origin: 0;
+    transform-origin: 0; }
+  .mfp-arrow-right {
+    -webkit-transform-origin: 100%;
+    transform-origin: 100%; }
+  .mfp-container {
+    padding-left: 6px;
+    padding-right: 6px; } }
+
+.mfp-ie7 .mfp-img {
+  padding: 0; }
+
+.mfp-ie7 .mfp-bottom-bar {
+  width: 600px;
+  left: 50%;
+  margin-left: -300px;
+  margin-top: 5px;
+  padding-bottom: 5px; }
+
+.mfp-ie7 .mfp-container {
+  padding: 0; }
+
+.mfp-ie7 .mfp-content {
+  padding-top: 44px; }
+
+.mfp-ie7 .mfp-close {
+  top: 0;
+  right: 0;
+  padding-top: 0; }
+</style><style type="text/css">/*
+ * Toastr
+ * Version 2.0.2
+ * Copyright 2012-2014 John Papa and Hans Fjällemark.
+ * All Rights Reserved.
+ * Use, reproduction, distribution, and modification of this code is subject to the terms and
+ * conditions of the MIT license, available at http://www.opensource.org/licenses/mit-license.php
+ *
+ * Author: John Papa and Hans Fjällemark
+ * Project: https://github.com/CodeSeven/toastr
+ */
+.toast-title {
+  font-weight: bold;
+}
+.toast-message {
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}
+.toast-message a,
+.toast-message label {
+  color: #ffffff;
+}
+.toast-message a:hover {
+  color: #cccccc;
+  text-decoration: none;
+}
+.toast-close-button {
+  position: relative;
+  right: -0.3em;
+  top: -0.3em;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  -webkit-text-shadow: 0 1px 0 #ffffff;
+  text-shadow: 0 1px 0 #ffffff;
+  opacity: 0.8;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  filter: alpha(opacity=80);
+}
+.toast-close-button:hover,
+.toast-close-button:focus {
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.4;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  filter: alpha(opacity=40);
+}
+/*Additional properties for button version
+ iOS requires the button element instead of an anchor tag.
+ If you want the anchor version, it requires `href="#"`.*/
+button.toast-close-button {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+.toast-top-full-width {
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+.toast-bottom-full-width {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+.toast-top-left {
+  top: 12px;
+  left: 12px;
+}
+.toast-top-right {
+  top: 12px;
+  right: 12px;
+}
+.toast-bottom-right {
+  right: 12px;
+  bottom: 12px;
+}
+.toast-bottom-left {
+  bottom: 12px;
+  left: 12px;
+}
+#toast-container {
+  position: fixed;
+  z-index: 999999;
+  /*overrides*/
+
+}
+#toast-container * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#toast-container > div {
+  margin: 0 0 6px;
+  padding: 15px 15px 15px 50px;
+  width: 300px;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
+  background-position: 15px center;
+  background-repeat: no-repeat;
+  -moz-box-shadow: 0 0 12px #999999;
+  -webkit-box-shadow: 0 0 12px #999999;
+  box-shadow: 0 0 12px #999999;
+  color: #ffffff;
+  opacity: 0.8;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  filter: alpha(opacity=80);
+}
+#toast-container > :hover {
+  -moz-box-shadow: 0 0 12px #000000;
+  -webkit-box-shadow: 0 0 12px #000000;
+  box-shadow: 0 0 12px #000000;
+  opacity: 1;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  filter: alpha(opacity=100);
+  cursor: pointer;
+}
+#toast-container > .toast-info {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVEhLtZa9SgNBEMc9sUxxRcoUKSzSWIhXpFMhhYWFhaBg4yPYiWCXZxBLERsLRS3EQkEfwCKdjWJAwSKCgoKCcudv4O5YLrt7EzgXhiU3/4+b2ckmwVjJSpKkQ6wAi4gwhT+z3wRBcEz0yjSseUTrcRyfsHsXmD0AmbHOC9Ii8VImnuXBPglHpQ5wwSVM7sNnTG7Za4JwDdCjxyAiH3nyA2mtaTJufiDZ5dCaqlItILh1NHatfN5skvjx9Z38m69CgzuXmZgVrPIGE763Jx9qKsRozWYw6xOHdER+nn2KkO+Bb+UV5CBN6WC6QtBgbRVozrahAbmm6HtUsgtPC19tFdxXZYBOfkbmFJ1VaHA1VAHjd0pp70oTZzvR+EVrx2Ygfdsq6eu55BHYR8hlcki+n+kERUFG8BrA0BwjeAv2M8WLQBtcy+SD6fNsmnB3AlBLrgTtVW1c2QN4bVWLATaIS60J2Du5y1TiJgjSBvFVZgTmwCU+dAZFoPxGEEs8nyHC9Bwe2GvEJv2WXZb0vjdyFT4Cxk3e/kIqlOGoVLwwPevpYHT+00T+hWwXDf4AJAOUqWcDhbwAAAAASUVORK5CYII=") !important;
+}
+#toast-container > .toast-error {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHOSURBVEhLrZa/SgNBEMZzh0WKCClSCKaIYOED+AAKeQQLG8HWztLCImBrYadgIdY+gIKNYkBFSwu7CAoqCgkkoGBI/E28PdbLZmeDLgzZzcx83/zZ2SSXC1j9fr+I1Hq93g2yxH4iwM1vkoBWAdxCmpzTxfkN2RcyZNaHFIkSo10+8kgxkXIURV5HGxTmFuc75B2RfQkpxHG8aAgaAFa0tAHqYFfQ7Iwe2yhODk8+J4C7yAoRTWI3w/4klGRgR4lO7Rpn9+gvMyWp+uxFh8+H+ARlgN1nJuJuQAYvNkEnwGFck18Er4q3egEc/oO+mhLdKgRyhdNFiacC0rlOCbhNVz4H9FnAYgDBvU3QIioZlJFLJtsoHYRDfiZoUyIxqCtRpVlANq0EU4dApjrtgezPFad5S19Wgjkc0hNVnuF4HjVA6C7QrSIbylB+oZe3aHgBsqlNqKYH48jXyJKMuAbiyVJ8KzaB3eRc0pg9VwQ4niFryI68qiOi3AbjwdsfnAtk0bCjTLJKr6mrD9g8iq/S/B81hguOMlQTnVyG40wAcjnmgsCNESDrjme7wfftP4P7SP4N3CJZdvzoNyGq2c/HWOXJGsvVg+RA/k2MC/wN6I2YA2Pt8GkAAAAASUVORK5CYII=") !important;
+}
+#toast-container > .toast-success {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADsSURBVEhLY2AYBfQMgf///3P8+/evAIgvA/FsIF+BavYDDWMBGroaSMMBiE8VC7AZDrIFaMFnii3AZTjUgsUUWUDA8OdAH6iQbQEhw4HyGsPEcKBXBIC4ARhex4G4BsjmweU1soIFaGg/WtoFZRIZdEvIMhxkCCjXIVsATV6gFGACs4Rsw0EGgIIH3QJYJgHSARQZDrWAB+jawzgs+Q2UO49D7jnRSRGoEFRILcdmEMWGI0cm0JJ2QpYA1RDvcmzJEWhABhD/pqrL0S0CWuABKgnRki9lLseS7g2AlqwHWQSKH4oKLrILpRGhEQCw2LiRUIa4lwAAAABJRU5ErkJggg==") !important;
+}
+#toast-container > .toast-warning {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGYSURBVEhL5ZSvTsNQFMbXZGICMYGYmJhAQIJAICYQPAACiSDB8AiICQQJT4CqQEwgJvYASAQCiZiYmJhAIBATCARJy+9rTsldd8sKu1M0+dLb057v6/lbq/2rK0mS/TRNj9cWNAKPYIJII7gIxCcQ51cvqID+GIEX8ASG4B1bK5gIZFeQfoJdEXOfgX4QAQg7kH2A65yQ87lyxb27sggkAzAuFhbbg1K2kgCkB1bVwyIR9m2L7PRPIhDUIXgGtyKw575yz3lTNs6X4JXnjV+LKM/m3MydnTbtOKIjtz6VhCBq4vSm3ncdrD2lk0VgUXSVKjVDJXJzijW1RQdsU7F77He8u68koNZTz8Oz5yGa6J3H3lZ0xYgXBK2QymlWWA+RWnYhskLBv2vmE+hBMCtbA7KX5drWyRT/2JsqZ2IvfB9Y4bWDNMFbJRFmC9E74SoS0CqulwjkC0+5bpcV1CZ8NMej4pjy0U+doDQsGyo1hzVJttIjhQ7GnBtRFN1UarUlH8F3xict+HY07rEzoUGPlWcjRFRr4/gChZgc3ZL2d8oAAAAASUVORK5CYII=") !important;
+}
+#toast-container.toast-top-full-width > div,
+#toast-container.toast-bottom-full-width > div {
+  width: 96%;
+  margin: auto;
+}
+.toast {
+  background-color: #030303;
+}
+.toast-success {
+  background-color: #51a351;
+}
+.toast-error {
+  background-color: #bd362f;
+}
+.toast-info {
+  background-color: #2f96b4;
+}
+.toast-warning {
+  background-color: #f89406;
+}
+/*Responsive Design*/
+@media all and (max-width: 240px) {
+  #toast-container > div {
+    padding: 8px 8px 8px 50px;
+    width: 11em;
+  }
+  #toast-container .toast-close-button {
+    right: -0.2em;
+    top: -0.2em;
+  }
+}
+@media all and (min-width: 241px) and (max-width: 480px) {
+  #toast-container > div {
+    padding: 8px 8px 8px 50px;
+    width: 18em;
+  }
+  #toast-container .toast-close-button {
+    right: -0.2em;
+    top: -0.2em;
+  }
+}
+@media all and (min-width: 481px) and (max-width: 768px) {
+  #toast-container > div {
+    padding: 15px 15px 15px 50px;
+    width: 25em;
+  }
+}
+</style><style type="text/css">.atwho-view {
+    position:absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    margin-top: 18px;
+    background: white;
+    color: black;
+    border: 1px solid #DDD;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    min-width: 120px;
+    max-height: 200px;
+    overflow: auto;
+    z-index: 11110 !important;
+}
+
+.atwho-view .cur {
+    background: #3366FF;
+    color: white;
+}
+.atwho-view .cur small {
+    color: white;
+}
+.atwho-view strong {
+    color: #3366FF;
+}
+.atwho-view .cur strong {
+    color: white;
+    font:bold;
+}
+.atwho-view ul {
+    /* width: 100px; */
+    list-style:none;
+    padding:0;
+    margin:auto;
+}
+.atwho-view ul li {
+    display: block;
+    padding: 5px 10px;
+    border-bottom: 1px solid #DDD;
+    cursor: pointer;
+    /* border-top: 1px solid #C8C8C8; */
+}
+.atwho-view small {
+    font-size: smaller;
+    color: #777;
+    font-weight: normal;
+}
+</style></head><body ng-class="{&#39;hub-full&#39;: state.current().opts.full, &#39;no-sidebar&#39;: !state.current().opts.sidebar, &#39;hub-is-home&#39;: state.current().name == &#39;home&#39; &amp;&amp; &#39;docs&#39; == &#39;landing&#39;, &#39;hub-suggested-edits&#39;: suggestedEdits.isEnabled}" class="body-overlap theme-line header-solid header-bg-size-auto header-bg-pos-tl header-overlay-triangles lumosity-normal " data-gr-c-s-loaded="true"><div id="hub-me" style="display: none;">{"loggedIn":false,"search":{"token":"YmY5MzUxZWFmMWMyYzZjYjkwOGM0NDQ0YWQ0ZDkwYTM2NTUzZDQ1NjI3ZGRkZDcxOTFkY2YyZWMxYjZjYzViNHRhZ0ZpbHRlcnM9cHJvamVjdDo1NGQ4MjI0ZDI1ZTkwYTBkMDBkYjU0ZmYsKGhpZGRlbjpub25lLGhpZGRlbjpmYWxzZSksKHZlcnNpb246bm9uZSx2ZXJzaW9uOjU1YTM5OTdhOTEyYTZlMjMwMDg4MmJhZCk=","filters":"tagFilters=project:54d8224d25e90a0d00db54ff,(hidden:none,hidden:false),(version:none,version:55a3997a912a6e2300882bad)","app":"T28YKFATPY","modules":{"landing":false,"docs":true,"examples":true,"reference":false,"blog":false,"discuss":false,"suggested_edits":true}}}</div><header id="hub-header"><div id="header-top"><div class="hub-container"><div class="clearfix"><a href="https://ignite.apache.org/" class="header-link"><h1 id="header-logo">Apache Ignite</h1></a><nav><ul id="header-nav-left"><li><a href="https://apacheignite.readme.io/docs/" target="_self">Java*</a></li><li><a href="https://apacheignite-net.readme.io/docs/" target="_self">C#/.NET</a></li><li><a href="https://apacheignite-cpp.readme.io/" target="_self">C++</a></li><li><a href="https://apacheignite-mix.readme.io/docs" target="_self">Integrations</a></li><li><a href="https://apacheignite-fs.readme.io/docs" target="_self">Hadoop/Spark</a></li><li><a href="https://apacheignite-tools.readme.io/docs" target="_self">Tools</a></li><li><a href="https://ignite.apache.org/community/resources.html#ask" target="_self">Ask a Question</a></li><li><a href="https://ignite.apache.org/download.cgi" target="_self">Download</a></li></ul><ul id="header-nav-right"><li><span login="" class=""><span ng-show="user.loggedIn" class="login hub-subheader-breadcrumbs ng-hide"><span class="dropdown right-dropdown"><script type="text/ng-template" id="loginPopover"><div id="hub-user-dropdown" class="ns-popover-tooltip"><div class="ns-triangle"></div><div class="triangle"></div><ul><li ng-show="user.isAdmin"><a href="https://dash.readme.io/project/apacheignite/v1.3/dashboard"> <i class="fa fa-lock"></i>Admin Panel</a></li><li><a ng-href="/logout?redirect_uri={{redirect()}}" target="_self"> <i class="fa fa-power-off"></i>Log out</a></li></ul></div></script><a ns-popover="" ns-popover-trigger="click" ns-popover-theme="ns-popover-dropdown-theme" ns-popover-placement="bottom|right" ns-popover-template="loginPopover" ns-popover-timeout="-1" class="hub-breadcrumb-item dropdown-toggle ng-scope ng-binding"><i class="fa fa-chevron-down"></i></a></span></span><span ng-show="!user.loggedIn" class="login"><a ng-href="/login?redirect=v1.3/docs/sql-queries" target="_self" href="https://apacheignite.readme.io/login?redirect=v1.3/docs/sql-queries">Log In</a></span></span></li><li><a href="https://ignite.apache.org/releases/2.0.0/javadoc/index.html" target="_self">Javadoc</a></li><li><a href="https://github.com/apache/ignite/tree/master/examples" target="_self">Examples</a></li></ul></nav></div><div id="hub-landing-top" class="hub-landing-html"><div id="jumbotron" class="promos">
+  <div class="row">
+    <div class="col-sm-offset-2 col-sm-8">
+      <h2 style="color: #444444;">GridGain Developer Hub - Apache Ignite<sup>tm</sup></h2>
+      <p>
+      Welcome to the Apache Ignite developer hub run by GridGain. 
+      Here you'll find comprehensive guides and documentation to help you 
+      start working with Apache Ignite as quickly as possible, as well 
+      as support if you get stuck.
+    	</p>
+      <p>&nbsp;</p>
+      <p>
+			GridGain also provides Community Edition which is a distribution of Apache Ignite made 
+      available by GridGain. It is the fastest and easiest way to get 
+      started with Apache Ignite. The Community Edition is generally more 
+      stable than the Apache Ignite release available from the Apache Ignite
+      website and may contain extra bug fixes and features that have not made
+      it yet into the release on the Apache website.
+      </p>
+      <p>&nbsp;</p>
+      <p>
+      Let's jump right in!
+      </p>
+      <p>&nbsp;</p>
+    	<a href="https://apacheignite.readme.io/v1.0/docs" class="btn btn-lg btn-primary">Documentation</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    	<a href="https://apacheignite.readme.io/v1.0/discuss" class="btn btn-lg btn-primary">Ask a Question</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    	<a href="https://apacheignite.readme.io/v1.0/page/download" class="btn btn-lg btn-primary">Download</a>
+      <p>&nbsp;</p>
+     	<a href="https://ignite.incubator.apache.org/releases/1.0.0/javadoc" target="_new" class="btn btn-primary">Javadoc</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    	<a href="https://ignite.incubator.apache.org/releases/1.0.0/scaladoc/scalar" target="_new" class="btn btn-primary">Scaladoc</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    	<a href="https://github.com/apache/incubator-ignite/tree/master/examples" target="_new" class="btn btn-primary">Examples</a>
+    </div>
+	</div>
+</div></div></div></div><div id="hub-subheader-parent"><div id="hub-subheader"><div class="hub-container"><nav id="header-bottom-nav"><div id="header-icon-nav"><div class="icons"><div class="hub-subheader-breadcrumbs"><!-- Version picker--><span dropdown="" class="left-dropdown dropdown ng-isolate-scope"><a dropdown-toggle="" href="https://apacheignite.readme.io/v1.3/docs/sql-queries" class="hub-breadcrumb-item dropdown-toggle"><span>v1.3</span><i class="fa fa-chevron-down"></i></a></span><span dropdown="" class="left-dropdown dropdown ng-isolate-scope"><a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-class="{&#39;hub-breadcrumb-last&#39;: !showTitle() &amp;&amp; !state.current().params.category}" dropdown-toggle="" class="hub-breadcrumb-item hub-breadcrumb-item-type dropdown-toggle"><span ng-show="state.current().root == &#39;home&#39;" class="ng-hide">Home</span><span ng-show="state.current().root == &#39;docs&#39;">Home</span><span ng-show="state.current().root == &#39;reference&#39;" class="ng-hide">Reference</span><span ng-show="state.current().root == &#39;preview&#39;" class="ng-hide">Reference</span><span ng-show="state.current().root == &#39;blog&#39;" class="ng-hide">Announcements</span><span ng-show="state.current().root == &#39;discuss&#39;" class="ng-hide">Ask a Question</span><span ng-show="state.current().root == &#39;error&#39;" class="ng-hide">Page Not Found</span><span ng-show="state.current().root == &#39;search&#39;" class="ng-hide">Search</span><span ng-show="state.current().root == &#39;custompages&#39;" style="text-transform: capitalize;" class="ng-binding ng-hide"></span><i class="fa fa-chevron-down"></i></a></span><span ng-show="showTitle()" class="hub-breadcrumb-item hub-breadcrumb-item-title"><span class="ng-binding">SQL Queries</span></span></div><div><div id="hub-search"><div searchbox="" ng-class="{full:search.full}" class="searchbox ng-scope"><input ng-model="search.query" type="text" placeholder="Search" class="search-box ng-pristine ng-untouched ng-valid"><div class="fa fa-search"></div></div></div></div></div></div></nav><div id="header-bottom-suggested-edits"><div class="pull-right"><a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="suggestedEdits.disable()" class="hub-suggested-edits-cancel"><i class="icon icon-cross-circle"></i>discard</a><!-- ngIf: user.isAdmin --><button ng-click="suggestedEdits.prepare()" class="btn btn-default"><i class="icon icon-right icon-register"></i><strong>Submit</strong> Suggested Edits</button></div></div></div><div><div id="hub-search-results" searchresults="" ng-class="{&#39;hub-search-results-active&#39;:search.full}" class="ng-scope"><div class="hub-container"><h3>Search results for "<em class="ng-binding"></em>"</h3><div ng-show="!search.results.length" class="hub-search-noresults"><em class="ng-binding">No results found for "".&nbsp;</em></div></div><ul ng-show="search.results.length" class="ng-hide"><!-- ngRepeat: result in search.results --></ul><a ng-show="search.results.length" ng-href="/v1.3/search?q=" class="viewAll ng-hide" href="https://apacheignite.readme.io/v1.3/search?q=">View All Results</a></div></div><!-- ngIf: isMobile --></div></div></header><div ng-class="{active:contentLoadingSection || contentLoading}" class="hub-loading-indicator"></div><div id="hub-container" ng-class="{loading:contentLoadingSection}"><div class="hub-container"><div id="hub-sidebar-parent" sidebar="" class="hub-sidebar-sticky"><nav id="hub-sidebar"><div class="scrollable-parent"><div class="nano ng-isolate-scope has-scrollbar" scroll-to-top="state.current().root"><div class="nano-content" ng-transclude="" tabindex="0" style="right: -17px;"><div id="hub-sidebar-content" class="ng-scope"><div ng-show="state.current().root == &#39;docs&#39;"><h3>Basic Concepts</h3><ul><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39982912a6e2300882bc5&#39;)}" class="">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;what-is-ignite&#39;})" href="https://apacheignite.readme.io/v1.3/docs/what-is-ignite" ui-sref-alt="docs" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;what-is-ignite&#39;].edited" class="icon icon-pencil4 ng-hide"></span>What is Ignite</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39982912a6e2300882bc6&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;getting-started&#39;})" href="https://apacheignite.readme.io/v1.3/docs/getting-started" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;getting-started&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Getting Started</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39982912a6e2300882bc7&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;maven-setup&#39;})" href="https://apacheignite.readme.io/v1.3/docs/maven-setup" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;maven-setup&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Maven Setup</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39982912a6e2300882bc8&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;ignite-life-cycle&#39;})" href="https://apacheignite.readme.io/v1.3/docs/ignite-life-cycle" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;ignite-life-cycle&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Ignite Life Cycle</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39982912a6e2300882bc9&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;async-support&#39;})" href="https://apacheignite.readme.io/v1.3/docs/async-support" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;async-support&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Asynchronous Support</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39982912a6e2300882bca&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;clients-vs-servers&#39;})" href="https://apacheignite.readme.io/v1.3/docs/clients-vs-servers" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;clients-vs-servers&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Clients and Servers</a><ul class="subpages"></ul></li></ul><h3>Clustering</h3><ul><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998c912a6e2300882c08&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;cluster&#39;})" href="https://apacheignite.readme.io/v1.3/docs/cluster" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;cluster&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Cluster</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998c912a6e2300882c09&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;cluster-groups&#39;})" href="https://apacheignite.readme.io/v1.3/docs/cluster-groups" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;cluster-groups&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Cluster Groups</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998c912a6e2300882c0a&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;leader-election&#39;})" href="https://apacheignite.readme.io/v1.3/docs/leader-election" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;leader-election&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Leader Election</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998c912a6e2300882c0b&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;cluster-config&#39;})" href="https://apacheignite.readme.io/v1.3/docs/cluster-config" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;cluster-config&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Cluster Configuration</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998c912a6e2300882c0c&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;zero-deployment&#39;})" href="https://apacheignite.readme.io/v1.3/docs/zero-deployment" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;zero-deployment&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Zero Deployment</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998c912a6e2300882c0e&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;aws-config&#39;})" href="https://apacheignite.readme.io/v1.3/docs/aws-config" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;aws-config&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Amazon AWS Integration</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998c912a6e2300882c0f&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;gce-configuration&#39;})" href="https://apacheignite.readme.io/v1.3/docs/gce-configuration" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;gce-configuration&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Google Cloud Integration</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998c912a6e2300882c0d&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;generic-cloud-configuration&#39;})" href="https://apacheignite.readme.io/v1.3/docs/generic-cloud-configuration" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;generic-cloud-configuration&#39;].edited" class="icon icon-pencil4 ng-hide"></span>JClouds Integration</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998c912a6e2300882c10&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;network-config&#39;})" href="https://apacheignite.readme.io/v1.3/docs/network-config" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;network-config&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Network Configuration</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998c912a6e2300882c12&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;docker-deployment&#39;})" href="https://apacheignite.readme.io/v1.3/docs/docker-deployment" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;docker-deployment&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Docker Deployment</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998c912a6e2300882c11&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;mesos-deployment&#39;})" href="https://apacheignite.readme.io/v1.3/docs/mesos-deployment" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;mesos-deployment&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Mesos Deployment</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3a8fc5f54460d000d4ca2&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;yarn-deployment&#39;})" href="https://apacheignite.readme.io/v1.3/docs/yarn-deployment" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;yarn-deployment&#39;].edited" class="icon icon-pencil4 ng-hide"></span>YARN Deployment</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55afda1fd7624e3700e4fa95&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;ssltls&#39;})" href="https://apacheignite.readme.io/v1.3/docs/ssltls" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;ssltls&#39;].edited" class="icon icon-pencil4 ng-hide"></span>SSL\TLS</a><ul class="subpages"></ul></li></ul><h3>Data Grid</h3><ul><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39983912a6e2300882bcc&#39;)}" class="">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;data-grid&#39;})" href="https://apacheignite.readme.io/v1.3/docs/data-grid" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;data-grid&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Data Grid</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39983912a6e2300882bcd&#39;)}" class="">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;jcache&#39;})" href="https://apacheignite.readme.io/v1.3/docs/jcache" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;jcache&#39;].edited" class="icon icon-pencil4 ng-hide"></span>JCache and Beyond</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39983912a6e2300882bce&#39;)}" class="">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;cache-modes&#39;})" href="https://apacheignite.readme.io/v1.3/docs/cache-modes" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;cache-modes&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Cache Modes</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39983912a6e2300882bcf&#39;)}" class="">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;primary-and-backup-copies&#39;})" href="https://apacheignite.readme.io/v1.3/docs/primary-and-backup-copies" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;primary-and-backup-copies&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Primary &amp; Backup Copies</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39983912a6e2300882bd0&#39;)}" class="">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;near-caches&#39;})" href="https://apacheignite.readme.io/v1.3/docs/near-caches" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;near-caches&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Near Caches</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39983912a6e2300882bd1&#39;)}" class="">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;cache-queries&#39;})" href="https://apacheignite.readme.io/v1.3/docs/cache-queries" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;cache-queries&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Cache Queries</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55d34adab9ef4435006deca5&#39;)}" class="subnav-expanded">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;sql-queries&#39;})" href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ui-sref-alt="" class="text-overflow active"><span ng-show="suggestedEdits.edited[&#39;sql-queries&#39;].edited" class="icon icon-pencil4 ng-hide"></span>SQL Queries</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39983912a6e2300882bd2&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;continuous-queries&#39;})" href="https://apacheignite.readme.io/v1.3/docs/continuous-queries" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;continuous-queries&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Continuous Queries</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39983912a6e2300882bd3&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;transactions&#39;})" href="https://apacheignite.readme.io/v1.3/docs/transactions" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;transactions&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Transactions</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39983912a6e2300882bd4&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;off-heap-memory&#39;})" href="https://apacheignite.readme.io/v1.3/docs/off-heap-memory" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;off-heap-memory&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Off-Heap Memory</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39983912a6e2300882bd5&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;affinity-collocation&#39;})" href="https://apacheignite.readme.io/v1.3/docs/affinity-collocation" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;affinity-collocation&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Affinity Collocation</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39983912a6e2300882bd6&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;persistent-store&#39;})" href="https://apacheignite.readme.io/v1.3/docs/persistent-store" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;persistent-store&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Persistent Store</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39983912a6e2300882bd7&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;automatic-persistence&#39;})" href="https://apacheignite.readme.io/v1.3/docs/automatic-persistence" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;automatic-persistence&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Automatic Persistence</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39983912a6e2300882bd8&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;data-loading&#39;})" href="https://apacheignite.readme.io/v1.3/docs/data-loading" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;data-loading&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Data Loading</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39983912a6e2300882bd9&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;evictions&#39;})" href="https://apacheignite.readme.io/v1.3/docs/evictions" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;evictions&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Eviction Policies</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55e99923461e2a390050f280&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;expiry-policies&#39;})" href="https://apacheignite.readme.io/v1.3/docs/expiry-policies" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;expiry-policies&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Expiry Policies</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39983912a6e2300882bda&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;rebalancing&#39;})" href="https://apacheignite.readme.io/v1.3/docs/rebalancing" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;rebalancing&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Data Rebalancing</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39983912a6e2300882bdb&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;web-session-clustering&#39;})" href="https://apacheignite.readme.io/v1.3/docs/web-session-clustering" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;web-session-clustering&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Web Session Clustering</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39983912a6e2300882bdc&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;hibernate-l2-cache&#39;})" href="https://apacheignite.readme.io/v1.3/docs/hibernate-l2-cache" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;hibernate-l2-cache&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Hibernate L2 Cache</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39983912a6e2300882bdd&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;jdbc-driver&#39;})" href="https://apacheignite.readme.io/v1.3/docs/jdbc-driver" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;jdbc-driver&#39;].edited" class="icon icon-pencil4 ng-hide"></span>JDBC Driver</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a7501c16d20b1900ed8ff8&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;spring-caching&#39;})" href="https://apacheignite.readme.io/v1.3/docs/spring-caching" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;spring-caching&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Spring Caching</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39983912a6e2300882bde&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;performance-tips&#39;})" href="https://apacheignite.readme.io/v1.3/docs/performance-tips" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;performance-tips&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Performance Tips</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55e8651231eb773900d0c492&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;topology-validation&#39;})" href="https://apacheignite.readme.io/v1.3/docs/topology-validation" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;topology-validation&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Topology Validation</a><ul class="subpages"></ul></li></ul><h3>Interactive SQL</h3><ul><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39983912a6e2300882bcb&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;data-analysis-with-apache-zeppelin&#39;})" href="https://apacheignite.readme.io/v1.3/docs/data-analysis-with-apache-zeppelin" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;data-analysis-with-apache-zeppelin&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Ignite with Apache Zeppelin</a><ul class="subpages"></ul></li></ul><h3>Streaming &amp; CEP</h3><ul><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3997f912a6e2300882bbe&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;streaming--cep&#39;})" href="https://apacheignite.readme.io/v1.3/docs/streaming--cep" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;streaming--cep&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Streaming &amp; CEP</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3997f912a6e2300882bbf&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;data-streamers&#39;})" href="https://apacheignite.readme.io/v1.3/docs/data-streamers" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;data-streamers&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Data Streamers</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3997f912a6e2300882bc0&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;sliding-windows&#39;})" href="https://apacheignite.readme.io/v1.3/docs/sliding-windows" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;sliding-windows&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Sliding Windows</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3997f912a6e2300882bc1&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;streaming-example&#39;})" href="https://apacheignite.readme.io/v1.3/docs/streaming-example" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;streaming-example&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Word Count Example</a><ul class="subpages"></ul></li></ul><h3>Distributed Data Structures</h3><ul><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998b912a6e2300882c02&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;queue-and-set&#39;})" href="https://apacheignite.readme.io/v1.3/docs/queue-and-set" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;queue-and-set&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Queue and Set</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998b912a6e2300882c03&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;atomic-types&#39;})" href="https://apacheignite.readme.io/v1.3/docs/atomic-types" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;atomic-types&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Atomic Types</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998b912a6e2300882c04&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;countdownlatch&#39;})" href="https://apacheignite.readme.io/v1.3/docs/countdownlatch" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;countdownlatch&#39;].edited" class="icon icon-pencil4 ng-hide"></span>CountDownLatch</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998b912a6e2300882c05&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;id-generator&#39;})" href="https://apacheignite.readme.io/v1.3/docs/id-generator" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;id-generator&#39;].edited" class="icon icon-pencil4 ng-hide"></span>ID Generator</a><ul class="subpages"></ul></li></ul><h3>Memcached</h3><ul><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998d912a6e2300882c13&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;memcached-support&#39;})" href="https://apacheignite.readme.io/v1.3/docs/memcached-support" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;memcached-support&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Memcached Support</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998d912a6e2300882c14&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;php&#39;})" href="https://apacheignite.readme.io/v1.3/docs/php" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;php&#39;].edited" class="icon icon-pencil4 ng-hide"></span>PHP</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998d912a6e2300882c15&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;java&#39;})" href="https://apacheignite.readme.io/v1.3/docs/java" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;java&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Java</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998d912a6e2300882c16&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;python&#39;})" href="https://apacheignite.readme.io/v1.3/docs/python" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;python&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Python</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998d912a6e2300882c17&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;ruby&#39;})" href="https://apacheignite.readme.io/v1.3/docs/ruby" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;ruby&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Ruby</a><ul class="subpages"></ul></li></ul><h3>Compute Grid</h3><ul><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39986912a6e2300882be9&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;compute-grid&#39;})" href="https://apacheignite.readme.io/v1.3/docs/compute-grid" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;compute-grid&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Compute Grid</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39986912a6e2300882bea&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;distributed-closures&#39;})" href="https://apacheignite.readme.io/v1.3/docs/distributed-closures" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;distributed-closures&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Distributed Closures</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39986912a6e2300882beb&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;executor-service&#39;})" href="https://apacheignite.readme.io/v1.3/docs/executor-service" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;executor-service&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Executor Service</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39986912a6e2300882bec&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;compute-tasks&#39;})" href="https://apacheignite.readme.io/v1.3/docs/compute-tasks" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;compute-tasks&#39;].edited" class="icon icon-pencil4 ng-hide"></span>MapReduce &amp; ForkJoin</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39986912a6e2300882bed&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;node-local-map&#39;})" href="https://apacheignite.readme.io/v1.3/docs/node-local-map" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;node-local-map&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Per-Node Shared State</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39986912a6e2300882bee&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;collocate-compute-and-data&#39;})" href="https://apacheignite.readme.io/v1.3/docs/collocate-compute-and-data" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;collocate-compute-and-data&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Collocate Compute and Data</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39986912a6e2300882bef&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;fault-tolerance&#39;})" href="https://apacheignite.readme.io/v1.3/docs/fault-tolerance" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;fault-tolerance&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Fault Tolerance</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39986912a6e2300882bf0&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;load-balancing&#39;})" href="https://apacheignite.readme.io/v1.3/docs/load-balancing" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;load-balancing&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Load Balancing</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39986912a6e2300882bf1&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;checkpointing&#39;})" href="https://apacheignite.readme.io/v1.3/docs/checkpointing" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;checkpointing&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Checkpointing</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39986912a6e2300882bf2&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;job-scheduling&#39;})" href="https://apacheignite.readme.io/v1.3/docs/job-scheduling" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;job-scheduling&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Job Scheduling</a><ul class="subpages"></ul></li></ul><h3>Service Grid</h3><ul><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39987912a6e2300882bf3&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;service-grid&#39;})" href="https://apacheignite.readme.io/v1.3/docs/service-grid" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;service-grid&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Service Grid</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39987912a6e2300882bf4&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;service-example&#39;})" href="https://apacheignite.readme.io/v1.3/docs/service-example" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;service-example&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Service Example</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39987912a6e2300882bf5&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;cluster-singletons&#39;})" href="https://apacheignite.readme.io/v1.3/docs/cluster-singletons" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;cluster-singletons&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Cluster Singletons</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39987912a6e2300882bf6&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;service-configuration&#39;})" href="https://apacheignite.readme.io/v1.3/docs/service-configuration" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;service-configuration&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Service Configuration</a><ul class="subpages"></ul></li></ul><h3>Distributed Messaging</h3><ul><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39988912a6e2300882bf7&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;messaging&#39;})" href="https://apacheignite.readme.io/v1.3/docs/messaging" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;messaging&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Topic Based</a><ul class="subpages"></ul></li></ul><h3>Distributed Events</h3><ul><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998b912a6e2300882c06&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;events&#39;})" href="https://apacheignite.readme.io/v1.3/docs/events" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;events&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Local and Remote Events</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998b912a6e2300882c07&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;automatic-batching&#39;})" href="https://apacheignite.readme.io/v1.3/docs/automatic-batching" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;automatic-batching&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Automatic Batching</a><ul class="subpages"></ul></li></ul><h3>HTTP</h3><ul><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39989912a6e2300882bfb&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;rest-api&#39;})" href="https://apacheignite.readme.io/v1.3/docs/rest-api" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;rest-api&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Rest API</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39989912a6e2300882bfc&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;configuration&#39;})" href="https://apacheignite.readme.io/v1.3/docs/configuration" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;configuration&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Configuration</a><ul class="subpages"></ul></li></ul><h3>In-Memory File System</h3><ul><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39981912a6e2300882bc2&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;igfs&#39;})" href="https://apacheignite.readme.io/v1.3/docs/igfs" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;igfs&#39;].edited" class="icon icon-pencil4 ng-hide"></span>IGFS Native Ignite APIs</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39985912a6e2300882be1&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;file-system&#39;})" href="https://apacheignite.readme.io/v1.3/docs/file-system" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;file-system&#39;].edited" class="icon icon-pencil4 ng-hide"></span>IGFS as Hadoop FileSystem</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39981912a6e2300882bc3&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;secondary-file-system&#39;})" href="https://apacheignite.readme.io/v1.3/docs/secondary-file-system" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;secondary-file-system&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Hadoop FileSystem Cache</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39981912a6e2300882bc4&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;modes&#39;})" href="https://apacheignite.readme.io/v1.3/docs/modes" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;modes&#39;].edited" class="icon icon-pencil4 ng-hide"></span>IGFS Modes</a><ul class="subpages"></ul></li></ul><h3>Hadoop Accelerator</h3><ul><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39985912a6e2300882bdf&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;hadoop-accelerator&#39;})" href="https://apacheignite.readme.io/v1.3/docs/hadoop-accelerator" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;hadoop-accelerator&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Hadoop Accelerator</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39985912a6e2300882be0&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;map-reduce&#39;})" href="https://apacheignite.readme.io/v1.3/docs/map-reduce" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;map-reduce&#39;].edited" class="icon icon-pencil4 ng-hide"></span>MapReduce</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39985912a6e2300882be5&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;installing-on-apache-hadoop&#39;})" href="https://apacheignite.readme.io/v1.3/docs/installing-on-apache-hadoop" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;installing-on-apache-hadoop&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Installing on Apache Hadoop</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39985912a6e2300882be6&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;installing-on-cloudera-cdh&#39;})" href="https://apacheignite.readme.io/v1.3/docs/installing-on-cloudera-cdh" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;installing-on-cloudera-cdh&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Installing on Cloudera CDH</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39985912a6e2300882be7&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;installing-on-hortonworks-hdp&#39;})" href="https://apacheignite.readme.io/v1.3/docs/installing-on-hortonworks-hdp" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;installing-on-hortonworks-hdp&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Installing on Hortonworks HDP</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55ba046904775a2f0062807b&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;running-apache-hive-over-ignited-hadoop&#39;})" href="https://apacheignite.readme.io/v1.3/docs/running-apache-hive-over-ignited-hadoop" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;running-apache-hive-over-ignited-hadoop&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Ignite and Apache Hive</a><ul class="subpages"></ul></li></ul><h3>Spark Shared RDDs</h3><ul><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998a912a6e2300882bfd&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;shared-rdd&#39;})" href="https://apacheignite.readme.io/v1.3/docs/shared-rdd" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;shared-rdd&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Shared RDD Overview</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998a912a6e2300882bff&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;ignitecontext--igniterdd&#39;})" href="https://apacheignite.readme.io/v1.3/docs/ignitecontext--igniterdd" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;ignitecontext--igniterdd&#39;].edited" class="icon icon-pencil4 ng-hide"></span>IgniteRDD &amp; IgniteContext</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998a912a6e2300882bfe&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;installation--deployment&#39;})" href="https://apacheignite.readme.io/v1.3/docs/installation--deployment" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;installation--deployment&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Installation &amp; Deployment</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998a912a6e2300882c00&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;testing-integration-with-spark-shell&#39;})" href="https://apacheignite.readme.io/v1.3/docs/testing-integration-with-spark-shell" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;testing-integration-with-spark-shell&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Test Ignite with Spark-shell</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a3998a912a6e2300882c01&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;troubleshooting&#39;})" href="https://apacheignite.readme.io/v1.3/docs/troubleshooting" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;troubleshooting&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Troubleshooting</a><ul class="subpages"></ul></li></ul><h3>Legal</h3><ul><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39989912a6e2300882bf9&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;license&#39;})" href="https://apacheignite.readme.io/v1.3/docs/license" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;license&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Apache License</a><ul class="subpages"></ul></li><li ng-class="{&#39;subnav-expanded&#39; : isActive(&#39;55a39989912a6e2300882bfa&#39;)}">             <a ui-sref="docs.show({&#39;doc&#39;: &#39;copyright&#39;})" href="https://apacheignite.readme.io/v1.3/docs/copyright" ui-sref-alt="" class="text-overflow"><span ng-show="suggestedEdits.edited[&#39;copyright&#39;].edited" class="icon icon-pencil4 ng-hide"></span>Copyright</a><ul class="subpages"></ul></li></ul></div><div ng-show="state.current().root == &#39;discuss&#39;" class="ng-hide"><!--a.btn.btn-primary.btn-full.btn-lg(href="" ui-sref="discuss.create") Ask A Question--><h3>Support</h3></div><div ng-show="state.current().root == &#39;reference&#39; || state.current().root == &#39;preview&#39;" class="ng-hide"><div class="disabled-warning"><i class="icon icon-notification"></i> Only admins can see this<a href="http://dash.readme.io/project/apacheignite/v1.3/dashboard" target="_blank">Enable it for everyone <i class="fa fa-chevron-right"></i></a></div></div><div ng-show="state.current().root == &#39;reference-edit&#39;" class="ng-hide"></div><div ng-show="state.current().root == &#39;blog&#39;" class="ng-hide"><h3>Recent Posts</h3><ul><li><a ui-sref="blog.show({&#39;blog&#39;: &#39;ignite-forum-is-moved&#39;})" class="text-overflow" href="https://apacheignite.readme.io/v1.3/blog/ignite-forum-is-moved">Ignite Forum is Moved</a></li><li><a ui-sref="blog.show({&#39;blog&#39;: &#39;welcome-to-apache-ignite&#39;})" class="text-overflow" href="https://apacheignite.readme.io/v1.3/blog/welcome-to-apache-ignite">Welcome to Apache Ignite</a></li></ul><h3>Archive</h3><ul><li><a ui-sref="blog.archive({&#39;year&#39;: &#39;2016&#39;, &#39;month&#39;: &#39;January&#39;})" class="text-overflow" href="https://apacheignite.readme.io/v1.3/blog/2016/January">January 2016 (1)</a></li></ul><ul><li><a ui-sref="blog.archive({&#39;year&#39;: &#39;2015&#39;, &#39;month&#39;: &#39;February&#39;})" class="text-overflow" href="https://apacheignite.readme.io/v1.3/blog/2015/February">February 2015 (1)</a></li></ul></div></div></div><div class="nano-pane"><div class="nano-slider" style="height: 152px; transform: translate(0px, 119.079px);"></div></div></div></div></nav></div><section id="hub-content"><div state-container="" ng-class="{loading: contentLoading}" class="hub-content-container" data-state-container="true"><div class="compiled ng-scope"><meta name="meta:slug" content="sql-queries"><meta name="meta:type" content="docs"><meta name="meta:parent"><meta name="meta:title" content="SQL Queries"><meta name="meta:description" content="Ignite supports free-form SQL queries virtually without any limitations. SQL syntax is ANSI-99 compliant. You can use any SQL function, any aggregation, any grouping and Ignite will figure out where to fetch the results from.  See example **SqlQuery** below.  Ignite supports distributed SQL joins. M..."><meta name="meta:_id" content="55d34adab9ef4435006deca5"><meta name="meta:hidden"><!-- ngIf: !suggestedEdits.isEnabled --><div ng-if="!suggestedEdits.isEnabled" class="ng-scope"><header id="content-head"><div class="row clearfix"><div class="col-xs-9"><h1>SQL Queries</h1><div class="excerpt"></div></div><div class="col-xs-3"><a ng-click="suggestedEdits.enable()" href="https://apacheignite.readme.io/v1.3/docs/sql-queries" class="suggestEdits"><i class="icon icon-register"></i>Suggest Edits</a></div></div></header><div id="content-container" scroll-spy="" class="grid-container-fluid ng-scope"><section ng-class="{&quot;grid-75&quot;: false != true &amp;&amp; ss.toc.length , &quot;grid-100&quot;: false != false || !ss.toc.length}" class="content-body grid-75">
+<!-- Gah, you have to manually restart the app if you change this!-->
+<div class="magic-block-textarea"><p>Ignite supports free-form SQL queries virtually without any limitations. SQL syntax is ANSI-99 compliant. You can use any SQL function, any aggregation, any grouping and Ignite will figure out where to fetch the results from.</p>
+<p>See example <strong>SqlQuery</strong> below.</p>
+
+</div>
+<div class="magic-block-api-header">
+	<h1 class="header-scroll is-api-header"><span id="sql-joins"></span>
+		<div id="section-sql-joins" class="anchor waypoint"></div>SQL Joins<a href="https://apacheignite.readme.io/v1.3/docs/sql-queries#section-sql-joins" class="fa fa-anchor"></a>
+	</h1>
+</div>
+<div class="magic-block-textarea"><p>Ignite supports distributed SQL joins. Moreover, if data resides in different caches, Ignite allows for cross-cache joins as well. </p>
+<p>Joins between <code>PARTITIONED</code> and <code>REPLICATED</code> caches always work without any limitations. However, if you do a join between two <code>PARTITIONED</code> data sets, then you must make sure that the keys you are joining on are <strong>collocated</strong>. </p>
+<p>See example <strong>SqlQuery JOIN</strong> below.</p>
+
+</div>
+<div class="magic-block-api-header">
+	<h1 class="header-scroll is-api-header"><span id="fields-queries"></span>
+		<div id="section-fields-queries" class="anchor waypoint"></div>Fields Queries<a href="https://apacheignite.readme.io/v1.3/docs/sql-queries#section-fields-queries" class="fa fa-anchor"></a>
+	</h1>
+</div>
+<div class="magic-block-textarea"><p>Instead of selecting the whole object, you can choose to select only specific fields in order to minimize network and serialization overhead. For this purpose Ignite has a concept of <code>fields queries</code>. Also it is useful when you want to execute some aggregate query.</p>
+<p>See example <strong>SqlFieldsQuery</strong> below.</p>
+
+</div>
+<div class="magic-block-api-header">
+	<h1 class="header-scroll is-api-header"><span id="cross-cache-queries"></span>
+		<div id="section-cross-cache-queries" class="anchor waypoint"></div>Cross-Cache Queries<a href="https://apacheignite.readme.io/v1.3/docs/sql-queries#section-cross-cache-queries" class="fa fa-anchor"></a>
+	</h1>
+</div>
+<div class="magic-block-textarea"><p>You can query data from multiple caches. In this case, cache names act as schema names in regular SQL. This means all caches can be referred by cache names in quotes. The cache on which the query was created acts as the default schema and does not need to be explicitly specified.</p>
+<p>See example <strong>Cross-Cache SqlFieldsQuery</strong>.</p>
+
+</div>
+<div class="magic-block-code ng-scope">
+	<ul class="block-code-header">
+		<li><a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="showCode(0)" ng-class="{active: (0 == tab)}" class="active">SqlQuery</a></li>
+		<li><a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="showCode(1)" ng-class="{active: (1 == tab)}">SqlQuery JOIN</a></li>
+		<li><a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="showCode(2)" ng-class="{active: (2 == tab)}">SqlFieldsQuery</a></li>
+		<li><a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="showCode(3)" ng-class="{active: (3 == tab)}">Cross-Cache SqlFieldsQuery</a></li>
+	</ul>
+	<div class="block-code-code">
+		<!-- ngIf: tab == 0 --><pre ng-if="tab == 0" class="ng-scope"><code><span class="cm-s-neo"><span class="cm-variable">IgniteCache</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">Long</span>, <span class="cm-variable">Person</span><span class="cm-operator">&gt;</span> <span class="cm-variable">cache</span> <span class="cm-operator">=</span> <span class="cm-variable">ignite</span>.<span class="cm-variable">cache</span>(<span class="cm-string">"mycache"</span>);
+
+<span class="cm-variable">SqlQuery</span> <span class="cm-variable">sql</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">SqlQuery</span>(<span class="cm-variable">Person</span>.<span class="cm-keyword">class</span>, <span class="cm-string">"salary &gt; ?"</span>);
+
+<span class="cm-comment">// Find only persons earning more than 1,000.</span>
+<span class="cm-keyword">try</span> (<span class="cm-variable">QueryCursor</span><span class="cm-operator">&lt;</span><span class="cm-variable">Entry</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">Long</span>, <span class="cm-variable">Person</span><span class="cm-operator">&gt;&gt;</span> <span class="cm-variable">cursor</span> <span class="cm-operator">=</span> <span class="cm-variable">cache</span>.<span class="cm-variable">query</span>(<span class="cm-variable">sql</span>.<span class="cm-variable">setArgs</span>(<span class="cm-number">1000</span>))) {
+  <span class="cm-keyword">for</span> (<span class="cm-variable">Entry</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">Long</span>, <span class="cm-variable">Person</span><span class="cm-operator">&gt;</span> <span class="cm-variable">e</span> : <span class="cm-variable">cursor</span>)
+    <span class="cm-variable">System</span>.<span class="cm-variable">out</span>.<span class="cm-variable">println</span>(<span class="cm-variable">e</span>.<span class="cm-variable">getValue</span>().<span class="cm-variable">toString</span>());
+}</span></code></pre><!-- end ngIf: tab == 0 -->
+		<!-- ngIf: tab == 1 -->
+		<!-- ngIf: tab == 2 -->
+		<!-- ngIf: tab == 3 -->
+	</div>
+</div>
+<div class="magic-block-api-header">
+	<h1 class="header-scroll is-api-header"><span id="configuring-sql-indexes-by-annotations"></span>
+		<div id="section-configuring-sql-indexes-by-annotations" class="anchor waypoint"></div>Configuring SQL Indexes by Annotations<a href="https://apacheignite.readme.io/v1.3/docs/sql-queries#section-configuring-sql-indexes-by-annotations" class="fa fa-anchor"></a>
+	</h1>
+</div>
+<div class="magic-block-textarea"><p>Indexes can be configured from code by using <code>@QuerySqlField</code> annotations. To tell Ignite which types should be indexed, key-value pairs can be passed into <code>CacheConfiguration.setIndexedTypes</code> method like in example below. Note that this method accepts only pairs of types, one for key class and another for value class. Primitives are passed as boxed types.</p>
+
+</div>
+<div class="magic-block-code ng-scope">
+	<ul class="block-code-header">
+		<li><a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="showCode(0)" ng-class="{active: (0 == tab)}" class="active">Java</a></li>
+	</ul>
+	<div class="block-code-code">
+		<!-- ngIf: tab == 0 --><pre ng-if="tab == 0" class="ng-scope"><code><span class="cm-s-neo"><span class="cm-variable">CacheConfiguration</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">Object</span>,<span class="cm-variable-3">Object</span><span class="cm-operator">&gt;</span> <span class="cm-variable">ccfg</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">CacheConfiguration</span><span class="cm-operator">&lt;&gt;</span>();
+
+<span class="cm-comment">// Here we are setting 3 key-value type pairs to be indexed.</span>
+<span class="cm-variable">ccfg</span>.<span class="cm-variable">setIndexedTypes</span>(
+  <span class="cm-variable">MyKey</span>.<span class="cm-keyword">class</span>, <span class="cm-variable">MyValue</span>.<span class="cm-keyword">class</span>,
+	<span class="cm-variable-3">Long</span>.<span class="cm-keyword">class</span>, <span class="cm-variable">MyOtherValue</span>.<span class="cm-keyword">class</span>,
+  <span class="cm-variable">UUID</span>.<span class="cm-keyword">class</span>, <span class="cm-variable-3">String</span>.<span class="cm-keyword">class</span>
+);</span></code></pre><!-- end ngIf: tab == 0 -->
+	</div>
+</div>
+<div class="magic-block-textarea"><h2 class="header-scroll"><div class="anchor waypoint" id="section-making-fields-visible-for-sql-queries"></div>Making Fields Visible for SQL Queries<a class="fa fa-anchor" href="https://apacheignite.readme.io/v1.3/docs/sql-queries#section-making-fields-visible-for-sql-queries"></a></h2>
+<p>To make fields accessible for SQL queries you have to annotate them with <code>@QuerySqlField</code>. Field <code>age</code> will not be accessible from SQL. Note that none of these fields are indexed. </p>
+
+</div>
+<div class="magic-block-code ng-scope">
+	<ul class="block-code-header">
+		<li><a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="showCode(0)" ng-class="{active: (0 == tab)}" class="active">Java</a></li>
+		<li><a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="showCode(1)" ng-class="{active: (1 == tab)}">Scala</a></li>
+	</ul>
+	<div class="block-code-code">
+		<!-- ngIf: tab == 0 --><pre ng-if="tab == 0" class="ng-scope"><code><span class="cm-s-neo"><span class="cm-keyword">public</span> <span class="cm-keyword">class</span> <span class="cm-def">Person</span> <span class="cm-keyword">implements</span> <span class="cm-variable">Serializable</span> {
+  <span class="cm-comment">/** Will be visible in SQL. */</span>
+	<span class="cm-meta">@QuerySqlField</span>
+  <span class="cm-keyword">private</span> <span class="cm-variable-3">long</span> <span class="cm-variable">id</span>;
+  
+  <span class="cm-comment">/** Will be visible in SQL. */</span>
+  <span class="cm-meta">@QuerySqlField</span>
+  <span class="cm-keyword">private</span> <span class="cm-variable-3">String</span> <span class="cm-variable">name</span>;
+  
+  <span class="cm-comment">/** Will NOT be visible in SQL. */</span>
+  <span class="cm-keyword">private</span> <span class="cm-variable-3">int</span> <span class="cm-variable">age</span>;
+}</span></code></pre><!-- end ngIf: tab == 0 -->
+		<!-- ngIf: tab == 1 -->
+	</div>
+</div>
+<div class="magic-block-callout type-info ">
+	<h3><i title="Info" class="fa fa-info-circle"></i>Scala Annotations
+	</h3>
+	<div class="callout-body"><p>In Scala classes, the <code>@QuerySqlField</code> annotation must be accompanied by the <code>@field</code> annotation in order for a field to be visible for Ignite, like so:  <code>@(QuerySqlField @field)</code>. </p>
+<p>Alternatively, you can also use the <code>@ScalarCacheQuerySqlField</code> annotation from the <code>ignite-scalar</code> module which is just a type alias for the <code>@field</code> annotation.</p>
+
+	</div>
+</div>
+<div class="magic-block-textarea"><h2 class="header-scroll"><div class="anchor waypoint" id="section-single-column-indexes"></div>Single Column Indexes<a class="fa fa-anchor" href="https://apacheignite.readme.io/v1.3/docs/sql-queries#section-single-column-indexes"></a></h2>
+<p>To make fields not only accessible by SQL but also speedup queries you can index field values. To create a single column index you can annotate field with <code>@QuerySqlField(index = true)</code>.  </p>
+
+</div>
+<div class="magic-block-code ng-scope">
+	<ul class="block-code-header">
+		<li><a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="showCode(0)" ng-class="{active: (0 == tab)}" class="active">Java</a></li>
+		<li><a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="showCode(1)" ng-class="{active: (1 == tab)}">Scala</a></li>
+	</ul>
+	<div class="block-code-code">
+		<!-- ngIf: tab == 0 --><pre ng-if="tab == 0" class="ng-scope"><code><span class="cm-s-neo"><span class="cm-keyword">public</span> <span class="cm-keyword">class</span> <span class="cm-def">Person</span> <span class="cm-keyword">implements</span> <span class="cm-variable">Serializable</span> {
+  <span class="cm-comment">/** Will be indexed in ascending order. */</span>
+	<span class="cm-meta">@QuerySqlField</span>(<span class="cm-variable">index</span> <span class="cm-operator">=</span> <span class="cm-atom">true</span>)
+  <span class="cm-keyword">private</span> <span class="cm-variable-3">long</span> <span class="cm-variable">id</span>;
+  
+  <span class="cm-comment">/** Will be visible in SQL, but not indexed. */</span>
+  <span class="cm-meta">@QuerySqlField</span>
+  <span class="cm-keyword">private</span> <span class="cm-variable-3">String</span> <span class="cm-variable">name</span>;
+  
+  <span class="cm-comment">/** Will be indexed in descending order. */</span>
+  <span class="cm-meta">@QuerySqlField</span>(<span class="cm-variable">index</span> <span class="cm-operator">=</span> <span class="cm-atom">true</span>, <span class="cm-variable">descending</span> <span class="cm-operator">=</span> <span class="cm-atom">true</span>)
+  <span class="cm-keyword">private</span> <span class="cm-variable-3">int</span> <span class="cm-variable">age</span>;
+}</span></code></pre><!-- end ngIf: tab == 0 -->
+		<!-- ngIf: tab == 1 -->
+	</div>
+</div>
+<div class="magic-block-callout type-info ">
+	<h3><i title="Info" class="fa fa-info-circle"></i>Scala Annotations
+	</h3>
+	<div class="callout-body"><p>In Scala classes, the indexed <code>@QuerySqlField</code> annotation should look like so: <code>@(QuerySqlField @field)(index = true)</code>.</p>
+
+	</div>
+</div>
+<div class="magic-block-textarea"><h2 class="header-scroll"><div class="anchor waypoint" id="section-group-indexes"></div>Group Indexes<a class="fa fa-anchor" href="https://apacheignite.readme.io/v1.3/docs/sql-queries#section-group-indexes"></a></h2>
+<p>To have a multi-field index to speedup queries with complex conditions, you can use <code>@QuerySqlField.Group</code> annotation. It is possible to put multiple <code>@QuerySqlField.Group</code> annotations into <code>orderedGroups</code> if you want the field to participate in more than one group index. </p>
+<p>For example of a group index in the class below we have field <code>age</code> which participates in a group index named <code>"age_salary_idx"</code> with group order 0 and descending sort order. Also in the same group index participates field <code>salary</code> with group order 3 and ascending sort order. On top of that field <code>salary</code> itself is indexed with single column index (we have <code>index = true</code> in addition to <code>orderedGroups</code> declaration). Group <code>order</code> does not have to be any particular number, it is needed just to sort fields inside of this group. </p>
+
+</div>
+<div class="magic-block-code ng-scope">
+	<ul class="block-code-header">
+		<li><a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="showCode(0)" ng-class="{active: (0 == tab)}" class="active">Java</a></li>
+	</ul>
+	<div class="block-code-code">
+		<!-- ngIf: tab == 0 --><pre ng-if="tab == 0" class="ng-scope"><code><span class="cm-s-neo"><span class="cm-keyword">public</span> <span class="cm-keyword">class</span> <span class="cm-def">Person</span> <span class="cm-keyword">implements</span> <span class="cm-variable">Serializable</span> {
+  <span class="cm-comment">/** Indexed in a group index with "salary". */</span>
+  <span class="cm-meta">@QuerySqlField</span>(<span class="cm-variable">orderedGroups</span><span class="cm-operator">=</span>{<span class="cm-meta">@QuerySqlField</span>.<span class="cm-variable">Group</span>(
+    <span class="cm-variable">name</span> <span class="cm-operator">=</span> <span class="cm-string">"age_salary_idx"</span>, <span class="cm-variable">order</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>, <span class="cm-variable">descending</span> <span class="cm-operator">=</span> <span class="cm-atom">true</span>)})
+  <span class="cm-keyword">private</span> <span class="cm-variable-3">int</span> <span class="cm-variable">age</span>;
+
+  <span class="cm-comment">/** Indexed separately and in a group index with "age". */</span>
+  <span class="cm-meta">@QuerySqlField</span>(<span class="cm-variable">index</span> <span class="cm-operator">=</span> <span class="cm-atom">true</span>, <span class="cm-variable">orderedGroups</span><span class="cm-operator">=</span>{<span class="cm-meta">@QuerySqlField</span>.<span class="cm-variable">Group</span>(
+    <span class="cm-variable">name</span> <span class="cm-operator">=</span> <span class="cm-string">"age_salary_idx"</span>, <span class="cm-variable">order</span> <span class="cm-operator">=</span> <span class="cm-number">3</span>)})
+  <span class="cm-keyword">private</span> <span class="cm-variable-3">double</span> <span class="cm-variable">salary</span>;
+}</span></code></pre><!-- end ngIf: tab == 0 -->
+	</div>
+</div>
+<div class="magic-block-callout type-danger no-title"><span class="noTitleIcon"><i title="Danger" class="fa fa-exclamation-triangle"></i></span>
+	<div class="callout-body"><p>Note that annotating a field with <code>@QuerySqlField.Group</code> outside of <code>@QuerySqlField(orderedGroups={...})</code> will have no effect.</p>
+
+	</div>
+</div>
+<div class="magic-block-api-header">
+	<h1 class="header-scroll is-api-header"><span id="configuring-sql-indexes-by-cachetypemetadata"></span>
+		<div id="section-configuring-sql-indexes-by-cachetypemetadata" class="anchor waypoint"></div>Configuring SQL Indexes by CacheTypeMetadata<a href="https://apacheignite.readme.io/v1.3/docs/sql-queries#section-configuring-sql-indexes-by-cachetypemetadata" class="fa fa-anchor"></a>
+	</h1>
+</div>
+<div class="magic-block-textarea"><p>Indexes and fields also could be configured with <code>org.apache.ignite.cache.CacheTypeMetadata</code> which is convenient for XML configuration with Spring. Please refer to javadoc for details, basically it is equivalent to using <code>@QuerySqlField</code> annotation.</p>
+
+</div>
+<div class="magic-block-code ng-scope">
+	<ul class="block-code-header">
+		<li><a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="showCode(0)" ng-class="{active: (0 == tab)}" class="active">XML</a></li>
+	</ul>
+	<div class="block-code-code">
+		<!-- ngIf: tab == 0 --><pre ng-if="tab == 0" class="ng-scope"><code><span class="cm-s-neo"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">bean</span> <span class="cm-attribute">class</span>=<span class="cm-string">"org.apache.ignite.configuration.IgniteConfiguration"</span><span class="cm-tag cm-bracket">&gt;</span>
+...
+ <span class="cm-comment">&lt;!-- Cache configuration. --&gt;</span>
+ <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">property</span> <span class="cm-attribute">name</span>=<span class="cm-string">"cacheConfiguration"</span><span class="cm-tag cm-bracket">&gt;</span>
+  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">list</span><span class="cm-tag cm-bracket">&gt;</span>
+   <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">bean</span> <span class="cm-attribute">class</span>=<span class="cm-string">"org.apache.ignite.configuration.CacheConfiguration"</span><span class="cm-tag cm-bracket">&gt;</span>
+	  <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">property</span> <span class="cm-attribute">name</span>=<span class="cm-string">"name"</span> <span class="cm-attribute">value</span>=<span class="cm-string">"my_cache"</span><span class="cm-tag cm-bracket">/&gt;</span>
+    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">property</span> <span class="cm-attribute">name</span> =<span class="cm-string">"typeMetadata"</span><span class="cm-tag cm-bracket">&gt;</span>
+     <span class="cm-comment">&lt;!-- Cache types metadata. --&gt;</span>
+     <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">list</span><span class="cm-tag cm-bracket">&gt;</span>
+      <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">bean</span> <span class="cm-attribute">class</span>=<span class="cm-string">"org.apache.ignite.cache.CacheTypeMetadata"</span><span class="cm-tag cm-bracket">&gt;</span>
+        <span class="cm-comment">&lt;!-- Type to query. --&gt;</span>
+        <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">property</span> <span class="cm-attribute">name</span>=<span class="cm-string">"valueType"</span> <span class="cm-attribute">value</span>=<span class="cm-string">"org.apache.ignite.examples.datagrid.store.Person"</span><span class="cm-tag cm-bracket">/&gt;</span>
+        <span class="cm-comment">&lt;!-- Fields to be queried. --&gt;</span>
+        <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">property</span> <span class="cm-attribute">name</span>=<span class="cm-string">"queryFields"</span><span class="cm-tag cm-bracket">&gt;</span>
+        <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">map</span><span class="cm-tag cm-bracket">&gt;</span>
+         <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">entry</span> <span class="cm-attribute">key</span>=<span class="cm-string">"id"</span> <span class="cm-attribute">value</span>=<span class="cm-string">"java.lang.Long"</span><span class="cm-tag cm-bracket">/&gt;</span>
+         <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">entry</span> <span class="cm-attribute">key</span>=<span class="cm-string">"orgId"</span> <span class="cm-attribute">value</span>=<span class="cm-string">"java.util.UUID"</span><span class="cm-tag cm-bracket">/&gt;</span>
+         <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">entry</span> <span class="cm-attribute">key</span>=<span class="cm-string">"firstName"</span> <span class="cm-attribute">value</span>=<span class="cm-string">"java.lang.String"</span><span class="cm-tag cm-bracket">/&gt;</span>
+         <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">entry</span> <span class="cm-attribute">key</span>=<span class="cm-string">"lastName"</span> <span class="cm-attribute">value</span>=<span class="cm-string">"java.lang.String"</span><span class="cm-tag cm-bracket">/&gt;</span>
+         <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">entry</span> <span class="cm-attribute">key</span>=<span class="cm-string">"resume"</span> <span class="cm-attribute">value</span>=<span class="cm-string">"java.lang.String"</span><span class="cm-tag cm-bracket">/&gt;</span>
+         <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">entry</span> <span class="cm-attribute">key</span>=<span class="cm-string">"salary"</span> <span class="cm-attribute">value</span>=<span class="cm-string">"double"</span><span class="cm-tag cm-bracket">/&gt;</span>
+        <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">map</span><span class="cm-tag cm-bracket">&gt;</span>
+       <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">property</span><span class="cm-tag cm-bracket">&gt;</span>
+        <span class="cm-comment">&lt;!-- Fields to index in ascending order. --&gt;</span>
+       <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">property</span> <span class="cm-attribute">name</span>=<span class="cm-string">"ascendingFields"</span><span class="cm-tag cm-bracket">&gt;</span>
+        <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">map</span><span class="cm-tag cm-bracket">&gt;</span>
+         <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">entry</span> <span class="cm-attribute">key</span>=<span class="cm-string">"id"</span> <span class="cm-attribute">value</span>=<span class="cm-string">"java.util.UUID"</span><span class="cm-tag cm-bracket">/&gt;</span>
+         <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">entry</span> <span class="cm-attribute">key</span>=<span class="cm-string">"orgId"</span> <span class="cm-attribute">value</span>=<span class="cm-string">"java.util.UUID"</span><span class="cm-tag cm-bracket">/&gt;</span>
+         <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">entry</span> <span class="cm-attribute">key</span>=<span class="cm-string">"salary"</span> <span class="cm-attribute">value</span>=<span class="cm-string">"double"</span><span class="cm-tag cm-bracket">/&gt;</span>
+        <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">map</span><span class="cm-tag cm-bracket">&gt;</span>
+       <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">property</span><span class="cm-tag cm-bracket">&gt;</span>
+      <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">bean</span><span class="cm-tag cm-bracket">&gt;</span>
+     <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">list</span><span class="cm-tag cm-bracket">&gt;</span>
+...
+  <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag cm-error">list</span><span class="cm-tag cm-bracket cm-error">&gt;</span>
+ <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag cm-error">property</span><span class="cm-tag cm-bracket cm-error">&gt;</span>
+...
+<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag cm-error">bean</span><span class="cm-tag cm-bracket cm-error">&gt;</span></span></code></pre><!-- end ngIf: tab == 0 -->
+	</div>
+</div>
+<div class="magic-block-api-header">
+	<h1 class="header-scroll is-api-header"><span id="how-sql-queries-work"></span>
+		<div id="section-how-sql-queries-work" class="anchor waypoint"></div>How SQL Queries Work<a href="https://apacheignite.readme.io/v1.3/docs/sql-queries#section-how-sql-queries-work" class="fa fa-anchor"></a>
+	</h1>
+</div>
+<div class="magic-block-textarea"><p>There are two main ways of how query can be processed in Ignite:</p>
+<ol>
+<li value="1"><p>If you execute the query against <code>REPLICATED</code> cache then Ignite assumes that all data available locally and run a simple local SQL query in H2 database engine. The same will happen for <code>LOCAL</code> caches.</p>
+</li><li value="2"><p>If you execute the query against <code>PARTITIONED</code> cache, it work the following way: the query will be parsed and split into multiple map queries and a single reduce query. Then all the map queries are executed on all data nodes of participating caches, providing results to reducing node, which will in turn run reduce query over these intermediate results.</p>
+</li></ol>
+
+</div>
+<div class="magic-block-api-header">
+	<h1 class="header-scroll is-api-header"><span id="using-explain"></span>
+		<div id="section-using-explain" class="anchor waypoint"></div>Using EXPLAIN<a href="https://apacheignite.readme.io/v1.3/docs/sql-queries#section-using-explain" class="fa fa-anchor"></a>
+	</h1>
+</div>
+<div class="magic-block-textarea"><p>Ignite supports "EXPLAIN ..." syntax in SQL queries and reading execution plans is a main way to analyze query performance in Ignite. Note that plan cursor will contain multiple rows: the last one will contain query for reducing node, others are for map nodes.</p>
+
+</div>
+<div class="magic-block-code ng-scope">
+	<ul class="block-code-header">
+		<li><a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="showCode(0)" ng-class="{active: (0 == tab)}" class="active">Java</a></li>
+	</ul>
+	<div class="block-code-code">
+		<!-- ngIf: tab == 0 --><pre ng-if="tab == 0" class="ng-scope"><code><span class="cm-s-neo"><span class="cm-variable">SqlFieldsQuery</span> <span class="cm-variable">sql</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">SqlFieldsQuery</span>(
+  <span class="cm-string">"explain select name from Person where age = ?"</span>).<span class="cm-variable">setArgs</span>(<span class="cm-number">26</span>); 
+
+<span class="cm-variable">System</span>.<span class="cm-variable">out</span>.<span class="cm-variable">println</span>(<span class="cm-variable">cache</span>.<span class="cm-variable">query</span>(<span class="cm-variable">sql</span>).<span class="cm-variable">getAll</span>());</span></code></pre><!-- end ngIf: tab == 0 -->
+	</div>
+</div>
+<div class="magic-block-textarea"><p>The execution plan itself is generated by H2 as described here:<br><a href="http://www.h2database.com/html/performance.html#explain_plan" target="_self">http://www.h2database.com/html/performance.html#explain_plan</a></p>
+
+</div>
+<div class="magic-block-api-header">
+	<h1 class="header-scroll is-api-header"><span id="using-h2-debug-console"></span>
+		<div id="section-using-h2-debug-console" class="anchor waypoint"></div>Using H2 Debug Console<a href="https://apacheignite.readme.io/v1.3/docs/sql-queries#section-using-h2-debug-console" class="fa fa-anchor"></a>
+	</h1>
+</div>
+<div class="magic-block-textarea"><p>When developing with Ignite sometimes it is useful to check if your tables and indexes look  correctly or run some local queries against embedded in node H2 database. For that purpose Ignite has an ability to start H2 Console. To do that you can start a local node with <code>IGNITE_H2_DEBUG_CONSOLE</code> system property or environment variable set to <code>true</code>. The console will be opened in your browser. Probably you will need to click <code>Refresh</code> button on the Console because it can be opened before database objects initialized. </p>
+
+</div>
+<div class="magic-block-image">
+	<figure><a href="./SQL Queries_files/OsddL8lfTOSLKqZWaTlI_Screen Shot 2015-08-24 at 7.06.36 PM.png" class="block-display-image-parent block-display-image-size-smart "><img src="./SQL Queries_files/OsddL8lfTOSLKqZWaTlI_Screen Shot 2015-08-24 at 7.06.36 PM.png" alt=""></a>
+	</figure>
+</div>
+<div class="magic-block-api-header">
+	<h1 class="header-scroll is-api-header"><span id="off-heap-sql-indexes"></span>
+		<div id="section-off-heap-sql-indexes" class="anchor waypoint"></div>Off-heap SQL Indexes<a href="https://apacheignite.readme.io/v1.3/docs/sql-queries#section-off-heap-sql-indexes" class="fa fa-anchor"></a>
+	</h1>
+</div>
+<div class="magic-block-textarea"><p>Ignite supports placing index data to off-heap memory. This makes sense for very large datasets when keeping data on heap causes high GC activity and unacceptable response times. </p>
+<p>SQL Indexes will reside on heap when property <code>CacheConfiguration.setOffHeapMaxMemory</code> is set to <code>-1</code>, otherwise off-heap indexes are always used. Note that it is the only property to enable or disable off-heap indexing, while for example  <code>CacheConfiguration.setMemoryMode</code> does not have any effect on indexing.</p>
+<p>To improve performance of SQL queries with off-heap enabled, you can try to increase value of property <code>CacheConfiguration.setSqlOnheapRowCacheSize</code> which can be low by default <code>10 000</code>.</p>
+
+</div>
+<div class="magic-block-code ng-scope">
+	<ul class="block-code-header">
+		<li><a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="showCode(0)" ng-class="{active: (0 == tab)}" class="active">Java</a></li>
+	</ul>
+	<div class="block-code-code">
+		<!-- ngIf: tab == 0 --><pre ng-if="tab == 0" class="ng-scope"><code><span class="cm-s-neo"><span class="cm-variable">CacheConfiguration</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">Object</span>, <span class="cm-variable-3">Object</span><span class="cm-operator">&gt;</span> <span class="cm-variable">ccfg</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">CacheConfiguration</span><span class="cm-operator">&lt;&gt;</span>();
+
+<span class="cm-comment">// Set unlimited off-heap memory for cache and enable off-heap indexes.</span>
+<span class="cm-variable">ccfg</span>.<span class="cm-variable">setOffHeapMaxMemory</span>(<span class="cm-number">0</span>); 
+
+<span class="cm-comment">// Cache entries will be placed on heap and can be evited to off-heap.</span>
+<span class="cm-variable">ccfg</span>.<span class="cm-variable">setMemoryMode</span>(<span class="cm-variable">ONHEAP_TIERED</span>);
+<span class="cm-variable">ccfg</span>.<span class="cm-variable">setEvictionPolicy</span>(<span class="cm-keyword">new</span> <span class="cm-variable">RandomEvictionPolicy</span>(<span class="cm-number">100_000</span>));
+
+<span class="cm-comment">// Increase size of SQL on-heap row cache for off-heap indexes.</span>
+<span class="cm-variable">ccfg</span>.<span class="cm-variable">setSqlOnheapRowCacheSize</span>(<span class="cm-number">100_000</span>);</span></code></pre><!-- end ngIf: tab == 0 -->
+	</div>
+</div>
+<div class="magic-block-api-header">
+	<h1 class="header-scroll is-api-header"><span id="choosing-indexes"></span>
+		<div id="section-choosing-indexes" class="anchor waypoint"></div>Choosing Indexes<a href="https://apacheignite.readme.io/v1.3/docs/sql-queries#section-choosing-indexes" class="fa fa-anchor"></a>
+	</h1>
+</div>
+<div class="magic-block-textarea"><p>There are multiple things you should consider when choosing indexes for your Ignite application. </p>
+<ul>
+<li>Indexes are not free. They consume memory, also each index needs to be updated separately, thus your cache update performance can be lower if you have more indexes. On top of that optimizer can do more mistakes choosing wrong index to run query. </li></ul>
+
+</div>
+<div class="magic-block-callout type-danger ">
+	<h3><i title="Danger" class="fa fa-exclamation-triangle"></i>It is a bad strategy to index everything!
+	</h3>
+</div>
+<div class="magic-block-textarea"><ul>
+<li>Indexes are just sorted data structures. If you define an index on the fields (a,b,c) , the records are sorted first on a, then b, then c.</li></ul>
+
+</div>
+<div class="magic-block-callout type-info ">
+	<h3><i title="Info" class="fa fa-info-circle"></i>Example of Sorted Index
+	</h3>
+	<div class="callout-body"><p><strong>| A | B | C |</strong><br>| 1 | 2 | 3 |<br>| 1 | 4 | 2 |<br>| 1 | 4 | 4 |<br>| 2 | 3 | 5 |<br>| 2 | 4 | 4 |<br>| 2 | 4 | 5 |</p>
+<p>Any condition like <code>a = 1 and b &gt; 3</code> can be viewed as a bounded range, both bounds can be quickly looked up in index in <strong>log(N)</strong> time, the result will be everything between.</p>
+<p>The following conditions will be able to use the index:</p>
+<ul>
+<li><code>a = ?</code></li><li><code>a = ? and b = ?</code></li><li><code>a = ? and b = ? and c = ?</code></li></ul>
+<p>Condition <code>a = ? and c = ?</code> is no better than <code>a = ?</code> from the index point of view.<br>Obviously half-bounded ranges like <code>a &gt; ?</code> can be used as well.</p>
+
+	</div>
+</div>
+<div class="magic-block-textarea"><ul>
+<li>Indexes on a single fields are no better than group indexes on multiple fields starting with the same field (index on (a) is no better than (a,b,c)). Thus it is preferable to use group indexes.</li></ul>
+
+</div>
+<div class="magic-block-api-header">
+	<h1 class="header-scroll is-api-header"><span id="performance-and-usability-considerations"></span>
+		<div id="section-performance-and-usability-considerations" class="anchor waypoint"></div>Performance and Usability Considerations<a href="https://apacheignite.readme.io/v1.3/docs/sql-queries#section-performance-and-usability-considerations" class="fa fa-anchor"></a>
+	</h1>
+</div>
+<div class="magic-block-textarea"><p>There are few common pitfalls that should be noticed when running SQL queries.</p>
+<ol>
+<li value="1"><p>If the query is using operator <strong>OR</strong> then it may use indexes not the way you would expect. For example for query <code>select name from Person where sex='M' and (age = 20 or age = 30)</code> index on field <code>age</code> will not be used even if it is obviously more selective than index on field <code>sex</code> and thus is preferable. To workaround this issue you have to rewrite the query with UNION ALL (notice that UNION without ALL will return DISTINCT rows, which will change query semantics and introduce additional performance penalty) like <code>select name from Person where sex='M' and age = 20 
+UNION ALL 
+select name from Person where sex='M' and age = 30</code>. This way indexes will be used correctly.</p>
+</li><li value="2"><p>If query contains operator <strong>IN</strong> then it has two problems: it is impossible to provide variable list of parameters (you have to specify the exact list in query like <code>where id in (?, ?, ?)</code>, but you can not write it like <code>where id in ?</code> and pass array or collection) and this query will not use index. To workaround both problems you can rewrite the query in the following way: <code>select p.name from Person p join table(id bigint = ?) i on p.id = i.id</code>. Here you can provide object array (Object[]) of any length as a parameter and the query will use index on field <code>id</code>. Note that primitive arrays (int[], long[], etc..) can not be used with this syntax, you have to pass array of boxed primitives.</p>
+</li></ol>
+
+</div></section><section ng-show="ss.toc.length" class="content-toc grid-25"><!-- ngIf: stickyTOC --><div id="sticky13-sticky-wrapper" class="sticky-wrapper is-sticky"><div sticky="66" ng-if="stickyTOC" class="sticky-toc ng-scope" id="sticky13" style="width: 191px; position: fixed; top: 66px;"><nav><div class=""><ul><li ng-show="ss.toc.length"><a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="scrollTo()" class="tocHeader"><i class="icon icon-text-align-left"></i>Table of Contents</a></li><!-- ngRepeat: toc in ss.toc --><li ng-repeat="toc in ss.toc" class="toc-DIV"> <a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="scrollTo(toc[0])" class="ng-binding">
+		SQL Joins
+	</a></li><!-- end ngRepeat: toc in ss.toc --><li ng-repeat="toc in ss.toc" class="toc-DIV"> <a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="scrollTo(toc[0])" class="ng-binding">
+		Fields Queries
+	</a></li><!-- end ngRepeat: toc in ss.toc --><li ng-repeat="toc in ss.toc" class="toc-DIV"> <a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="scrollTo(toc[0])" class="ng-binding">
+		Cross-Cache Queries
+	</a></li><!-- end ngRepeat: toc in ss.toc --><li ng-repeat="toc in ss.toc" class="toc-DIV"> <a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="scrollTo(toc[0])" class="ng-binding">
+		Configuring SQL Indexes by Annotations
+	</a></li><!-- end ngRepeat: toc in ss.toc --><li ng-repeat="toc in ss.toc" class="toc-DIV"> <a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="scrollTo(toc[0])" class="ng-binding">
+		Configuring SQL Indexes by CacheTypeMetadata
+	</a></li><!-- end ngRepeat: toc in ss.toc --><li ng-repeat="toc in ss.toc" class="toc-DIV"> <a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="scrollTo(toc[0])" class="ng-binding">
+		How SQL Queries Work
+	</a></li><!-- end ngRepeat: toc in ss.toc --><li ng-repeat="toc in ss.toc" class="toc-DIV"> <a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="scrollTo(toc[0])" class="ng-binding">
+		Using EXPLAIN
+	</a></li><!-- end ngRepeat: toc in ss.toc --><li ng-repeat="toc in ss.toc" class="toc-DIV"> <a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="scrollTo(toc[0])" class="ng-binding">
+		Using H2 Debug Console
+	</a></li><!-- end ngRepeat: toc in ss.toc --><li ng-repeat="toc in ss.toc" class="toc-DIV"> <a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="scrollTo(toc[0])" class="ng-binding">
+		Off-heap SQL Indexes
+	</a></li><!-- end ngRepeat: toc in ss.toc --><li ng-repeat="toc in ss.toc" class="toc-DIV"> <a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="scrollTo(toc[0])" class="ng-binding">
+		Choosing Indexes
+	</a></li><!-- end ngRepeat: toc in ss.toc --><li ng-repeat="toc in ss.toc" class="toc-DIV"> <a href="https://apacheignite.readme.io/v1.3/docs/sql-queries" ng-click="scrollTo(toc[0])" class="ng-binding">
+		Performance and Usability Considerations
+	</a></li><!-- end ngRepeat: toc in ss.toc --></ul></div></nav></div></div><!-- end ngIf: stickyTOC --><!-- ngIf: !stickyTOC --></section></div></div><!-- end ngIf: !suggestedEdits.isEnabled --><!-- ngIf: suggestedEdits.isEnabled --></div></div></section></div></div><!-- Logo--><footer><div class="hub-container"><div id="readmeLogo"><a href="https://readme.io/?ref_src=hub&amp;project=apacheignite" class="icon icon-readme"></a></div></div></footer><script>var is_hub = true;
+var is_hub2 = true;
+var is_hub_edit = true;
+</script><script src="./SQL Queries_files/bundle-hub2.js.download"></script><!-- Google Analytics--><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-52479696-1', 'auto');
+ga('send', 'pageview');
+
+$(window).on('pageLoad', function(e, state){
+  ga('send', 'pageview', window.location.pathname);
+});
+</script><script>ga('create', 'UA-61232409-1', 'auto', {'name': 'custom'});
+ga('custom.send', 'pageview');
+$(window).on('pageLoad', function(e, state){
+  ga('custom.send', 'pageview', window.location.pathname);
+});
+
+</script><div id="nspopover-1" class="ns-popover-dropdown-theme ns-popover-bottom-placement ns-popover-right-align ng-scope" style="position: absolute; display: none;"><div id="hub-user-dropdown" class="ns-popover-tooltip"><div class="ns-triangle"></div><div class="triangle"></div><ul><li ng-show="user.isAdmin" class="ng-hide"><a href="https://dash.readme.io/project/apacheignite/v1.3/dashboard"> <i class="fa fa-lock"></i>Admin Panel</a></li><li><a ng-href="/logout?redirect_uri=v1.3/docs/sql-queries" target="_self" href="https://apacheignite.readme.io/logout?redirect_uri=v1.3/docs/sql-queries"> <i class="fa fa-power-off"></i>Log out</a></li></ul></div></div></body></html>
