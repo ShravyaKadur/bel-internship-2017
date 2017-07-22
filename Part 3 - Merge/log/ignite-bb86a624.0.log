@@ -1,0 +1,195 @@
+[11:13:10,149][INFO][main][IgniteKernal] 
+
+>>>    __________  ________________  
+>>>   /  _/ ___/ |/ /  _/_  __/ __/  
+>>>  _/ // (7 7    // /  / / / _/    
+>>> /___/\___/_/|_/___/ /_/ /___/   
+>>> 
+>>> ver. 2.0.0#20170430-sha1:d4eef3c6
+>>> 2017 Copyright(C) Apache Software Foundation
+>>> 
+>>> Ignite documentation: http://ignite.apache.org
+
+[11:13:10,166][INFO][main][IgniteKernal] Config URL: file:/opt/apache-ignite-fabric-2.0.0-bin/examples/config/example-ignite.xml
+[11:13:10,166][INFO][main][IgniteKernal] Daemon mode: off
+[11:13:10,168][INFO][main][IgniteKernal] OS: Linux 4.4.0-31-generic amd64
+[11:13:10,168][INFO][main][IgniteKernal] OS user: shravya
+[11:13:10,168][INFO][main][IgniteKernal] PID: 3901
+[11:13:10,171][INFO][main][IgniteKernal] Language runtime: Java Platform API Specification ver. 1.8
+[11:13:10,171][INFO][main][IgniteKernal] VM information: Java(TM) SE Runtime Environment 1.8.0_131-b11 Oracle Corporation Java HotSpot(TM) 64-Bit Server VM 25.131-b11
+[11:13:10,184][INFO][main][IgniteKernal] VM total memory: 0.97GB
+[11:13:10,184][INFO][main][IgniteKernal] Remote Management [restart: on, REST: on, JMX (remote: on, port: 49113, auth: off, ssl: off)]
+[11:13:10,184][INFO][main][IgniteKernal] IGNITE_HOME=/opt/apache-ignite-fabric-2.0.0-bin
+[11:13:10,184][INFO][main][IgniteKernal] VM arguments: [-Xms1g, -Xmx1g, -XX:+AggressiveOpts, -XX:MaxMetaspaceSize=256m, -DIGNITE_QUIET=true, -DIGNITE_SUCCESS_FILE=/opt/apache-ignite-fabric-2.0.0-bin/work/ignite_success_04f7e666-14f7-47ad-a9ff-5ba304d21407, -Dcom.sun.management.jmxremote, -Dcom.sun.management.jmxremote.port=49113, -Dcom.sun.management.jmxremote.authenticate=false, -Dcom.sun.management.jmxremote.ssl=false, -DIGNITE_HOME=/opt/apache-ignite-fabric-2.0.0-bin, -DIGNITE_PROG_NAME=bin/ignite.sh]
+[11:13:10,185][INFO][main][IgniteKernal] System cache's MemoryPolicy size is configured to 40 MB. Use MemoryConfiguration.systemCacheMemorySize property to change the setting.
+[11:13:10,185][INFO][main][IgniteKernal] Configured caches [in 'default' memoryPolicy: ['ignite-sys-cache', 'ignite-atomics-sys-cache']]
+[11:13:10,186][WARNING][main][IgniteKernal] Peer class loading is enabled (disable it in production for performance and deployment consistency reasons)
+[11:13:10,246][INFO][main][IgniteKernal] 3-rd party licenses can be found at: /opt/apache-ignite-fabric-2.0.0-bin/libs/licenses
+[11:13:10,705][INFO][main][IgnitePluginProcessor] Configured plugins:
+[11:13:10,705][INFO][main][IgnitePluginProcessor]   ^-- None
+[11:13:10,717][INFO][main][IgnitePluginProcessor] 
+[11:13:11,039][INFO][main][TcpCommunicationSpi] Successfully bound communication NIO server to TCP port [port=47101, locHost=0.0.0.0/0.0.0.0, selectorsCnt=4, selectorSpins=0, pairedConn=false]
+[11:13:11,080][WARNING][main][TcpCommunicationSpi] Message queue limit is set to 0 which may lead to potential OOMEs when running cache operations in FULL_ASYNC or PRIMARY_SYNC modes due to message queues growth on sender and receiver sides.
+[11:13:11,215][WARNING][main][NoopCheckpointSpi] Checkpoints are disabled (to enable configure any GridCheckpointSpi implementation)
+[11:13:11,321][WARNING][main][GridCollisionManager] Collision resolution is disabled (all jobs will be activated upon arrival).
+[11:13:11,335][INFO][main][IgniteKernal] Security status [authentication=off, tls/ssl=off]
+[11:13:12,285][WARNING][main][IgniteCacheDatabaseSharedManager] No user-defined default MemoryPolicy found; system default of 1GB size will be used.
+[11:13:12,628][WARNING][main][IgniteH2Indexing] Serialization of Java objects in H2 was enabled.
+[11:13:12,807][INFO][main][GridTcpRestProtocol] Command protocol successfully started [name=TCP binary, host=0.0.0.0/0.0.0.0, port=11212]
+[11:13:13,071][INFO][main][IgniteKernal] Non-loopback local IPs: 10.0.2.15, fe80:0:0:0:a00:27ff:fef7:15ba%eth0
+[11:13:13,071][INFO][main][IgniteKernal] Enabled local MACs: 080027F715BA
+[11:13:13,216][INFO][main][TcpDiscoverySpi] Successfully bound to TCP port [port=47500, localHost=0.0.0.0/0.0.0.0, locNodeId=bb86a624-732f-40c0-8b8c-50253b1dd161]
+[11:13:17,218][WARNING][main][IgniteKernal] Attempting to start more nodes than physical RAM available on current host (this can cause significant slowdown)
+[11:13:21,589][INFO][main][GridCacheProcessor] Started cache [name=ignite-sys-cache, memoryPolicyName=sysMemPlc, mode=REPLICATED]
+[11:13:21,799][INFO][main][GridCacheProcessor] Started cache [name=ignite-atomics-sys-cache, memoryPolicyName=sysMemPlc, mode=PARTITIONED]
+[11:13:22,843][INFO][main][GridCacheProcessor] Started cache [name=msgCache, memoryPolicyName=null, mode=PARTITIONED]
+[11:13:23,452][INFO][grid-nio-worker-tcp-comm-0-#17%null%][TcpCommunicationSpi] Established outgoing communication connection [locAddr=/127.0.0.1:34578, rmtAddr=/127.0.0.1:47103]
+[11:13:26,461][INFO][exchange-worker-#27%null%][GridCachePartitionExchangeManager] Rebalancing scheduled [order=[ignite-sys-cache, ignite-atomics-sys-cache, msgCache]]
+[11:13:26,462][INFO][exchange-worker-#27%null%][GridCachePartitionExchangeManager] Rebalancing started [top=AffinityTopologyVersion [topVer=9, minorTopVer=0], evt=NODE_JOINED, node=bb86a624-732f-40c0-8b8c-50253b1dd161]
+[11:13:26,477][INFO][exchange-worker-#27%null%][GridDhtPartitionDemander] <ignite-sys-cache> Starting rebalancing [mode=SYNC, fromNode=3a239768-7f90-4698-863b-df67bccae766, partitionsCount=100, topology=AffinityTopologyVersion [topVer=9, minorTopVer=0], updateSeq=1]
+[11:13:26,745][INFO][utility-#31%null%][GridDhtPartitionDemander] <ignite-sys-cache> Completed (final) rebalancing [fromNode=3a239768-7f90-4698-863b-df67bccae766, topology=AffinityTopologyVersion [topVer=9, minorTopVer=0], time=261 ms]
+[11:13:26,749][INFO][utility-#31%null%][GridDhtPartitionDemander] <ignite-atomics-sys-cache> Starting rebalancing [mode=SYNC, fromNode=3a239768-7f90-4698-863b-df67bccae766, partitionsCount=330, topology=AffinityTopologyVersion [topVer=9, minorTopVer=0], updateSeq=1]
+[11:13:26,814][INFO][sys-#32%null%][GridDhtPartitionDemander] <ignite-atomics-sys-cache> Completed (final) rebalancing [fromNode=3a239768-7f90-4698-863b-df67bccae766, topology=AffinityTopologyVersion [topVer=9, minorTopVer=0], time=63 ms]
+[11:13:26,825][INFO][sys-#32%null%][GridDhtPartitionDemander] <msgCache> Starting rebalancing [mode=ASYNC, fromNode=3a239768-7f90-4698-863b-df67bccae766, partitionsCount=330, topology=AffinityTopologyVersion [topVer=9, minorTopVer=0], updateSeq=1]
+[11:13:27,224][INFO][sys-#33%null%][GridDhtPartitionDemander] <msgCache> Completed (final) rebalancing [fromNode=3a239768-7f90-4698-863b-df67bccae766, topology=AffinityTopologyVersion [topVer=9, minorTopVer=0], time=391 ms]
+[11:13:27,855][INFO][main][IgniteKernal] Performance suggestions for grid  (fix if possible)
+[11:13:27,855][INFO][main][IgniteKernal] To disable, set -DIGNITE_PERFORMANCE_SUGGESTIONS_DISABLED=true
+[11:13:27,855][INFO][main][IgniteKernal]   ^-- Disable grid events (remove 'includeEventTypes' from configuration)
+[11:13:27,855][INFO][main][IgniteKernal]   ^-- Enable G1 Garbage Collector (add '-XX:+UseG1GC' to JVM options)
+[11:13:27,855][INFO][main][IgniteKernal]   ^-- Set max direct memory size if getting 'OOME: Direct buffer memory' (add '-XX:MaxDirectMemorySize=<size>[g|G|m|M|k|K]' to JVM options)
+[11:13:27,855][INFO][main][IgniteKernal]   ^-- Disable processing of calls to System.gc() (add '-XX:+DisableExplicitGC' to JVM options)
+[11:13:27,857][INFO][main][IgniteKernal] Refer to this page for more performance suggestions: https://apacheignite.readme.io/docs/jvm-and-system-tuning
+[11:13:27,857][INFO][main][IgniteKernal] 
+[11:13:27,858][INFO][main][IgniteKernal] To start Console Management & Monitoring run ignitevisorcmd.{sh|bat}
+[11:13:27,859][INFO][main][IgniteKernal] 
+[11:13:27,860][INFO][main][IgniteKernal] 
+
+>>> +----------------------------------------------------------------------+
+>>> Ignite ver. 2.0.0#20170430-sha1:d4eef3c68ff116ee34bc13648cd82c640b3ea072
+>>> +----------------------------------------------------------------------+
+>>> OS name: Linux 4.4.0-31-generic amd64
+>>> CPU(s): 1
+>>> Heap: 1.0GB
+>>> VM name: 3901@shravya-VirtualBox
+>>> Local node [ID=BB86A624-732F-40C0-8B8C-50253B1DD161, order=9, clientMode=false]
+>>> Local node addresses: [10.0.2.15/0:0:0:0:0:0:0:1%lo, /10.0.2.15, /127.0.0.1]
+>>> Local ports: TCP:11212 TCP:47101 UDP:47400 TCP:47500 
+
+[11:13:27,904][INFO][main][GridDiscoveryManager] Topology snapshot [ver=9, servers=3, clients=0, CPUs=1, heap=2.5GB]
+[11:13:29,562][INFO][exchange-worker-#27%null%][GridCachePartitionExchangeManager] Skipping rebalancing (nothing scheduled) [top=AffinityTopologyVersion [topVer=9, minorTopVer=1], evt=DISCOVERY_CUSTOM_EVT, node=3a239768-7f90-4698-863b-df67bccae766]
+[11:14:02,884][INFO][disco-event-worker-#25%null%][GridDiscoveryManager] Added new node to topology: TcpDiscoveryNode [id=e7ecf045-7fc1-4644-a56c-8d58105befa8, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/10.0.2.15:47502, /0:0:0:0:0:0:0:1%lo:47502, /127.0.0.1:47502], discPort=47502, order=10, intOrder=7, lastExchangeTime=1499665441958, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false]
+[11:14:02,887][INFO][disco-event-worker-#25%null%][GridDiscoveryManager] Topology snapshot [ver=10, servers=4, clients=0, CPUs=1, heap=3.5GB]
+[11:14:13,041][WARNING][exchange-worker-#27%null%][GridCachePartitionExchangeManager] Failed to wait for partition map exchange [topVer=AffinityTopologyVersion [topVer=10, minorTopVer=0], node=bb86a624-732f-40c0-8b8c-50253b1dd161]. Dumping pending objects that might be the cause: 
+[11:14:13,041][WARNING][exchange-worker-#27%null%][GridCachePartitionExchangeManager] Ready affinity version: AffinityTopologyVersion [topVer=9, minorTopVer=1]
+[11:14:13,049][WARNING][exchange-worker-#27%null%][GridCachePartitionExchangeManager] Last exchange future: GridDhtPartitionsExchangeFuture [dummy=false, forcePreload=false, reassign=false, discoEvt=DiscoveryEvent [evtNode=TcpDiscoveryNode [id=e7ecf045-7fc1-4644-a56c-8d58105befa8, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/10.0.2.15:47502, /0:0:0:0:0:0:0:1%lo:47502, /127.0.0.1:47502], discPort=47502, order=10, intOrder=7, lastExchangeTime=1499665441958, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false], topVer=10, nodeId8=bb86a624, msg=Node joined: TcpDiscoveryNode [id=e7ecf045-7fc1-4644-a56c-8d58105befa8, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/10.0.2.15:47502, /0:0:0:0:0:0:0:1%lo:47502, /127.0.0.1:47502], discPort=47502, order=10, intOrder=7, lastExchangeTime=1499665441958, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false], type=NODE_JOINED, tstamp=1499665442877], crd=TcpDiscoveryNode [id=3a239768-7f90-4698-863b-df67bccae766, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/0:0:0:0:0:0:0:1%lo:47503, /127.0.0.1:47503, /10.0.2.15:47503], discPort=47503, order=4, intOrder=4, lastExchangeTime=1499665395833, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false], exchId=GridDhtPartitionExchangeId [topVer=AffinityTopologyVersion [topVer=10, minorTopVer=0], nodeId=e7ecf045, evt=NODE_JOINED], added=true, initFut=GridFutureAdapter [ignoreInterrupts=false, state=DONE, res=true, hash=150531051], init=true, lastVer=null, partReleaseFut=GridCompoundFuture [rdc=null, initFlag=1, lsnrCalls=4, done=true, cancelled=false, err=null, futs=[true, true, true, true]], affChangeMsg=null, skipPreload=false, clientOnlyExchange=false, initTs=1499665442892, centralizedAff=false, changeGlobalStateE=null, exchangeOnChangeGlobalState=false, forcedRebFut=null, evtLatch=0, remaining=[3a239768-7f90-4698-863b-df67bccae766, c593a728-c915-4fed-ae33-e941a45a0cee, e7ecf045-7fc1-4644-a56c-8d58105befa8], srvNodes=[TcpDiscoveryNode [id=3a239768-7f90-4698-863b-df67bccae766, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/0:0:0:0:0:0:0:1%lo:47503, /127.0.0.1:47503, /10.0.2.15:47503], discPort=47503, order=4, intOrder=4, lastExchangeTime=1499665395833, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false], TcpDiscoveryNode [id=c593a728-c915-4fed-ae33-e941a45a0cee, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/10.0.2.15:47501, /0:0:0:0:0:0:0:1%lo:47501, /127.0.0.1:47501], discPort=47501, order=8, intOrder=5, lastExchangeTime=1499665395853, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false], TcpDiscoveryNode [id=bb86a624-732f-40c0-8b8c-50253b1dd161, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/0:0:0:0:0:0:0:1%lo:47500, /127.0.0.1:47500, /10.0.2.15:47500], discPort=47500, order=9, intOrder=6, lastExchangeTime=1499665451947, loc=true, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false], TcpDiscoveryNode [id=e7ecf045-7fc1-4644-a56c-8d58105befa8, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/10.0.2.15:47502, /0:0:0:0:0:0:0:1%lo:47502, /127.0.0.1:47502], discPort=47502, order=10, intOrder=7, lastExchangeTime=1499665441958, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false]], super=GridFutureAdapter [ignoreInterrupts=false, state=INIT, res=null, hash=541541736]]
+[11:14:13,050][WARNING][exchange-worker-#27%null%][GridCachePartitionExchangeManager] Pending exchange futures:
+[11:14:13,050][WARNING][exchange-worker-#27%null%][GridCachePartitionExchangeManager] Last 10 exchange futures (total: 3):
+[11:14:13,064][WARNING][exchange-worker-#27%null%][GridCachePartitionExchangeManager] >>> GridDhtPartitionsExchangeFuture [dummy=false, forcePreload=false, reassign=false, discoEvt=DiscoveryEvent [evtNode=TcpDiscoveryNode [id=e7ecf045-7fc1-4644-a56c-8d58105befa8, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/10.0.2.15:47502, /0:0:0:0:0:0:0:1%lo:47502, /127.0.0.1:47502], discPort=47502, order=10, intOrder=7, lastExchangeTime=1499665441958, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false], topVer=10, nodeId8=bb86a624, msg=Node joined: TcpDiscoveryNode [id=e7ecf045-7fc1-4644-a56c-8d58105befa8, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/10.0.2.15:47502, /0:0:0:0:0:0:0:1%lo:47502, /127.0.0.1:47502], discPort=47502, order=10, intOrder=7, lastExchangeTime=1499665441958, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false], type=NODE_JOINED, tstamp=1499665442877], crd=TcpDiscoveryNode [id=3a239768-7f90-4698-863b-df67bccae766, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/0:0:0:0:0:0:0:1%lo:47503, /127.0.0.1:47503, /10.0.2.15:47503], discPort=47503, order=4, intOrder=4, lastExchangeTime=1499665395833, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false], exchId=GridDhtPartitionExchangeId [topVer=AffinityTopologyVersion [topVer=10, minorTopVer=0], nodeId=e7ecf045, evt=NODE_JOINED], added=true, initFut=GridFutureAdapter [ignoreInterrupts=false, state=DONE, res=true, hash=150531051], init=true, lastVer=null, partReleaseFut=GridCompoundFuture [rdc=null, initFlag=1, lsnrCalls=4, done=true, cancelled=false, err=null, futs=[true, true, true, true]], affChangeMsg=null, skipPreload=false, clientOnlyExchange=false, initTs=1499665442892, centralizedAff=false, changeGlobalStateE=null, exchangeOnChangeGlobalState=false, forcedRebFut=null, evtLatch=0, remaining=[3a239768-7f90-4698-863b-df67bccae766, c593a728-c915-4fed-ae33-e941a45a0cee, e7ecf045-7fc1-4644-a56c-8d58105befa8], srvNodes=[TcpDiscoveryNode [id=3a239768-7f90-4698-863b-df67bccae766, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/0:0:0:0:0:0:0:1%lo:47503, /127.0.0.1:47503, /10.0.2.15:47503], discPort=47503, order=4, intOrder=4, lastExchangeTime=1499665395833, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false], TcpDiscoveryNode [id=c593a728-c915-4fed-ae33-e941a45a0cee, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/10.0.2.15:47501, /0:0:0:0:0:0:0:1%lo:47501, /127.0.0.1:47501], discPort=47501, order=8, intOrder=5, lastExchangeTime=1499665395853, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false], TcpDiscoveryNode [id=bb86a624-732f-40c0-8b8c-50253b1dd161, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/0:0:0:0:0:0:0:1%lo:47500, /127.0.0.1:47500, /10.0.2.15:47500], discPort=47500, order=9, intOrder=6, lastExchangeTime=1499665451947, loc=true, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false], TcpDiscoveryNode [id=e7ecf045-7fc1-4644-a56c-8d58105befa8, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/10.0.2.15:47502, /0:0:0:0:0:0:0:1%lo:47502, /127.0.0.1:47502], discPort=47502, order=10, intOrder=7, lastExchangeTime=1499665441958, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false]], super=GridFutureAdapter [ignoreInterrupts=false, state=INIT, res=null, hash=541541736]]
+[11:14:13,068][WARNING][exchange-worker-#27%null%][GridCachePartitionExchangeManager] >>> GridDhtPartitionsExchangeFuture [dummy=false, forcePreload=false, reassign=false, discoEvt=DiscoveryCustomEvent [customMsg=null, affTopVer=AffinityTopologyVersion [topVer=9, minorTopVer=1], super=DiscoveryEvent [evtNode=TcpDiscoveryNode [id=3a239768-7f90-4698-863b-df67bccae766, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/0:0:0:0:0:0:0:1%lo:47503, /127.0.0.1:47503, /10.0.2.15:47503], discPort=47503, order=4, intOrder=4, lastExchangeTime=1499665395833, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false], topVer=9, nodeId8=bb86a624, msg=null, type=DISCOVERY_CUSTOM_EVT, tstamp=1499665408421]], crd=TcpDiscoveryNode [id=3a239768-7f90-4698-863b-df67bccae766, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/0:0:0:0:0:0:0:1%lo:47503, /127.0.0.1:47503, /10.0.2.15:47503], discPort=47503, order=4, intOrder=4, lastExchangeTime=1499665395833, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false], exchId=GridDhtPartitionExchangeId [topVer=AffinityTopologyVersion [topVer=9, minorTopVer=1], nodeId=3a239768, evt=DISCOVERY_CUSTOM_EVT], added=true, initFut=GridFutureAdapter [ignoreInterrupts=false, state=DONE, res=true, hash=1787251389], init=true, lastVer=null, partReleaseFut=GridCompoundFuture [rdc=null, initFlag=1, lsnrCalls=4, done=true, cancelled=false, err=null, futs=[true, true, true, true]], affChangeMsg=CacheAffinityChangeMessage [id=cb6e9ea2d51-af57b7be-47b6-4802-9966-0cd595902fa2, topVer=AffinityTopologyVersion [topVer=9, minorTopVer=0], exchId=null, partsMsg=null, exchangeNeeded=true], skipPreload=false, clientOnlyExchange=false, initTs=1499665408421, centralizedAff=false, changeGlobalStateE=null, exchangeOnChangeGlobalState=false, forcedRebFut=null, evtLatch=0, remaining=[3a239768-7f90-4698-863b-df67bccae766, c593a728-c915-4fed-ae33-e941a45a0cee], srvNodes=[TcpDiscoveryNode [id=3a239768-7f90-4698-863b-df67bccae766, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/0:0:0:0:0:0:0:1%lo:47503, /127.0.0.1:47503, /10.0.2.15:47503], discPort=47503, order=4, intOrder=4, lastExchangeTime=1499665395833, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false], TcpDiscoveryNode [id=c593a728-c915-4fed-ae33-e941a45a0cee, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/10.0.2.15:47501, /0:0:0:0:0:0:0:1%lo:47501, /127.0.0.1:47501], discPort=47501, order=8, intOrder=5, lastExchangeTime=1499665395853, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false], TcpDiscoveryNode [id=bb86a624-732f-40c0-8b8c-50253b1dd161, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/0:0:0:0:0:0:0:1%lo:47500, /127.0.0.1:47500, /10.0.2.15:47500], discPort=47500, order=9, intOrder=6, lastExchangeTime=1499665451947, loc=true, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false]], super=GridFutureAdapter [ignoreInterrupts=false, state=DONE, res=AffinityTopologyVersion [topVer=9, minorTopVer=1], hash=628050504]]
+[11:14:13,076][WARNING][exchange-worker-#27%null%][GridCachePartitionExchangeManager] >>> GridDhtPartitionsExchangeFuture [dummy=false, forcePreload=false, reassign=false, discoEvt=DiscoveryEvent [evtNode=TcpDiscoveryNode [id=bb86a624-732f-40c0-8b8c-50253b1dd161, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/0:0:0:0:0:0:0:1%lo:47500, /127.0.0.1:47500, /10.0.2.15:47500], discPort=47500, order=9, intOrder=6, lastExchangeTime=1499665451947, loc=true, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false], topVer=9, nodeId8=bb86a624, msg=null, type=NODE_JOINED, tstamp=1499665397206], crd=TcpDiscoveryNode [id=3a239768-7f90-4698-863b-df67bccae766, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/0:0:0:0:0:0:0:1%lo:47503, /127.0.0.1:47503, /10.0.2.15:47503], discPort=47503, order=4, intOrder=4, lastExchangeTime=1499665395833, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false], exchId=GridDhtPartitionExchangeId [topVer=AffinityTopologyVersion [topVer=9, minorTopVer=0], nodeId=bb86a624, evt=NODE_JOINED], added=false, initFut=GridFutureAdapter [ignoreInterrupts=false, state=DONE, res=true, hash=378218873], init=true, lastVer=null, partReleaseFut=GridCompoundFuture [rdc=null, initFlag=1, lsnrCalls=4, done=true, cancelled=false, err=null, futs=[true, true, true, true]], affChangeMsg=null, skipPreload=false, clientOnlyExchange=false, initTs=1499665403061, centralizedAff=false, changeGlobalStateE=null, exchangeOnChangeGlobalState=false, forcedRebFut=null, evtLatch=0, remaining=[3a239768-7f90-4698-863b-df67bccae766, c593a728-c915-4fed-ae33-e941a45a0cee], srvNodes=[TcpDiscoveryNode [id=3a239768-7f90-4698-863b-df67bccae766, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/0:0:0:0:0:0:0:1%lo:47503, /127.0.0.1:47503, /10.0.2.15:47503], discPort=47503, order=4, intOrder=4, lastExchangeTime=1499665395833, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false], TcpDiscoveryNode [id=c593a728-c915-4fed-ae33-e941a45a0cee, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/10.0.2.15:47501, /0:0:0:0:0:0:0:1%lo:47501, /127.0.0.1:47501], discPort=47501, order=8, intOrder=5, lastExchangeTime=1499665395853, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false], TcpDiscoveryNode [id=bb86a624-732f-40c0-8b8c-50253b1dd161, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/0:0:0:0:0:0:0:1%lo:47500, /127.0.0.1:47500, /10.0.2.15:47500], discPort=47500, order=9, intOrder=6, lastExchangeTime=1499665451947, loc=true, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false]], super=GridFutureAdapter [ignoreInterrupts=false, state=DONE, res=AffinityTopologyVersion [topVer=9, minorTopVer=0], hash=208903727]]
+[11:14:13,076][WARNING][exchange-worker-#27%null%][GridCachePartitionExchangeManager] Pending transactions:
+[11:14:13,077][WARNING][exchange-worker-#27%null%][GridCachePartitionExchangeManager] Pending explicit locks:
+[11:14:13,077][WARNING][exchange-worker-#27%null%][GridCachePartitionExchangeManager] Pending cache futures:
+[11:14:13,077][WARNING][exchange-worker-#27%null%][GridCachePartitionExchangeManager] Pending atomic cache futures:
+[11:14:13,077][WARNING][exchange-worker-#27%null%][GridCachePartitionExchangeManager] Pending data streamer futures:
+[11:14:13,077][WARNING][exchange-worker-#27%null%][GridCachePartitionExchangeManager] Pending transaction deadlock detection futures:
+[11:14:13,086][WARNING][exchange-worker-#27%null%][TcpCommunicationSpi] Communication SPI recovery descriptors: 
+    [key=ConnectionKey [nodeId=3a239768-7f90-4698-863b-df67bccae766, idx=0, connCnt=-1], msgsSent=10, msgsAckedByRmt=9, msgsRcvd=12, lastAcked=12, reserveCnt=1, descIdHash=426472920]
+Communication SPI clients: 
+    [node=3a239768-7f90-4698-863b-df67bccae766, client=GridTcpNioCommunicationClient [ses=GridSelectorNioSessionImpl [worker=DirectNioClientWorker [super=AbstractNioClientWorker [selector=sun.nio.ch.EPollSelectorImpl@2d7120d9, idx=0, bytesRcvd=106575, bytesSent=6475, bytesRcvd0=0, bytesSent0=10, select=true, super=GridWorker [name=grid-nio-worker-tcp-comm-0, igniteInstanceName=null, finished=false, hashCode=1005900288, interrupted=false, runner=grid-nio-worker-tcp-comm-0-#17%null%]]], writeBuf=java.nio.DirectByteBuffer[pos=0 lim=32768 cap=32768], readBuf=java.nio.DirectByteBuffer[pos=0 lim=32768 cap=32768], inRecovery=GridNioRecoveryDescriptor [acked=9, resendCnt=0, rcvCnt=12, sentCnt=10, reserved=true, lastAck=12, nodeLeft=false, node=TcpDiscoveryNode [id=3a239768-7f90-4698-863b-df67bccae766, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/0:0:0:0:0:0:0:1%lo:47503, /127.0.0.1:47503, /10.0.2.15:47503], discPort=47503, order=4, intOrder=4, lastExchangeTime=1499665395833, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false], connected=true, connectCnt=1, queueLimit=4096, reserveCnt=1, pairedConnections=false], outRecovery=GridNioRecoveryDescriptor [acked=9, resendCnt=0, rcvCnt=12, sentCnt=10, reserved=true, lastAck=12, nodeLeft=false, node=TcpDiscoveryNode [id=3a239768-7f90-4698-863b-df67bccae766, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/0:0:0:0:0:0:0:1%lo:47503, /127.0.0.1:47503, /10.0.2.15:47503], discPort=47503, order=4, intOrder=4, lastExchangeTime=1499665395833, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false], connected=true, connectCnt=1, queueLimit=4096, reserveCnt=1, pairedConnections=false], super=GridNioSessionImpl [locAddr=/127.0.0.1:34578, rmtAddr=/127.0.0.1:47103, createTime=1499665403444, closeTime=0, bytesSent=6475, bytesRcvd=106575, bytesSent0=10, bytesRcvd0=0, sndSchedTime=1499665403444, lastSndTime=1499665451165, lastRcvTime=1499665444558, readsPaused=false, filterChain=FilterChain[filters=[GridNioCodecFilter [parser=o.a.i.i.util.nio.GridDirectParser@44571a00, directMode=true], GridConnectionBytesVerifyFilter], accepted=false]], super=GridAbstractCommunicationClient [lastUsed=1499665403468, closed=false, connIdx=0]]]
+
+[11:14:13,089][WARNING][exchange-worker-#27%null%][TcpCommunicationSpi] NIO server statistics [readerSesBalanceCnt=0, writerSesBalanceCnt=0]
+[11:14:13,091][WARNING][grid-nio-worker-tcp-comm-0-#17%null%][TcpCommunicationSpi] 
+>> Selector info [idx=0, keysCnt=1, bytesRcvd=106575, bytesRcvd0=0, bytesSent=6475, bytesSent0=10]
+    Connection info [in=false, rmtAddr=/127.0.0.1:47103, locAddr=/127.0.0.1:34578, msgsSent=10, msgsAckedByRmt=9, descIdHash=426472920, msgsRcvd=12, lastAcked=12, descIdHash=426472920, bytesRcvd=106575, bytesRcvd0=0, bytesSent=6475, bytesSent0=10, opQueueSize=0, msgWriter=DirectMessageWriter [state=DirectMessageState [pos=0, stack=[StateItem [stream=DirectByteBufferStreamImplV2 [buf=java.nio.DirectByteBuffer[pos=0 lim=32768 cap=32768], baseOff=139730251867680, arrOff=-1, tmpArrOff=0, tmpArrBytes=0, msgTypeDone=false, msg=null, mapIt=null, it=null, arrPos=-1, keyDone=false, readSize=-1, readItems=0, prim=0, primShift=0, uuidState=0, uuidMost=0, uuidLeast=0, uuidLocId=0, lastFinished=true], state=0, hdrWritten=false], StateItem [stream=DirectByteBufferStreamImplV2 [buf=java.nio.DirectByteBuffer[pos=0 lim=32768 cap=32768], baseOff=139730251867680, arrOff=-1, tmpArrOff=0, tmpArrBytes=0, msgTypeDone=false, msg=null, mapIt=null, it=null, arrPos=-1, keyDone=false, readSize=-1, readItems=0, prim=0, primShift=0, uuidState=0, uuidMost=0, uuidLeast=0, uuidLocId=0, lastFinished=true], state=0, hdrWritten=false], StateItem [stream=DirectByteBufferStreamImplV2 [buf=java.nio.DirectByteBuffer[pos=0 lim=32768 cap=32768], baseOff=139730251867680, arrOff=-1, tmpArrOff=0, tmpArrBytes=0, msgTypeDone=false, msg=null, mapIt=null, it=null, arrPos=-1, keyDone=false, readSize=-1, readItems=0, prim=0, primShift=0, uuidState=0, uuidMost=0, uuidLeast=0, uuidLocId=0, lastFinished=true], state=0, hdrWritten=false], StateItem [stream=DirectByteBufferStreamImplV2 [buf=java.nio.DirectByteBuffer[pos=0 lim=32768 cap=32768], baseOff=139730251867680, arrOff=-1, tmpArrOff=0, tmpArrBytes=0, msgTypeDone=false, msg=null, mapIt=null, it=null, arrPos=-1, keyDone=false, readSize=-1, readItems=0, prim=0, primShift=0, uuidState=0, uuidMost=0, uuidLeast=0, uuidLocId=0, lastFinished=true], state=0, hdrWritten=false], null, null, null, null, null, null]]], msgReader=DirectMessageReader [state=DirectMessageState [pos=0, stack=[StateItem [stream=DirectByteBufferStreamImplV2 [buf=java.nio.DirectByteBuffer[pos=0 lim=32768 cap=32768], baseOff=139730252933824, arrOff=-1, tmpArrOff=0, tmpArrBytes=0, msgTypeDone=false, msg=null, mapIt=null, it=null, arrPos=-1, keyDone=false, readSize=-1, readItems=0, prim=0, primShift=0, uuidState=0, uuidMost=0, uuidLeast=0, uuidLocId=0, lastFinished=true], state=0], StateItem [stream=DirectByteBufferStreamImplV2 [buf=java.nio.DirectByteBuffer[pos=0 lim=32768 cap=32768], baseOff=139730252933824, arrOff=-1, tmpArrOff=0, tmpArrBytes=0, msgTypeDone=false, msg=null, mapIt=null, it=null, arrPos=-1, keyDone=false, readSize=-1, readItems=0, prim=0, primShift=0, uuidState=0, uuidMost=0, uuidLeast=0, uuidLocId=0, lastFinished=true], state=0], StateItem [stream=DirectByteBufferStreamImplV2 [buf=java.nio.DirectByteBuffer[pos=0 lim=32768 cap=32768], baseOff=139730252933824, arrOff=-1, tmpArrOff=0, tmpArrBytes=0, msgTypeDone=false, msg=null, mapIt=null, it=null, arrPos=-1, keyDone=false, readSize=-1, readItems=0, prim=0, primShift=0, uuidState=0, uuidMost=0, uuidLeast=0, uuidLocId=0, lastFinished=true], state=0], StateItem [stream=DirectByteBufferStreamImplV2 [buf=java.nio.DirectByteBuffer[pos=0 lim=32768 cap=32768], baseOff=139730252933824, arrOff=-1, tmpArrOff=0, tmpArrBytes=0, msgTypeDone=false, msg=null, mapIt=null, it=null, arrPos=-1, keyDone=false, readSize=-1, readItems=0, prim=0, primShift=0, uuidState=0, uuidMost=0, uuidLeast=0, uuidLocId=0, lastFinished=true], state=0], null, null, null, null, null, null]], lastRead=true]]
+
+[11:14:13,092][WARNING][grid-nio-worker-tcp-comm-1-#18%null%][TcpCommunicationSpi] 
+>> Selector info [idx=1, keysCnt=0, bytesRcvd=0, bytesRcvd0=0, bytesSent=0, bytesSent0=0]
+
+[11:14:13,093][WARNING][grid-nio-worker-tcp-comm-2-#19%null%][TcpCommunicationSpi] 
+>> Selector info [idx=2, keysCnt=0, bytesRcvd=0, bytesRcvd0=0, bytesSent=0, bytesSent0=0]
+
+[11:14:13,093][WARNING][grid-nio-worker-tcp-comm-3-#20%null%][TcpCommunicationSpi] 
+>> Selector info [idx=3, keysCnt=0, bytesRcvd=0, bytesRcvd0=0, bytesSent=0, bytesSent0=0]
+
+[11:14:14,305][INFO][exchange-worker-#27%null%][GridCachePartitionExchangeManager] Skipping rebalancing (nothing scheduled) [top=AffinityTopologyVersion [topVer=10, minorTopVer=0], evt=NODE_JOINED, node=e7ecf045-7fc1-4644-a56c-8d58105befa8]
+[11:14:15,201][INFO][grid-nio-worker-tcp-comm-1-#18%null%][TcpCommunicationSpi] Accepted incoming communication connection [locAddr=/0:0:0:0:0:0:0:1:47101, rmtAddr=/0:0:0:0:0:0:0:1:54116]
+[11:14:17,482][INFO][exchange-worker-#27%null%][GridCachePartitionExchangeManager] Skipping rebalancing (nothing scheduled) [top=AffinityTopologyVersion [topVer=10, minorTopVer=1], evt=DISCOVERY_CUSTOM_EVT, node=3a239768-7f90-4698-863b-df67bccae766]
+[11:14:27,334][INFO][ignite-update-notifier-timer][GridUpdateNotifier] Update status is not available.
+[11:14:27,837][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=bb86a624, name=null, uptime=00:01:00:029]
+    ^-- H/N/C [hosts=1, nodes=4, CPUs=1]
+    ^-- CPU [cur=1.33%, avg=6.01%, GC=0%]
+    ^-- PageMemory [pages=1526]
+    ^-- Heap [used=140MB, free=85.79%, comm=989MB]
+    ^-- Non heap [used=45MB, free=97.01%, comm=46MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=8, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[11:15:27,844][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=bb86a624, name=null, uptime=00:02:00:044]
+    ^-- H/N/C [hosts=1, nodes=4, CPUs=1]
+    ^-- CPU [cur=1.33%, avg=3.97%, GC=0%]
+    ^-- PageMemory [pages=1526]
+    ^-- Heap [used=146MB, free=85.24%, comm=989MB]
+    ^-- Non heap [used=46MB, free=96.96%, comm=47MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[11:16:27,853][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=bb86a624, name=null, uptime=00:03:00:050]
+    ^-- H/N/C [hosts=1, nodes=4, CPUs=1]
+    ^-- CPU [cur=1.33%, avg=3.31%, GC=0%]
+    ^-- PageMemory [pages=1526]
+    ^-- Heap [used=156MB, free=84.2%, comm=989MB]
+    ^-- Non heap [used=47MB, free=96.91%, comm=47MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[11:17:27,853][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=bb86a624, name=null, uptime=00:04:00:056]
+    ^-- H/N/C [hosts=1, nodes=4, CPUs=1]
+    ^-- CPU [cur=1.33%, avg=2.97%, GC=0%]
+    ^-- PageMemory [pages=1526]
+    ^-- Heap [used=166MB, free=83.17%, comm=989MB]
+    ^-- Non heap [used=47MB, free=96.85%, comm=48MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[11:19:23,319][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=bb86a624, name=null, uptime=00:05:55:525]
+    ^-- H/N/C [hosts=1, nodes=4, CPUs=1]
+    ^-- CPU [cur=23.33%, avg=2.92%, GC=2488.27%]
+    ^-- PageMemory [pages=1526]
+    ^-- Heap [used=47MB, free=95.2%, comm=989MB]
+    ^-- Non heap [used=48MB, free=96.84%, comm=49MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=1, idle=0, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[11:19:23,507][WARNING][disco-event-worker-#25%null%][GridDiscoveryManager] Node FAILED: TcpDiscoveryNode [id=c593a728-c915-4fed-ae33-e941a45a0cee, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/10.0.2.15:47501, /0:0:0:0:0:0:0:1%lo:47501, /127.0.0.1:47501], discPort=47501, order=8, intOrder=5, lastExchangeTime=1499665395853, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false]
+[11:19:23,589][WARNING][tcp-disco-msg-worker-#2%null%][TcpDiscoverySpi] Node is out of topology (probably, due to short-time network problems).
+[11:19:23,589][INFO][disco-event-worker-#25%null%][GridDiscoveryManager] Topology snapshot [ver=11, servers=3, clients=0, CPUs=1, heap=2.5GB]
+[11:19:24,383][WARNING][disco-event-worker-#25%null%][GridDiscoveryManager] Local node SEGMENTED: TcpDiscoveryNode [id=bb86a624-732f-40c0-8b8c-50253b1dd161, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/0:0:0:0:0:0:0:1%lo:47500, /127.0.0.1:47500, /10.0.2.15:47500], discPort=47500, order=9, intOrder=6, lastExchangeTime=1499665763589, loc=true, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false]
+[11:19:24,510][WARNING][disco-event-worker-#25%null%][GridDiscoveryManager] Stopping local node according to configured segmentation policy.
+[11:19:24,519][WARNING][disco-event-worker-#25%null%][GridDiscoveryManager] Node FAILED: TcpDiscoveryNode [id=3a239768-7f90-4698-863b-df67bccae766, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/0:0:0:0:0:0:0:1%lo:47503, /127.0.0.1:47503, /10.0.2.15:47503], discPort=47503, order=4, intOrder=4, lastExchangeTime=1499665395833, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false]
+[11:19:24,520][INFO][disco-event-worker-#25%null%][GridDiscoveryManager] Topology snapshot [ver=12, servers=2, clients=0, CPUs=1, heap=2.0GB]
+[11:19:24,523][WARNING][disco-event-worker-#25%null%][GridDiscoveryManager] Node FAILED: TcpDiscoveryNode [id=e7ecf045-7fc1-4644-a56c-8d58105befa8, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/10.0.2.15:47502, /0:0:0:0:0:0:0:1%lo:47502, /127.0.0.1:47502], discPort=47502, order=10, intOrder=7, lastExchangeTime=1499665441958, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false]
+[11:19:24,524][INFO][disco-event-worker-#25%null%][GridDiscoveryManager] Topology snapshot [ver=13, servers=1, clients=0, CPUs=1, heap=1.0GB]
+[11:19:24,793][INFO][Thread-3][GridTcpRestProtocol] Command protocol successfully stopped: TCP binary
+[11:19:25,142][INFO][Thread-3][GridCacheProcessor] Stopped cache: ignite-sys-cache
+[11:19:25,143][INFO][Thread-3][GridCacheProcessor] Stopped cache: ignite-atomics-sys-cache
+[11:19:25,143][INFO][Thread-3][GridCacheProcessor] Stopped cache: msgCache
+[11:19:25,176][INFO][Thread-3][GridDeploymentLocalStore] Removed undeployed class: GridDeployment [ts=1499665406149, depMode=SHARED, clsLdr=sun.misc.Launcher$AppClassLoader@764c12b6, clsLdrId=911d50b2d51-bb86a624-732f-40c0-8b8c-50253b1dd161, userVer=0, loc=true, sampleClsName=org.apache.ignite.internal.processors.cache.distributed.dht.preloader.GridDhtPartitionFullMap, pendingUndeploy=false, undeployed=true, usage=0]
+[11:19:25,540][INFO][Thread-3][IgniteKernal] 
+
+>>> +---------------------------------------------------------------------------------+
+>>> Ignite ver. 2.0.0#20170430-sha1:d4eef3c68ff116ee34bc13648cd82c640b3ea072 stopped OK
+>>> +---------------------------------------------------------------------------------+
+>>> Grid uptime: 00:05:57:671
+
+

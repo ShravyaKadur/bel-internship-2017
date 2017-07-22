@@ -1,0 +1,69 @@
+[22:16:42,681][INFO][main][IgniteKernal] 
+
+>>>    __________  ________________  
+>>>   /  _/ ___/ |/ /  _/_  __/ __/  
+>>>  _/ // (7 7    // /  / / / _/    
+>>> /___/\___/_/|_/___/ /_/ /___/   
+>>> 
+>>> ver. 2.0.0#20170430-sha1:d4eef3c6
+>>> 2017 Copyright(C) Apache Software Foundation
+>>> 
+>>> Ignite documentation: http://ignite.apache.org
+
+[22:16:42,696][INFO][main][IgniteKernal] Config URL: file:/opt/apache-ignite-fabric-2.0.0-bin/examples/config/example-ignite.xml
+[22:16:42,697][INFO][main][IgniteKernal] Daemon mode: off
+[22:16:42,697][INFO][main][IgniteKernal] OS: Linux 4.4.0-31-generic amd64
+[22:16:42,697][INFO][main][IgniteKernal] OS user: shravya
+[22:16:42,698][INFO][main][IgniteKernal] PID: 5227
+[22:16:42,699][INFO][main][IgniteKernal] Language runtime: Java Platform API Specification ver. 1.8
+[22:16:42,699][INFO][main][IgniteKernal] VM information: Java(TM) SE Runtime Environment 1.8.0_131-b11 Oracle Corporation Java HotSpot(TM) 64-Bit Server VM 25.131-b11
+[22:16:42,701][INFO][main][IgniteKernal] VM total memory: 0.97GB
+[22:16:42,701][INFO][main][IgniteKernal] Remote Management [restart: on, REST: on, JMX (remote: on, port: 49115, auth: off, ssl: off)]
+[22:16:42,701][INFO][main][IgniteKernal] IGNITE_HOME=/opt/apache-ignite-fabric-2.0.0-bin
+[22:16:42,701][INFO][main][IgniteKernal] VM arguments: [-Xms1g, -Xmx1g, -XX:+AggressiveOpts, -XX:MaxMetaspaceSize=256m, -DIGNITE_QUIET=true, -DIGNITE_SUCCESS_FILE=/opt/apache-ignite-fabric-2.0.0-bin/work/ignite_success_b048eff9-7909-44d6-b8aa-77401daaf347, -Dcom.sun.management.jmxremote, -Dcom.sun.management.jmxremote.port=49115, -Dcom.sun.management.jmxremote.authenticate=false, -Dcom.sun.management.jmxremote.ssl=false, -DIGNITE_HOME=/opt/apache-ignite-fabric-2.0.0-bin, -DIGNITE_PROG_NAME=bin/ignite.sh]
+[22:16:42,702][INFO][main][IgniteKernal] System cache's MemoryPolicy size is configured to 40 MB. Use MemoryConfiguration.systemCacheMemorySize property to change the setting.
+[22:16:42,702][INFO][main][IgniteKernal] Configured caches [in 'default' memoryPolicy: ['ignite-sys-cache', 'ignite-atomics-sys-cache']]
+[22:16:42,703][WARNING][main][IgniteKernal] Peer class loading is enabled (disable it in production for performance and deployment consistency reasons)
+[22:16:42,769][INFO][main][IgniteKernal] 3-rd party licenses can be found at: /opt/apache-ignite-fabric-2.0.0-bin/libs/licenses
+[22:16:43,133][INFO][main][IgnitePluginProcessor] Configured plugins:
+[22:16:43,138][INFO][main][IgnitePluginProcessor]   ^-- None
+[22:16:43,138][INFO][main][IgnitePluginProcessor] 
+[22:16:43,386][INFO][main][TcpCommunicationSpi] Successfully bound communication NIO server to TCP port [port=47100, locHost=0.0.0.0/0.0.0.0, selectorsCnt=4, selectorSpins=0, pairedConn=false]
+[22:16:43,626][WARNING][main][TcpCommunicationSpi] Message queue limit is set to 0 which may lead to potential OOMEs when running cache operations in FULL_ASYNC or PRIMARY_SYNC modes due to message queues growth on sender and receiver sides.
+[22:16:43,804][WARNING][main][NoopCheckpointSpi] Checkpoints are disabled (to enable configure any GridCheckpointSpi implementation)
+[22:16:43,869][WARNING][main][GridCollisionManager] Collision resolution is disabled (all jobs will be activated upon arrival).
+[22:16:43,871][INFO][main][IgniteKernal] Security status [authentication=off, tls/ssl=off]
+[22:16:44,594][WARNING][main][IgniteCacheDatabaseSharedManager] No user-defined default MemoryPolicy found; system default of 1GB size will be used.
+[22:16:44,834][WARNING][main][IgniteH2Indexing] Serialization of Java objects in H2 was enabled.
+[22:16:45,026][INFO][main][GridTcpRestProtocol] Command protocol successfully started [name=TCP binary, host=0.0.0.0/0.0.0.0, port=11211]
+[22:16:45,224][INFO][main][IgniteKernal] Non-loopback local IPs: 10.0.2.15, fe80:0:0:0:a00:27ff:fef7:15ba%eth0
+[22:16:45,225][INFO][main][IgniteKernal] Enabled local MACs: 080027F715BA
+[22:16:45,363][INFO][main][TcpDiscoverySpi] Successfully bound to TCP port [port=47500, localHost=0.0.0.0/0.0.0.0, locNodeId=944814a5-fb60-41a2-b6b4-855578808a61]
+[22:16:47,370][INFO][main][GridCacheProcessor] Started cache [name=ignite-sys-cache, memoryPolicyName=sysMemPlc, mode=REPLICATED]
+[22:16:47,383][INFO][main][GridCacheProcessor] Started cache [name=ignite-atomics-sys-cache, memoryPolicyName=sysMemPlc, mode=PARTITIONED]
+[22:16:47,706][INFO][exchange-worker-#26%null%][GridCachePartitionExchangeManager] Skipping rebalancing (nothing scheduled) [top=AffinityTopologyVersion [topVer=1, minorTopVer=0], evt=NODE_JOINED, node=944814a5-fb60-41a2-b6b4-855578808a61]
+[22:16:47,814][INFO][main][IgniteKernal] Performance suggestions for grid  (fix if possible)
+[22:16:47,815][INFO][main][IgniteKernal] To disable, set -DIGNITE_PERFORMANCE_SUGGESTIONS_DISABLED=true
+[22:16:47,815][INFO][main][IgniteKernal]   ^-- Disable grid events (remove 'includeEventTypes' from configuration)
+[22:16:47,819][INFO][main][IgniteKernal]   ^-- Enable G1 Garbage Collector (add '-XX:+UseG1GC' to JVM options)
+[22:16:47,819][INFO][main][IgniteKernal]   ^-- Set max direct memory size if getting 'OOME: Direct buffer memory' (add '-XX:MaxDirectMemorySize=<size>[g|G|m|M|k|K]' to JVM options)
+[22:16:47,824][INFO][main][IgniteKernal]   ^-- Disable processing of calls to System.gc() (add '-XX:+DisableExplicitGC' to JVM options)
+[22:16:47,824][INFO][main][IgniteKernal] Refer to this page for more performance suggestions: https://apacheignite.readme.io/docs/jvm-and-system-tuning
+[22:16:47,824][INFO][main][IgniteKernal] 
+[22:16:47,825][INFO][main][IgniteKernal] To start Console Management & Monitoring run ignitevisorcmd.{sh|bat}
+[22:16:47,841][INFO][main][IgniteKernal] 
+[22:16:47,843][INFO][main][IgniteKernal] 
+
+>>> +----------------------------------------------------------------------+
+>>> Ignite ver. 2.0.0#20170430-sha1:d4eef3c68ff116ee34bc13648cd82c640b3ea072
+>>> +----------------------------------------------------------------------+
+>>> OS name: Linux 4.4.0-31-generic amd64
+>>> CPU(s): 1
+>>> Heap: 1.0GB
+>>> VM name: 5227@shravya-VirtualBox
+>>> Local node [ID=944814A5-FB60-41A2-B6B4-855578808A61, order=1, clientMode=false]
+>>> Local node addresses: [10.0.2.15/0:0:0:0:0:0:0:1%lo, /10.0.2.15, /127.0.0.1]
+>>> Local ports: TCP:11211 TCP:47100 UDP:47400 TCP:47500 
+
+[22:16:47,854][INFO][main][GridDiscoveryManager] Topology snapshot [ver=1, servers=1, clients=0, CPUs=1, heap=1.0GB]
+[22:16:53,375][INFO][Thread-2][G] Invoking shutdown hook...

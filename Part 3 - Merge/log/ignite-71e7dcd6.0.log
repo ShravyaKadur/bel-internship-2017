@@ -1,0 +1,172 @@
+[19:19:36,631][INFO][main][IgniteKernal] 
+
+>>>    __________  ________________  
+>>>   /  _/ ___/ |/ /  _/_  __/ __/  
+>>>  _/ // (7 7    // /  / / / _/    
+>>> /___/\___/_/|_/___/ /_/ /___/   
+>>> 
+>>> ver. 2.0.0#20170430-sha1:d4eef3c6
+>>> 2017 Copyright(C) Apache Software Foundation
+>>> 
+>>> Ignite documentation: http://ignite.apache.org
+
+[19:19:36,651][INFO][main][IgniteKernal] Config URL: file:/opt/apache-ignite-fabric-2.0.0-bin/examples/config/example-ignite.xml
+[19:19:36,652][INFO][main][IgniteKernal] Daemon mode: off
+[19:19:36,652][INFO][main][IgniteKernal] OS: Linux 4.4.0-31-generic amd64
+[19:19:36,653][INFO][main][IgniteKernal] OS user: shravya
+[19:19:36,684][INFO][main][IgniteKernal] PID: 6739
+[19:19:36,688][INFO][main][IgniteKernal] Language runtime: Java Platform API Specification ver. 1.8
+[19:19:36,688][INFO][main][IgniteKernal] VM information: Java(TM) SE Runtime Environment 1.8.0_131-b11 Oracle Corporation Java HotSpot(TM) 64-Bit Server VM 25.131-b11
+[19:19:36,707][INFO][main][IgniteKernal] VM total memory: 0.97GB
+[19:19:36,707][INFO][main][IgniteKernal] Remote Management [restart: on, REST: on, JMX (remote: on, port: 49112, auth: off, ssl: off)]
+[19:19:36,708][INFO][main][IgniteKernal] IGNITE_HOME=/opt/apache-ignite-fabric-2.0.0-bin
+[19:19:36,708][INFO][main][IgniteKernal] VM arguments: [-Xms1g, -Xmx1g, -XX:+AggressiveOpts, -XX:MaxMetaspaceSize=256m, -DIGNITE_QUIET=true, -DIGNITE_SUCCESS_FILE=/opt/apache-ignite-fabric-2.0.0-bin/work/ignite_success_4015afc7-addb-42c4-adca-e0caebeb5932, -Dcom.sun.management.jmxremote, -Dcom.sun.management.jmxremote.port=49112, -Dcom.sun.management.jmxremote.authenticate=false, -Dcom.sun.management.jmxremote.ssl=false, -DIGNITE_HOME=/opt/apache-ignite-fabric-2.0.0-bin, -DIGNITE_PROG_NAME=bin/ignite.sh]
+[19:19:36,708][INFO][main][IgniteKernal] System cache's MemoryPolicy size is configured to 40 MB. Use MemoryConfiguration.systemCacheMemorySize property to change the setting.
+[19:19:36,709][INFO][main][IgniteKernal] Configured caches [in 'default' memoryPolicy: ['ignite-sys-cache', 'ignite-atomics-sys-cache']]
+[19:19:36,709][WARNING][main][IgniteKernal] Peer class loading is enabled (disable it in production for performance and deployment consistency reasons)
+[19:19:36,808][INFO][main][IgniteKernal] 3-rd party licenses can be found at: /opt/apache-ignite-fabric-2.0.0-bin/libs/licenses
+[19:19:37,169][INFO][main][IgnitePluginProcessor] Configured plugins:
+[19:19:37,170][INFO][main][IgnitePluginProcessor]   ^-- None
+[19:19:37,170][INFO][main][IgnitePluginProcessor] 
+[19:19:37,482][INFO][main][TcpCommunicationSpi] Successfully bound communication NIO server to TCP port [port=47100, locHost=0.0.0.0/0.0.0.0, selectorsCnt=4, selectorSpins=0, pairedConn=false]
+[19:19:38,025][WARNING][main][TcpCommunicationSpi] Message queue limit is set to 0 which may lead to potential OOMEs when running cache operations in FULL_ASYNC or PRIMARY_SYNC modes due to message queues growth on sender and receiver sides.
+[19:19:38,129][WARNING][main][NoopCheckpointSpi] Checkpoints are disabled (to enable configure any GridCheckpointSpi implementation)
+[19:19:38,295][WARNING][main][GridCollisionManager] Collision resolution is disabled (all jobs will be activated upon arrival).
+[19:19:38,298][INFO][main][IgniteKernal] Security status [authentication=off, tls/ssl=off]
+[19:19:39,068][WARNING][main][IgniteCacheDatabaseSharedManager] No user-defined default MemoryPolicy found; system default of 1GB size will be used.
+[19:19:39,315][WARNING][main][IgniteH2Indexing] Serialization of Java objects in H2 was enabled.
+[19:19:39,487][INFO][main][GridTcpRestProtocol] Command protocol successfully started [name=TCP binary, host=0.0.0.0/0.0.0.0, port=11211]
+[19:19:40,220][INFO][main][GridJettyRestProtocol] Command protocol successfully started [name=Jetty REST, host=/0.0.0.0, port=8080]
+[19:19:40,437][INFO][main][IgniteKernal] Non-loopback local IPs: 10.0.2.15, fe80:0:0:0:a00:27ff:fef7:15ba%eth0
+[19:19:40,437][INFO][main][IgniteKernal] Enabled local MACs: 080027F715BA
+[19:19:40,588][INFO][main][TcpDiscoverySpi] Successfully bound to TCP port [port=47500, localHost=0.0.0.0/0.0.0.0, locNodeId=71e7dcd6-4e6f-4980-a85d-b2aa9a50b9f1]
+[19:19:44,111][INFO][main][GridCacheProcessor] Started cache [name=ignite-sys-cache, memoryPolicyName=sysMemPlc, mode=REPLICATED]
+[19:19:44,201][INFO][main][GridCacheProcessor] Started cache [name=ignite-atomics-sys-cache, memoryPolicyName=sysMemPlc, mode=PARTITIONED]
+[19:19:44,776][INFO][exchange-worker-#26%null%][GridCachePartitionExchangeManager] Skipping rebalancing (nothing scheduled) [top=AffinityTopologyVersion [topVer=1, minorTopVer=0], evt=NODE_JOINED, node=71e7dcd6-4e6f-4980-a85d-b2aa9a50b9f1]
+[19:19:44,982][INFO][main][IgniteKernal] Performance suggestions for grid  (fix if possible)
+[19:19:44,982][INFO][main][IgniteKernal] To disable, set -DIGNITE_PERFORMANCE_SUGGESTIONS_DISABLED=true
+[19:19:44,982][INFO][main][IgniteKernal]   ^-- Disable grid events (remove 'includeEventTypes' from configuration)
+[19:19:44,984][INFO][main][IgniteKernal]   ^-- Enable G1 Garbage Collector (add '-XX:+UseG1GC' to JVM options)
+[19:19:44,985][INFO][main][IgniteKernal]   ^-- Set max direct memory size if getting 'OOME: Direct buffer memory' (add '-XX:MaxDirectMemorySize=<size>[g|G|m|M|k|K]' to JVM options)
+[19:19:44,987][INFO][main][IgniteKernal]   ^-- Disable processing of calls to System.gc() (add '-XX:+DisableExplicitGC' to JVM options)
+[19:19:44,987][INFO][main][IgniteKernal] Refer to this page for more performance suggestions: https://apacheignite.readme.io/docs/jvm-and-system-tuning
+[19:19:44,988][INFO][main][IgniteKernal] 
+[19:19:44,989][INFO][main][IgniteKernal] To start Console Management & Monitoring run ignitevisorcmd.{sh|bat}
+[19:19:44,992][INFO][main][IgniteKernal] 
+[19:19:45,024][INFO][main][IgniteKernal] 
+
+>>> +----------------------------------------------------------------------+
+>>> Ignite ver. 2.0.0#20170430-sha1:d4eef3c68ff116ee34bc13648cd82c640b3ea072
+>>> +----------------------------------------------------------------------+
+>>> OS name: Linux 4.4.0-31-generic amd64
+>>> CPU(s): 1
+>>> Heap: 1.0GB
+>>> VM name: 6739@shravya-VirtualBox
+>>> Local node [ID=71E7DCD6-4E6F-4980-A85D-B2AA9A50B9F1, order=1, clientMode=false]
+>>> Local node addresses: [10.0.2.15/0:0:0:0:0:0:0:1%lo, /10.0.2.15, /127.0.0.1]
+>>> Local ports: TCP:8080 TCP:11211 TCP:47100 UDP:47400 TCP:47500 
+
+[19:19:45,030][INFO][main][GridDiscoveryManager] Topology snapshot [ver=1, servers=1, clients=0, CPUs=1, heap=1.0GB]
+[19:20:45,019][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=71e7dcd6, name=null, uptime=00:01:00:019]
+    ^-- H/N/C [hosts=1, nodes=1, CPUs=1]
+    ^-- CPU [cur=1.33%, avg=4.22%, GC=0%]
+    ^-- PageMemory [pages=2248]
+    ^-- Heap [used=83MB, free=91.6%, comm=989MB]
+    ^-- Non heap [used=45MB, free=97.03%, comm=45MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=5, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[19:20:52,519][INFO][ignite-update-notifier-timer][GridUpdateNotifier] Update status is not available.
+[19:21:14,092][SEVERE][rest-#36%null%][GridCacheCommandHandler] Failed to execute cache command: GridRestCacheRequest [cacheName=connCache, cacheFlags=0, ttl=null, super=GridRestRequest [destId=null, clientId=null, addr=/127.0.0.1:43604, cmd=CACHE_SIZE]]
+class org.apache.ignite.IgniteCheckedException: Failed to find cache for given cache name (null for default cache): connCache
+	at org.apache.ignite.internal.processors.rest.handlers.cache.GridCacheCommandHandler.localCache(GridCacheCommandHandler.java:755)
+	at org.apache.ignite.internal.processors.rest.handlers.cache.GridCacheCommandHandler.executeCommand(GridCacheCommandHandler.java:716)
+	at org.apache.ignite.internal.processors.rest.handlers.cache.GridCacheCommandHandler.handleAsync(GridCacheCommandHandler.java:588)
+	at org.apache.ignite.internal.processors.rest.GridRestProcessor.handleRequest(GridRestProcessor.java:266)
+	at org.apache.ignite.internal.processors.rest.GridRestProcessor.access$100(GridRestProcessor.java:89)
+	at org.apache.ignite.internal.processors.rest.GridRestProcessor$2.body(GridRestProcessor.java:155)
+	at org.apache.ignite.internal.util.worker.GridWorker.run(GridWorker.java:110)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+[19:21:14,485][SEVERE][rest-#36%null%][GridRestProcessor] Failed to handle request: CACHE_SIZE
+class org.apache.ignite.IgniteCheckedException: Failed to find cache for given cache name (null for default cache): connCache
+	at org.apache.ignite.internal.processors.rest.handlers.cache.GridCacheCommandHandler.localCache(GridCacheCommandHandler.java:755)
+	at org.apache.ignite.internal.processors.rest.handlers.cache.GridCacheCommandHandler.executeCommand(GridCacheCommandHandler.java:716)
+	at org.apache.ignite.internal.processors.rest.handlers.cache.GridCacheCommandHandler.handleAsync(GridCacheCommandHandler.java:588)
+	at org.apache.ignite.internal.processors.rest.GridRestProcessor.handleRequest(GridRestProcessor.java:266)
+	at org.apache.ignite.internal.processors.rest.GridRestProcessor.access$100(GridRestProcessor.java:89)
+	at org.apache.ignite.internal.processors.rest.GridRestProcessor$2.body(GridRestProcessor.java:155)
+	at org.apache.ignite.internal.util.worker.GridWorker.run(GridWorker.java:110)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:748)
+[19:21:45,040][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=71e7dcd6, name=null, uptime=00:02:00:065]
+    ^-- H/N/C [hosts=1, nodes=1, CPUs=1]
+    ^-- CPU [cur=1.33%, avg=3.18%, GC=0%]
+    ^-- PageMemory [pages=2248]
+    ^-- Heap [used=95MB, free=90.36%, comm=989MB]
+    ^-- Non heap [used=46MB, free=96.94%, comm=47MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[19:22:45,053][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=71e7dcd6, name=null, uptime=00:03:00:078]
+    ^-- H/N/C [hosts=1, nodes=1, CPUs=1]
+    ^-- CPU [cur=1.33%, avg=2.48%, GC=0%]
+    ^-- PageMemory [pages=2248]
+    ^-- Heap [used=99MB, free=89.96%, comm=989MB]
+    ^-- Non heap [used=46MB, free=96.93%, comm=47MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[19:23:45,050][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=71e7dcd6, name=null, uptime=00:04:00:079]
+    ^-- H/N/C [hosts=1, nodes=1, CPUs=1]
+    ^-- CPU [cur=1%, avg=2.17%, GC=0%]
+    ^-- PageMemory [pages=2248]
+    ^-- Heap [used=103MB, free=89.5%, comm=989MB]
+    ^-- Non heap [used=46MB, free=96.93%, comm=47MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[19:24:45,054][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=71e7dcd6, name=null, uptime=00:05:00:082]
+    ^-- H/N/C [hosts=1, nodes=1, CPUs=1]
+    ^-- CPU [cur=1.67%, avg=1.92%, GC=0%]
+    ^-- PageMemory [pages=2248]
+    ^-- Heap [used=107MB, free=89.11%, comm=989MB]
+    ^-- Non heap [used=46MB, free=96.92%, comm=47MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[19:25:45,069][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=71e7dcd6, name=null, uptime=00:06:00:099]
+    ^-- H/N/C [hosts=1, nodes=1, CPUs=1]
+    ^-- CPU [cur=1.33%, avg=1.79%, GC=0%]
+    ^-- PageMemory [pages=2248]
+    ^-- Heap [used=111MB, free=88.71%, comm=989MB]
+    ^-- Non heap [used=46MB, free=96.91%, comm=48MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[19:26:45,080][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=71e7dcd6, name=null, uptime=00:07:00:102]
+    ^-- H/N/C [hosts=1, nodes=1, CPUs=1]
+    ^-- CPU [cur=1%, avg=1.7%, GC=0%]
+    ^-- PageMemory [pages=2248]
+    ^-- Heap [used=122MB, free=87.63%, comm=989MB]
+    ^-- Non heap [used=47MB, free=96.9%, comm=48MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[19:26:47,766][INFO][Thread-24][G] Invoking shutdown hook...

@@ -1,0 +1,233 @@
+[22:59:18,756][INFO][pool-2-thread-1][IgniteKernal] 
+
+>>>    __________  ________________  
+>>>   /  _/ ___/ |/ /  _/_  __/ __/  
+>>>  _/ // (7 7    // /  / / / _/    
+>>> /___/\___/_/|_/___/ /_/ /___/   
+>>> 
+>>> ver. 2.0.0#20170430-sha1:d4eef3c6
+>>> 2017 Copyright(C) Apache Software Foundation
+>>> 
+>>> Ignite documentation: http://ignite.apache.org
+
+[22:59:18,837][INFO][pool-2-thread-1][IgniteKernal] Config URL: file:/opt/apache-ignite-fabric-2.0.0-bin/examples/config/kaf-ignite.xml
+[22:59:18,838][INFO][pool-2-thread-1][IgniteKernal] Daemon mode: off
+[22:59:18,838][INFO][pool-2-thread-1][IgniteKernal] OS: Linux 4.4.0-31-generic amd64
+[22:59:18,838][INFO][pool-2-thread-1][IgniteKernal] OS user: shravya
+[22:59:18,898][INFO][pool-2-thread-1][IgniteKernal] PID: 4231
+[22:59:18,899][INFO][pool-2-thread-1][IgniteKernal] Language runtime: Java Platform API Specification ver. 1.8
+[22:59:18,899][INFO][pool-2-thread-1][IgniteKernal] VM information: Java(TM) SE Runtime Environment 1.8.0_131-b11 Oracle Corporation Java HotSpot(TM) 64-Bit Server VM 25.131-b11
+[22:59:19,015][INFO][pool-2-thread-1][IgniteKernal] VM total memory: 0.25GB
+[22:59:19,016][INFO][pool-2-thread-1][IgniteKernal] Remote Management [restart: off, REST: on, JMX (remote: on, port: <n/a>, auth: off, ssl: off)]
+[22:59:19,016][INFO][pool-2-thread-1][IgniteKernal] IGNITE_HOME=/opt/apache-ignite-fabric-2.0.0-bin
+[22:59:19,057][INFO][pool-2-thread-1][IgniteKernal] VM arguments: [-Xmx256M, -XX:+UseG1GC, -XX:MaxGCPauseMillis=20, -XX:InitiatingHeapOccupancyPercent=35, -XX:+DisableExplicitGC, -Djava.awt.headless=true, -Dcom.sun.management.jmxremote, -Dcom.sun.management.jmxremote.authenticate=false, -Dcom.sun.management.jmxremote.ssl=false, -Dkafka.logs.dir=bin/../logs, -Dlog4j.configuration=file:bin/../config/connect-log4j.properties]
+[22:59:19,058][INFO][pool-2-thread-1][IgniteKernal] System cache's MemoryPolicy size is configured to 40 MB. Use MemoryConfiguration.systemCacheMemorySize property to change the setting.
+[22:59:19,058][INFO][pool-2-thread-1][IgniteKernal] Configured caches [in 'default' memoryPolicy: ['ignite-sys-cache', 'ignite-atomics-sys-cache', 'connCache']]
+[22:59:19,058][WARNING][pool-2-thread-1][IgniteKernal] Peer class loading is enabled (disable it in production for performance and deployment consistency reasons)
+[22:59:19,069][WARNING][pub-#13%null%][GridDiagnostic] JMX remote management is enabled but JMX port is either not set or invalid. Check system property 'com.sun.management.jmxremote.port' to make sure it specifies valid TCP/IP port.
+[22:59:19,096][INFO][pool-2-thread-1][IgniteKernal] 3-rd party licenses can be found at: /opt/apache-ignite-fabric-2.0.0-bin/libs/licenses
+[22:59:19,099][WARNING][pub-#14%null%][GridDiagnostic] Initial heap size is 32MB (should be no less than 512MB, use -Xms512m -Xmx512m).
+[22:59:19,551][INFO][pool-2-thread-1][IgnitePluginProcessor] Configured plugins:
+[22:59:19,551][INFO][pool-2-thread-1][IgnitePluginProcessor]   ^-- None
+[22:59:19,551][INFO][pool-2-thread-1][IgnitePluginProcessor] 
+[22:59:19,834][INFO][pool-2-thread-1][TcpCommunicationSpi] Successfully bound communication NIO server to TCP port [port=47100, locHost=0.0.0.0/0.0.0.0, selectorsCnt=4, selectorSpins=0, pairedConn=false]
+[22:59:19,956][WARNING][pool-2-thread-1][TcpCommunicationSpi] Message queue limit is set to 0 which may lead to potential OOMEs when running cache operations in FULL_ASYNC or PRIMARY_SYNC modes due to message queues growth on sender and receiver sides.
+[22:59:20,081][WARNING][pool-2-thread-1][NoopCheckpointSpi] Checkpoints are disabled (to enable configure any GridCheckpointSpi implementation)
+[22:59:20,236][WARNING][pool-2-thread-1][GridCollisionManager] Collision resolution is disabled (all jobs will be activated upon arrival).
+[22:59:20,241][INFO][pool-2-thread-1][IgniteKernal] Security status [authentication=off, tls/ssl=off]
+[22:59:20,978][WARNING][pool-2-thread-1][IgniteCacheDatabaseSharedManager] No user-defined default MemoryPolicy found; system default of 1GB size will be used.
+[22:59:21,267][INFO][pool-2-thread-1][GridTcpRestProtocol] Command protocol successfully started [name=TCP binary, host=0.0.0.0/0.0.0.0, port=11211]
+[22:59:21,442][INFO][pool-2-thread-1][IgniteKernal] Non-loopback local IPs: 10.0.2.15, fe80:0:0:0:a00:27ff:fef7:15ba%eth0
+[22:59:21,442][INFO][pool-2-thread-1][IgniteKernal] Enabled local MACs: 080027F715BA
+[22:59:21,527][INFO][pool-2-thread-1][TcpDiscoverySpi] Successfully bound to TCP port [port=47500, localHost=0.0.0.0/0.0.0.0, locNodeId=5efc9f2e-842f-48fc-9a70-d31291203c16]
+[22:59:23,316][INFO][pool-2-thread-1][GridCacheProcessor] Started cache [name=ignite-sys-cache, memoryPolicyName=sysMemPlc, mode=REPLICATED]
+[22:59:23,332][INFO][pool-2-thread-1][GridCacheProcessor] Started cache [name=ignite-atomics-sys-cache, memoryPolicyName=sysMemPlc, mode=PARTITIONED]
+[22:59:23,425][INFO][pool-2-thread-1][GridCacheProcessor] Started cache [name=connCache, memoryPolicyName=null, mode=PARTITIONED]
+[22:59:23,803][INFO][exchange-worker-#27%null%][GridCachePartitionExchangeManager] Skipping rebalancing (nothing scheduled) [top=AffinityTopologyVersion [topVer=1, minorTopVer=0], evt=NODE_JOINED, node=5efc9f2e-842f-48fc-9a70-d31291203c16]
+[22:59:23,895][INFO][pool-2-thread-1][IgniteKernal] Performance suggestions for grid  (fix if possible)
+[22:59:23,895][INFO][pool-2-thread-1][IgniteKernal] To disable, set -DIGNITE_PERFORMANCE_SUGGESTIONS_DISABLED=true
+[22:59:23,899][INFO][pool-2-thread-1][IgniteKernal]   ^-- Disable grid events (remove 'includeEventTypes' from configuration)
+[22:59:23,900][INFO][pool-2-thread-1][IgniteKernal]   ^-- Set max direct memory size if getting 'OOME: Direct buffer memory' (add '-XX:MaxDirectMemorySize=<size>[g|G|m|M|k|K]' to JVM options)
+[22:59:23,900][INFO][pool-2-thread-1][IgniteKernal] Refer to this page for more performance suggestions: https://apacheignite.readme.io/docs/jvm-and-system-tuning
+[22:59:23,901][INFO][pool-2-thread-1][IgniteKernal] 
+[22:59:23,907][INFO][pool-2-thread-1][IgniteKernal] To start Console Management & Monitoring run ignitevisorcmd.{sh|bat}
+[22:59:23,913][INFO][pool-2-thread-1][IgniteKernal] 
+[22:59:23,914][INFO][pool-2-thread-1][IgniteKernal] 
+
+>>> +----------------------------------------------------------------------+
+>>> Ignite ver. 2.0.0#20170430-sha1:d4eef3c68ff116ee34bc13648cd82c640b3ea072
+>>> +----------------------------------------------------------------------+
+>>> OS name: Linux 4.4.0-31-generic amd64
+>>> CPU(s): 1
+>>> Heap: 0.25GB
+>>> VM name: 4231@shravya-VirtualBox
+>>> Local node [ID=5EFC9F2E-842F-48FC-9A70-D31291203C16, order=1, clientMode=false]
+>>> Local node addresses: [10.0.2.15/0:0:0:0:0:0:0:1%lo, /10.0.2.15, /127.0.0.1]
+>>> Local ports: TCP:11211 TCP:47100 UDP:47400 TCP:47500 
+
+[22:59:23,935][INFO][pool-2-thread-1][GridDiscoveryManager] Topology snapshot [ver=1, servers=1, clients=0, CPUs=1, heap=0.25GB]
+[23:00:23,913][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=5efc9f2e, name=null, uptime=00:01:00:004]
+    ^-- H/N/C [hosts=1, nodes=1, CPUs=1]
+    ^-- CPU [cur=4.33%, avg=5.28%, GC=0%]
+    ^-- PageMemory [pages=4298]
+    ^-- Heap [used=70MB, free=72.46%, comm=244MB]
+    ^-- Non heap [used=54MB, free=-1%, comm=56MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=5, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[23:00:33,084][INFO][ignite-update-notifier-timer][GridUpdateNotifier] Update status is not available.
+[23:01:23,917][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=5efc9f2e, name=null, uptime=00:02:00:026]
+    ^-- H/N/C [hosts=1, nodes=1, CPUs=1]
+    ^-- CPU [cur=3.33%, avg=3.77%, GC=0%]
+    ^-- PageMemory [pages=4298]
+    ^-- Heap [used=74MB, free=70.9%, comm=244MB]
+    ^-- Non heap [used=55MB, free=-1%, comm=56MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[23:02:24,010][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=5efc9f2e, name=null, uptime=00:03:00:034]
+    ^-- H/N/C [hosts=1, nodes=1, CPUs=1]
+    ^-- CPU [cur=1.33%, avg=3.26%, GC=0%]
+    ^-- PageMemory [pages=4298]
+    ^-- Heap [used=79MB, free=68.95%, comm=244MB]
+    ^-- Non heap [used=55MB, free=-1%, comm=56MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[23:03:24,005][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=5efc9f2e, name=null, uptime=00:04:00:110]
+    ^-- H/N/C [hosts=1, nodes=1, CPUs=1]
+    ^-- CPU [cur=2%, avg=2.94%, GC=0%]
+    ^-- PageMemory [pages=4298]
+    ^-- Heap [used=83MB, free=67.38%, comm=244MB]
+    ^-- Non heap [used=55MB, free=-1%, comm=57MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[23:04:24,008][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=5efc9f2e, name=null, uptime=00:05:00:114]
+    ^-- H/N/C [hosts=1, nodes=1, CPUs=1]
+    ^-- CPU [cur=2%, avg=2.73%, GC=0%]
+    ^-- PageMemory [pages=4298]
+    ^-- Heap [used=87MB, free=65.82%, comm=244MB]
+    ^-- Non heap [used=55MB, free=-1%, comm=57MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[23:05:24,014][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=5efc9f2e, name=null, uptime=00:06:00:115]
+    ^-- H/N/C [hosts=1, nodes=1, CPUs=1]
+    ^-- CPU [cur=1.67%, avg=2.67%, GC=0%]
+    ^-- PageMemory [pages=4300]
+    ^-- Heap [used=37MB, free=85.55%, comm=244MB]
+    ^-- Non heap [used=56MB, free=-1%, comm=58MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[23:05:24,014][INFO][grid-timeout-worker-#15%null%][IgniteKernal] FreeList [name=null, buckets=256, dataPages=1, reusePages=0]
+[23:06:24,024][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=5efc9f2e, name=null, uptime=00:07:00:131]
+    ^-- H/N/C [hosts=1, nodes=1, CPUs=1]
+    ^-- CPU [cur=1%, avg=2.63%, GC=0%]
+    ^-- PageMemory [pages=4300]
+    ^-- Heap [used=41MB, free=83.98%, comm=244MB]
+    ^-- Non heap [used=57MB, free=-1%, comm=58MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[23:06:24,024][INFO][grid-timeout-worker-#15%null%][IgniteKernal] FreeList [name=null, buckets=256, dataPages=1, reusePages=0]
+[23:07:24,032][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=5efc9f2e, name=null, uptime=00:08:00:139]
+    ^-- H/N/C [hosts=1, nodes=1, CPUs=1]
+    ^-- CPU [cur=1.67%, avg=2.57%, GC=0%]
+    ^-- PageMemory [pages=4300]
+    ^-- Heap [used=45MB, free=82.42%, comm=244MB]
+    ^-- Non heap [used=57MB, free=-1%, comm=58MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[23:07:24,032][INFO][grid-timeout-worker-#15%null%][IgniteKernal] FreeList [name=null, buckets=256, dataPages=1, reusePages=0]
+[23:08:24,036][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=5efc9f2e, name=null, uptime=00:09:00:140]
+    ^-- H/N/C [hosts=1, nodes=1, CPUs=1]
+    ^-- CPU [cur=1.67%, avg=2.52%, GC=0%]
+    ^-- PageMemory [pages=4300]
+    ^-- Heap [used=36MB, free=85.74%, comm=244MB]
+    ^-- Non heap [used=57MB, free=-1%, comm=59MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[23:08:24,036][INFO][grid-timeout-worker-#15%null%][IgniteKernal] FreeList [name=null, buckets=256, dataPages=1, reusePages=0]
+[23:09:24,038][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=5efc9f2e, name=null, uptime=00:10:00:149]
+    ^-- H/N/C [hosts=1, nodes=1, CPUs=1]
+    ^-- CPU [cur=1.67%, avg=2.48%, GC=0%]
+    ^-- PageMemory [pages=4300]
+    ^-- Heap [used=40MB, free=84.18%, comm=244MB]
+    ^-- Non heap [used=57MB, free=-1%, comm=59MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[23:09:24,038][INFO][grid-timeout-worker-#15%null%][IgniteKernal] FreeList [name=null, buckets=256, dataPages=1, reusePages=0]
+[23:10:24,048][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=5efc9f2e, name=null, uptime=00:11:00:155]
+    ^-- H/N/C [hosts=1, nodes=1, CPUs=1]
+    ^-- CPU [cur=1.33%, avg=2.4%, GC=0%]
+    ^-- PageMemory [pages=4300]
+    ^-- Heap [used=43MB, free=83.01%, comm=244MB]
+    ^-- Non heap [used=58MB, free=-1%, comm=59MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[23:10:24,049][INFO][grid-timeout-worker-#15%null%][IgniteKernal] FreeList [name=null, buckets=256, dataPages=1, reusePages=0]
+[23:11:24,063][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=5efc9f2e, name=null, uptime=00:12:00:158]
+    ^-- H/N/C [hosts=1, nodes=1, CPUs=1]
+    ^-- CPU [cur=8.33%, avg=2.42%, GC=0%]
+    ^-- PageMemory [pages=4300]
+    ^-- Heap [used=47MB, free=81.45%, comm=244MB]
+    ^-- Non heap [used=58MB, free=-1%, comm=59MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[23:11:24,063][INFO][grid-timeout-worker-#15%null%][IgniteKernal] FreeList [name=null, buckets=256, dataPages=1, reusePages=0]
+[23:12:24,057][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=5efc9f2e, name=null, uptime=00:13:00:165]
+    ^-- H/N/C [hosts=1, nodes=1, CPUs=1]
+    ^-- CPU [cur=1.67%, avg=2.39%, GC=0%]
+    ^-- PageMemory [pages=4300]
+    ^-- Heap [used=51MB, free=79.88%, comm=244MB]
+    ^-- Non heap [used=58MB, free=-1%, comm=59MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[23:12:24,057][INFO][grid-timeout-worker-#15%null%][IgniteKernal] FreeList [name=null, buckets=256, dataPages=1, reusePages=0]
+[23:13:24,061][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=5efc9f2e, name=null, uptime=00:14:00:168]
+    ^-- H/N/C [hosts=1, nodes=1, CPUs=1]
+    ^-- CPU [cur=0.67%, avg=2.33%, GC=0%]
+    ^-- PageMemory [pages=4300]
+    ^-- Heap [used=54MB, free=78.71%, comm=244MB]
+    ^-- Non heap [used=58MB, free=-1%, comm=59MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[23:13:24,061][INFO][grid-timeout-worker-#15%null%][IgniteKernal] FreeList [name=null, buckets=256, dataPages=1, reusePages=0]
+[23:13:44,931][INFO][Thread-13][G] Invoking shutdown hook...

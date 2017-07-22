@@ -1,0 +1,87 @@
+[00:13:08,628][INFO][main][IgniteKernal] 
+
+>>>    __________  ________________  
+>>>   /  _/ ___/ |/ /  _/_  __/ __/  
+>>>  _/ // (7 7    // /  / / / _/    
+>>> /___/\___/_/|_/___/ /_/ /___/   
+>>> 
+>>> ver. 2.0.0#20170430-sha1:d4eef3c6
+>>> 2017 Copyright(C) Apache Software Foundation
+>>> 
+>>> Ignite documentation: http://ignite.apache.org
+
+[00:13:08,640][INFO][main][IgniteKernal] Config URL: file:/opt/apache-ignite-fabric-2.0.0-bin/config/default-config.xml
+[00:13:08,640][INFO][main][IgniteKernal] Daemon mode: off
+[00:13:08,641][INFO][main][IgniteKernal] OS: Linux 4.4.0-31-generic amd64
+[00:13:08,641][INFO][main][IgniteKernal] OS user: shravya
+[00:13:08,641][INFO][main][IgniteKernal] PID: 6845
+[00:13:08,642][INFO][main][IgniteKernal] Language runtime: Java Platform API Specification ver. 1.8
+[00:13:08,642][INFO][main][IgniteKernal] VM information: Java(TM) SE Runtime Environment 1.8.0_131-b11 Oracle Corporation Java HotSpot(TM) 64-Bit Server VM 25.131-b11
+[00:13:08,643][INFO][main][IgniteKernal] VM total memory: 0.97GB
+[00:13:08,643][INFO][main][IgniteKernal] Remote Management [restart: on, REST: on, JMX (remote: on, port: 49116, auth: off, ssl: off)]
+[00:13:08,643][INFO][main][IgniteKernal] IGNITE_HOME=/opt/apache-ignite-fabric-2.0.0-bin
+[00:13:08,644][INFO][main][IgniteKernal] VM arguments: [-Xms1g, -Xmx1g, -XX:+AggressiveOpts, -XX:MaxMetaspaceSize=256m, -DIGNITE_QUIET=true, -DIGNITE_SUCCESS_FILE=/opt/apache-ignite-fabric-2.0.0-bin/work/ignite_success_3de1af94-91e4-43bc-8b95-2473c253fc86, -Dcom.sun.management.jmxremote, -Dcom.sun.management.jmxremote.port=49116, -Dcom.sun.management.jmxremote.authenticate=false, -Dcom.sun.management.jmxremote.ssl=false, -DIGNITE_HOME=/opt/apache-ignite-fabric-2.0.0-bin, -DIGNITE_PROG_NAME=bin/ignite.sh]
+[00:13:08,645][INFO][main][IgniteKernal] System cache's MemoryPolicy size is configured to 40 MB. Use MemoryConfiguration.systemCacheMemorySize property to change the setting.
+[00:13:08,645][INFO][main][IgniteKernal] Configured caches [in 'default' memoryPolicy: ['ignite-sys-cache', 'ignite-atomics-sys-cache']]
+[00:13:08,687][INFO][main][IgniteKernal] 3-rd party licenses can be found at: /opt/apache-ignite-fabric-2.0.0-bin/libs/licenses
+[00:13:08,884][INFO][main][IgnitePluginProcessor] Configured plugins:
+[00:13:08,884][INFO][main][IgnitePluginProcessor]   ^-- None
+[00:13:08,885][INFO][main][IgnitePluginProcessor] 
+[00:13:09,275][INFO][main][TcpCommunicationSpi] Successfully bound communication NIO server to TCP port [port=47101, locHost=0.0.0.0/0.0.0.0, selectorsCnt=4, selectorSpins=0, pairedConn=false]
+[00:13:09,342][WARNING][main][TcpCommunicationSpi] Message queue limit is set to 0 which may lead to potential OOMEs when running cache operations in FULL_ASYNC or PRIMARY_SYNC modes due to message queues growth on sender and receiver sides.
+[00:13:09,442][WARNING][main][NoopCheckpointSpi] Checkpoints are disabled (to enable configure any GridCheckpointSpi implementation)
+[00:13:09,508][WARNING][main][GridCollisionManager] Collision resolution is disabled (all jobs will be activated upon arrival).
+[00:13:09,510][INFO][main][IgniteKernal] Security status [authentication=off, tls/ssl=off]
+[00:13:10,111][WARNING][main][IgniteCacheDatabaseSharedManager] No user-defined default MemoryPolicy found; system default of 1GB size will be used.
+[00:13:10,456][INFO][main][GridTcpRestProtocol] Command protocol successfully started [name=TCP binary, host=0.0.0.0/0.0.0.0, port=11212]
+[00:13:10,942][INFO][main][GridJettyRestProtocol] Command protocol successfully started [name=Jetty REST, host=/0.0.0.0, port=8080]
+[00:13:11,121][INFO][main][IgniteKernal] Non-loopback local IPs: 10.0.2.15, fe80:0:0:0:a00:27ff:fef7:15ba%eth0
+[00:13:11,121][INFO][main][IgniteKernal] Enabled local MACs: 080027F715BA
+[00:13:11,228][INFO][main][TcpDiscoverySpi] Successfully bound to TCP port [port=47501, localHost=0.0.0.0/0.0.0.0, locNodeId=a8d993cc-c4c0-42ef-b502-a4a586a489d6]
+[00:13:11,233][WARNING][main][TcpDiscoveryMulticastIpFinder] TcpDiscoveryMulticastIpFinder has no pre-configured addresses (it is recommended in production to specify at least one address in TcpDiscoveryMulticastIpFinder.getAddresses() configuration property)
+[00:13:13,907][SEVERE][main][IgniteKernal] Failed to start manager: GridManagerAdapter [enabled=true, name=o.a.i.i.managers.discovery.GridDiscoveryManager]
+class org.apache.ignite.IgniteCheckedException: Remote node has peer class loading enabled flag different from local [locId8=a8d993cc, locPeerClassLoading=false, rmtId8=2e78ea3a, rmtPeerClassLoading=true, rmtAddrs=[10.0.2.15/0:0:0:0:0:0:0:1%lo, /10.0.2.15, /127.0.0.1]]
+	at org.apache.ignite.internal.managers.discovery.GridDiscoveryManager.checkAttributes(GridDiscoveryManager.java:1112)
+	at org.apache.ignite.internal.managers.discovery.GridDiscoveryManager.start(GridDiscoveryManager.java:721)
+	at org.apache.ignite.internal.IgniteKernal.startManager(IgniteKernal.java:1745)
+	at org.apache.ignite.internal.IgniteKernal.start(IgniteKernal.java:968)
+	at org.apache.ignite.internal.IgnitionEx$IgniteNamedInstance.start0(IgnitionEx.java:1895)
+	at org.apache.ignite.internal.IgnitionEx$IgniteNamedInstance.start(IgnitionEx.java:1647)
+	at org.apache.ignite.internal.IgnitionEx.start0(IgnitionEx.java:1075)
+	at org.apache.ignite.internal.IgnitionEx.startConfigurations(IgnitionEx.java:993)
+	at org.apache.ignite.internal.IgnitionEx.start(IgnitionEx.java:879)
+	at org.apache.ignite.internal.IgnitionEx.start(IgnitionEx.java:778)
+	at org.apache.ignite.internal.IgnitionEx.start(IgnitionEx.java:648)
+	at org.apache.ignite.internal.IgnitionEx.start(IgnitionEx.java:617)
+	at org.apache.ignite.Ignition.start(Ignition.java:347)
+	at org.apache.ignite.startup.cmdline.CommandLineStartup.main(CommandLineStartup.java:302)
+[00:13:13,907][SEVERE][main][IgniteKernal] Got exception while starting (will rollback startup routine).
+class org.apache.ignite.IgniteCheckedException: Failed to start manager: GridManagerAdapter [enabled=true, name=org.apache.ignite.internal.managers.discovery.GridDiscoveryManager]
+	at org.apache.ignite.internal.IgniteKernal.startManager(IgniteKernal.java:1750)
+	at org.apache.ignite.internal.IgniteKernal.start(IgniteKernal.java:968)
+	at org.apache.ignite.internal.IgnitionEx$IgniteNamedInstance.start0(IgnitionEx.java:1895)
+	at org.apache.ignite.internal.IgnitionEx$IgniteNamedInstance.start(IgnitionEx.java:1647)
+	at org.apache.ignite.internal.IgnitionEx.start0(IgnitionEx.java:1075)
+	at org.apache.ignite.internal.IgnitionEx.startConfigurations(IgnitionEx.java:993)
+	at org.apache.ignite.internal.IgnitionEx.start(IgnitionEx.java:879)
+	at org.apache.ignite.internal.IgnitionEx.start(IgnitionEx.java:778)
+	at org.apache.ignite.internal.IgnitionEx.start(IgnitionEx.java:648)
+	at org.apache.ignite.internal.IgnitionEx.start(IgnitionEx.java:617)
+	at org.apache.ignite.Ignition.start(Ignition.java:347)
+	at org.apache.ignite.startup.cmdline.CommandLineStartup.main(CommandLineStartup.java:302)
+Caused by: class org.apache.ignite.IgniteCheckedException: Remote node has peer class loading enabled flag different from local [locId8=a8d993cc, locPeerClassLoading=false, rmtId8=2e78ea3a, rmtPeerClassLoading=true, rmtAddrs=[10.0.2.15/0:0:0:0:0:0:0:1%lo, /10.0.2.15, /127.0.0.1]]
+	at org.apache.ignite.internal.managers.discovery.GridDiscoveryManager.checkAttributes(GridDiscoveryManager.java:1112)
+	at org.apache.ignite.internal.managers.discovery.GridDiscoveryManager.start(GridDiscoveryManager.java:721)
+	at org.apache.ignite.internal.IgniteKernal.startManager(IgniteKernal.java:1745)
+	... 11 more
+[00:13:13,926][INFO][main][GridTcpRestProtocol] Command protocol successfully stopped: TCP binary
+[00:13:13,991][INFO][main][GridJettyRestProtocol] Command protocol successfully stopped: Jetty REST
+[00:13:14,026][WARNING][main][GridCacheIoManager] Failed to unregister ordered cache communication handler because it was not found for topic: T6 [topic=TOPIC_CACHE, id1=83e8ca36-2305-3266-8e65-1463be879baa, id2=0]
+[00:13:14,576][INFO][main][IgniteKernal] 
+
+>>> +---------------------------------------------------------------------------------+
+>>> Ignite ver. 2.0.0#20170430-sha1:d4eef3c68ff116ee34bc13648cd82c640b3ea072 stopped OK
+>>> +---------------------------------------------------------------------------------+
+>>> Grid uptime: 00:00:09:721
+
+

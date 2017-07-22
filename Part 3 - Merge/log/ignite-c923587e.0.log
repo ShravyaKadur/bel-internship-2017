@@ -1,0 +1,155 @@
+[19:27:29,429][INFO][main][IgniteKernal] 
+
+>>>    __________  ________________  
+>>>   /  _/ ___/ |/ /  _/_  __/ __/  
+>>>  _/ // (7 7    // /  / / / _/    
+>>> /___/\___/_/|_/___/ /_/ /___/   
+>>> 
+>>> ver. 2.0.0#20170430-sha1:d4eef3c6
+>>> 2017 Copyright(C) Apache Software Foundation
+>>> 
+>>> Ignite documentation: http://ignite.apache.org
+
+[19:27:29,442][INFO][main][IgniteKernal] Config URL: file:/opt/apache-ignite-fabric-2.0.0-bin/examples/config/kaf-ignite.xml
+[19:27:29,442][INFO][main][IgniteKernal] Daemon mode: off
+[19:27:29,443][INFO][main][IgniteKernal] OS: Linux 4.4.0-31-generic amd64
+[19:27:29,443][INFO][main][IgniteKernal] OS user: shravya
+[19:27:29,449][INFO][main][IgniteKernal] PID: 6920
+[19:27:29,450][INFO][main][IgniteKernal] Language runtime: Java Platform API Specification ver. 1.8
+[19:27:29,450][INFO][main][IgniteKernal] VM information: Java(TM) SE Runtime Environment 1.8.0_131-b11 Oracle Corporation Java HotSpot(TM) 64-Bit Server VM 25.131-b11
+[19:27:29,455][INFO][main][IgniteKernal] VM total memory: 0.97GB
+[19:27:29,455][INFO][main][IgniteKernal] Remote Management [restart: on, REST: on, JMX (remote: on, port: 49113, auth: off, ssl: off)]
+[19:27:29,462][INFO][main][IgniteKernal] IGNITE_HOME=/opt/apache-ignite-fabric-2.0.0-bin
+[19:27:29,463][INFO][main][IgniteKernal] VM arguments: [-Xms1g, -Xmx1g, -XX:+AggressiveOpts, -XX:MaxMetaspaceSize=256m, -DIGNITE_QUIET=true, -DIGNITE_SUCCESS_FILE=/opt/apache-ignite-fabric-2.0.0-bin/work/ignite_success_49269266-9ceb-42ed-9733-08d95145ca8e, -Dcom.sun.management.jmxremote, -Dcom.sun.management.jmxremote.port=49113, -Dcom.sun.management.jmxremote.authenticate=false, -Dcom.sun.management.jmxremote.ssl=false, -DIGNITE_HOME=/opt/apache-ignite-fabric-2.0.0-bin, -DIGNITE_PROG_NAME=bin/ignite.sh]
+[19:27:29,463][INFO][main][IgniteKernal] System cache's MemoryPolicy size is configured to 40 MB. Use MemoryConfiguration.systemCacheMemorySize property to change the setting.
+[19:27:29,463][INFO][main][IgniteKernal] Configured caches [in 'default' memoryPolicy: ['ignite-sys-cache', 'ignite-atomics-sys-cache', 'connCache']]
+[19:27:29,464][WARNING][main][IgniteKernal] Peer class loading is enabled (disable it in production for performance and deployment consistency reasons)
+[19:27:29,497][INFO][main][IgniteKernal] 3-rd party licenses can be found at: /opt/apache-ignite-fabric-2.0.0-bin/libs/licenses
+[19:27:29,745][INFO][main][IgnitePluginProcessor] Configured plugins:
+[19:27:29,745][INFO][main][IgnitePluginProcessor]   ^-- None
+[19:27:29,745][INFO][main][IgnitePluginProcessor] 
+[19:27:29,990][INFO][main][TcpCommunicationSpi] Successfully bound communication NIO server to TCP port [port=47100, locHost=0.0.0.0/0.0.0.0, selectorsCnt=4, selectorSpins=0, pairedConn=false]
+[19:27:30,035][WARNING][main][TcpCommunicationSpi] Message queue limit is set to 0 which may lead to potential OOMEs when running cache operations in FULL_ASYNC or PRIMARY_SYNC modes due to message queues growth on sender and receiver sides.
+[19:27:30,139][WARNING][main][NoopCheckpointSpi] Checkpoints are disabled (to enable configure any GridCheckpointSpi implementation)
+[19:27:30,214][WARNING][main][GridCollisionManager] Collision resolution is disabled (all jobs will be activated upon arrival).
+[19:27:30,216][INFO][main][IgniteKernal] Security status [authentication=off, tls/ssl=off]
+[19:27:30,745][WARNING][main][IgniteCacheDatabaseSharedManager] No user-defined default MemoryPolicy found; system default of 1GB size will be used.
+[19:27:31,100][INFO][main][GridTcpRestProtocol] Command protocol successfully started [name=TCP binary, host=0.0.0.0/0.0.0.0, port=11211]
+[19:27:31,630][INFO][main][GridJettyRestProtocol] Command protocol successfully started [name=Jetty REST, host=/0.0.0.0, port=8080]
+[19:27:31,890][INFO][main][IgniteKernal] Non-loopback local IPs: 10.0.2.15, fe80:0:0:0:a00:27ff:fef7:15ba%eth0
+[19:27:31,890][INFO][main][IgniteKernal] Enabled local MACs: 080027F715BA
+[19:27:31,953][INFO][main][TcpDiscoverySpi] Successfully bound to TCP port [port=47500, localHost=0.0.0.0/0.0.0.0, locNodeId=c923587e-42d0-4133-8a3b-357668948137]
+[19:27:34,055][INFO][main][GridCacheProcessor] Started cache [name=ignite-sys-cache, memoryPolicyName=sysMemPlc, mode=REPLICATED]
+[19:27:34,097][INFO][main][GridCacheProcessor] Started cache [name=ignite-atomics-sys-cache, memoryPolicyName=sysMemPlc, mode=PARTITIONED]
+[19:27:34,237][INFO][main][GridCacheProcessor] Started cache [name=connCache, memoryPolicyName=null, mode=PARTITIONED]
+[19:27:34,655][INFO][exchange-worker-#27%null%][GridCachePartitionExchangeManager] Skipping rebalancing (nothing scheduled) [top=AffinityTopologyVersion [topVer=1, minorTopVer=0], evt=NODE_JOINED, node=c923587e-42d0-4133-8a3b-357668948137]
+[19:27:34,757][INFO][main][IgniteKernal] Performance suggestions for grid  (fix if possible)
+[19:27:34,758][INFO][main][IgniteKernal] To disable, set -DIGNITE_PERFORMANCE_SUGGESTIONS_DISABLED=true
+[19:27:34,762][INFO][main][IgniteKernal]   ^-- Disable grid events (remove 'includeEventTypes' from configuration)
+[19:27:34,762][INFO][main][IgniteKernal]   ^-- Enable G1 Garbage Collector (add '-XX:+UseG1GC' to JVM options)
+[19:27:34,765][INFO][main][IgniteKernal]   ^-- Set max direct memory size if getting 'OOME: Direct buffer memory' (add '-XX:MaxDirectMemorySize=<size>[g|G|m|M|k|K]' to JVM options)
+[19:27:34,765][INFO][main][IgniteKernal]   ^-- Disable processing of calls to System.gc() (add '-XX:+DisableExplicitGC' to JVM options)
+[19:27:34,766][INFO][main][IgniteKernal] Refer to this page for more performance suggestions: https://apacheignite.readme.io/docs/jvm-and-system-tuning
+[19:27:34,766][INFO][main][IgniteKernal] 
+[19:27:34,766][INFO][main][IgniteKernal] To start Console Management & Monitoring run ignitevisorcmd.{sh|bat}
+[19:27:34,771][INFO][main][IgniteKernal] 
+[19:27:34,778][INFO][main][IgniteKernal] 
+
+>>> +----------------------------------------------------------------------+
+>>> Ignite ver. 2.0.0#20170430-sha1:d4eef3c68ff116ee34bc13648cd82c640b3ea072
+>>> +----------------------------------------------------------------------+
+>>> OS name: Linux 4.4.0-31-generic amd64
+>>> CPU(s): 1
+>>> Heap: 1.0GB
+>>> VM name: 6920@shravya-VirtualBox
+>>> Local node [ID=C923587E-42D0-4133-8A3B-357668948137, order=1, clientMode=false]
+>>> Local node addresses: [10.0.2.15/0:0:0:0:0:0:0:1%lo, /10.0.2.15, /127.0.0.1]
+>>> Local ports: TCP:8080 TCP:11211 TCP:47100 UDP:47400 TCP:47500 
+
+[19:27:34,793][INFO][main][GridDiscoveryManager] Topology snapshot [ver=1, servers=1, clients=0, CPUs=1, heap=1.0GB]
+[19:28:34,812][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=c923587e, name=null, uptime=00:01:00:041]
+    ^-- H/N/C [hosts=1, nodes=1, CPUs=1]
+    ^-- CPU [cur=2.33%, avg=4.21%, GC=0%]
+    ^-- PageMemory [pages=4298]
+    ^-- Heap [used=105MB, free=89.3%, comm=989MB]
+    ^-- Non heap [used=47MB, free=96.89%, comm=48MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[19:28:43,425][INFO][ignite-update-notifier-timer][GridUpdateNotifier] Update status is not available.
+[19:29:34,811][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=c923587e, name=null, uptime=00:02:00:062]
+    ^-- H/N/C [hosts=1, nodes=1, CPUs=1]
+    ^-- CPU [cur=1%, avg=2.82%, GC=0%]
+    ^-- PageMemory [pages=4298]
+    ^-- Heap [used=112MB, free=88.61%, comm=989MB]
+    ^-- Non heap [used=47MB, free=96.89%, comm=48MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[19:30:34,815][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=c923587e, name=null, uptime=00:03:00:067]
+    ^-- H/N/C [hosts=1, nodes=1, CPUs=1]
+    ^-- CPU [cur=1.67%, avg=2.31%, GC=0%]
+    ^-- PageMemory [pages=4298]
+    ^-- Heap [used=116MB, free=88.2%, comm=989MB]
+    ^-- Non heap [used=47MB, free=96.88%, comm=48MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=5, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[19:31:34,817][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=c923587e, name=null, uptime=00:04:00:071]
+    ^-- H/N/C [hosts=1, nodes=1, CPUs=1]
+    ^-- CPU [cur=0.67%, avg=2%, GC=0%]
+    ^-- PageMemory [pages=4298]
+    ^-- Heap [used=121MB, free=87.74%, comm=989MB]
+    ^-- Non heap [used=47MB, free=96.88%, comm=48MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[19:32:02,086][INFO][disco-event-worker-#25%null%][GridDiscoveryManager] Added new node to topology: TcpDiscoveryNode [id=a97d5694-4ec4-4e3a-b388-1bb480d353ba, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/10.0.2.15:47501, /0:0:0:0:0:0:0:1%lo:47501, /127.0.0.1:47501], discPort=47501, order=2, intOrder=2, lastExchangeTime=1500213720949, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false]
+[19:32:02,097][INFO][disco-event-worker-#25%null%][GridDiscoveryManager] Topology snapshot [ver=2, servers=2, clients=0, CPUs=1, heap=1.3GB]
+[19:32:04,736][INFO][grid-nio-worker-tcp-comm-0-#17%null%][TcpCommunicationSpi] Accepted incoming communication connection [locAddr=/0:0:0:0:0:0:0:1:47100, rmtAddr=/0:0:0:0:0:0:0:1:42814]
+[19:32:06,611][INFO][exchange-worker-#27%null%][GridCachePartitionExchangeManager] Skipping rebalancing (nothing scheduled) [top=AffinityTopologyVersion [topVer=2, minorTopVer=0], evt=NODE_JOINED, node=a97d5694-4ec4-4e3a-b388-1bb480d353ba]
+[19:32:10,855][INFO][exchange-worker-#27%null%][GridCachePartitionExchangeManager] Skipping rebalancing (nothing scheduled) [top=AffinityTopologyVersion [topVer=2, minorTopVer=1], evt=DISCOVERY_CUSTOM_EVT, node=c923587e-42d0-4133-8a3b-357668948137]
+[19:32:34,833][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=c923587e, name=null, uptime=00:05:00:088]
+    ^-- H/N/C [hosts=1, nodes=2, CPUs=1]
+    ^-- CPU [cur=1.67%, avg=2.09%, GC=0%]
+    ^-- PageMemory [pages=4300]
+    ^-- Heap [used=146MB, free=85.16%, comm=989MB]
+    ^-- Non heap [used=50MB, free=96.67%, comm=51MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=8, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[19:33:34,836][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=c923587e, name=null, uptime=00:06:00:092]
+    ^-- H/N/C [hosts=1, nodes=2, CPUs=1]
+    ^-- CPU [cur=1%, avg=2.12%, GC=0%]
+    ^-- PageMemory [pages=4300]
+    ^-- Heap [used=152MB, free=84.59%, comm=989MB]
+    ^-- Non heap [used=51MB, free=96.61%, comm=52MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[19:34:34,856][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=c923587e, name=null, uptime=00:07:00:106]
+    ^-- H/N/C [hosts=1, nodes=2, CPUs=1]
+    ^-- CPU [cur=1%, avg=1.99%, GC=0%]
+    ^-- PageMemory [pages=4300]
+    ^-- Heap [used=160MB, free=83.77%, comm=989MB]
+    ^-- Non heap [used=51MB, free=96.59%, comm=52MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[19:35:05,717][INFO][disco-event-worker-#25%null%][GridDiscoveryManager] Node left topology: TcpDiscoveryNode [id=a97d5694-4ec4-4e3a-b388-1bb480d353ba, addrs=[0:0:0:0:0:0:0:1%lo, 10.0.2.15, 127.0.0.1], sockAddrs=[/10.0.2.15:47501, /0:0:0:0:0:0:0:1%lo:47501, /127.0.0.1:47501], discPort=47501, order=2, intOrder=2, lastExchangeTime=1500213720949, loc=false, ver=2.0.0#20170430-sha1:d4eef3c6, isClient=false]
+[19:35:06,095][INFO][disco-event-worker-#25%null%][GridDiscoveryManager] Topology snapshot [ver=3, servers=1, clients=0, CPUs=1, heap=1.0GB]
+[19:35:08,250][INFO][exchange-worker-#27%null%][GridCachePartitionExchangeManager] Skipping rebalancing (nothing scheduled) [top=AffinityTopologyVersion [topVer=3, minorTopVer=0], evt=NODE_LEFT, node=a97d5694-4ec4-4e3a-b388-1bb480d353ba]

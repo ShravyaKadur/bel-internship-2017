@@ -1,0 +1,101 @@
+[19:31:45,507][INFO][pool-2-thread-1][IgniteKernal] 
+
+>>>    __________  ________________  
+>>>   /  _/ ___/ |/ /  _/_  __/ __/  
+>>>  _/ // (7 7    // /  / / / _/    
+>>> /___/\___/_/|_/___/ /_/ /___/   
+>>> 
+>>> ver. 2.0.0#20170430-sha1:d4eef3c6
+>>> 2017 Copyright(C) Apache Software Foundation
+>>> 
+>>> Ignite documentation: http://ignite.apache.org
+
+[19:31:45,694][INFO][pool-2-thread-1][IgniteKernal] Config URL: file:/opt/apache-ignite-fabric-2.0.0-bin/examples/config/kaf-ignite.xml
+[19:31:45,694][INFO][pool-2-thread-1][IgniteKernal] Daemon mode: off
+[19:31:45,695][INFO][pool-2-thread-1][IgniteKernal] OS: Linux 4.4.0-31-generic amd64
+[19:31:45,695][INFO][pool-2-thread-1][IgniteKernal] OS user: shravya
+[19:31:45,726][INFO][pool-2-thread-1][IgniteKernal] PID: 7065
+[19:31:45,727][INFO][pool-2-thread-1][IgniteKernal] Language runtime: Java Platform API Specification ver. 1.8
+[19:31:45,727][INFO][pool-2-thread-1][IgniteKernal] VM information: Java(TM) SE Runtime Environment 1.8.0_131-b11 Oracle Corporation Java HotSpot(TM) 64-Bit Server VM 25.131-b11
+[19:31:45,866][INFO][pool-2-thread-1][IgniteKernal] VM total memory: 0.25GB
+[19:31:45,866][INFO][pool-2-thread-1][IgniteKernal] Remote Management [restart: off, REST: on, JMX (remote: on, port: <n/a>, auth: off, ssl: off)]
+[19:31:45,866][INFO][pool-2-thread-1][IgniteKernal] IGNITE_HOME=/opt/apache-ignite-fabric-2.0.0-bin
+[19:31:45,866][INFO][pool-2-thread-1][IgniteKernal] VM arguments: [-Xmx256M, -XX:+UseG1GC, -XX:MaxGCPauseMillis=20, -XX:InitiatingHeapOccupancyPercent=35, -XX:+DisableExplicitGC, -Djava.awt.headless=true, -Dcom.sun.management.jmxremote, -Dcom.sun.management.jmxremote.authenticate=false, -Dcom.sun.management.jmxremote.ssl=false, -Dkafka.logs.dir=bin/../logs, -Dlog4j.configuration=file:bin/../config/connect-log4j.properties]
+[19:31:45,866][INFO][pool-2-thread-1][IgniteKernal] System cache's MemoryPolicy size is configured to 40 MB. Use MemoryConfiguration.systemCacheMemorySize property to change the setting.
+[19:31:45,867][INFO][pool-2-thread-1][IgniteKernal] Configured caches [in 'default' memoryPolicy: ['ignite-sys-cache', 'ignite-atomics-sys-cache', 'connCache']]
+[19:31:45,867][WARNING][pool-2-thread-1][IgniteKernal] Peer class loading is enabled (disable it in production for performance and deployment consistency reasons)
+[19:31:46,240][INFO][pool-2-thread-1][IgniteKernal] 3-rd party licenses can be found at: /opt/apache-ignite-fabric-2.0.0-bin/libs/licenses
+[19:31:46,240][WARNING][pub-#13%null%][GridDiagnostic] JMX remote management is enabled but JMX port is either not set or invalid. Check system property 'com.sun.management.jmxremote.port' to make sure it specifies valid TCP/IP port.
+[19:31:46,245][WARNING][pub-#14%null%][GridDiagnostic] Initial heap size is 32MB (should be no less than 512MB, use -Xms512m -Xmx512m).
+[19:31:48,555][INFO][pool-2-thread-1][IgnitePluginProcessor] Configured plugins:
+[19:31:48,555][INFO][pool-2-thread-1][IgnitePluginProcessor]   ^-- None
+[19:31:48,555][INFO][pool-2-thread-1][IgnitePluginProcessor] 
+[19:31:49,359][INFO][pool-2-thread-1][TcpCommunicationSpi] Successfully bound communication NIO server to TCP port [port=47101, locHost=0.0.0.0/0.0.0.0, selectorsCnt=4, selectorSpins=0, pairedConn=false]
+[19:31:50,063][WARNING][pool-2-thread-1][TcpCommunicationSpi] Message queue limit is set to 0 which may lead to potential OOMEs when running cache operations in FULL_ASYNC or PRIMARY_SYNC modes due to message queues growth on sender and receiver sides.
+[19:31:50,107][WARNING][pool-2-thread-1][NoopCheckpointSpi] Checkpoints are disabled (to enable configure any GridCheckpointSpi implementation)
+[19:31:50,377][WARNING][pool-2-thread-1][GridCollisionManager] Collision resolution is disabled (all jobs will be activated upon arrival).
+[19:31:50,382][INFO][pool-2-thread-1][IgniteKernal] Security status [authentication=off, tls/ssl=off]
+[19:31:55,655][WARNING][pool-2-thread-1][IgniteCacheDatabaseSharedManager] No user-defined default MemoryPolicy found; system default of 1GB size will be used.
+[19:31:57,247][INFO][pool-2-thread-1][GridTcpRestProtocol] Command protocol successfully started [name=TCP binary, host=0.0.0.0/0.0.0.0, port=11212]
+[19:31:58,503][INFO][pool-2-thread-1][IgniteKernal] Non-loopback local IPs: 10.0.2.15, fe80:0:0:0:a00:27ff:fef7:15ba%eth0
+[19:31:58,507][INFO][pool-2-thread-1][IgniteKernal] Enabled local MACs: 080027F715BA
+[19:31:58,826][INFO][pool-2-thread-1][TcpDiscoverySpi] Successfully bound to TCP port [port=47501, localHost=0.0.0.0/0.0.0.0, locNodeId=a97d5694-4ec4-4e3a-b388-1bb480d353ba]
+[19:32:03,666][INFO][pool-2-thread-1][GridCacheProcessor] Started cache [name=ignite-sys-cache, memoryPolicyName=sysMemPlc, mode=REPLICATED]
+[19:32:03,866][INFO][pool-2-thread-1][GridCacheProcessor] Started cache [name=ignite-atomics-sys-cache, memoryPolicyName=sysMemPlc, mode=PARTITIONED]
+[19:32:04,503][INFO][pool-2-thread-1][GridCacheProcessor] Started cache [name=connCache, memoryPolicyName=null, mode=PARTITIONED]
+[19:32:04,903][INFO][grid-nio-worker-tcp-comm-0-#17%null%][TcpCommunicationSpi] Established outgoing communication connection [locAddr=/0:0:0:0:0:0:0:1:42814, rmtAddr=/0:0:0:0:0:0:0:1%lo:47100]
+[19:32:07,852][INFO][exchange-worker-#27%null%][GridCachePartitionExchangeManager] Rebalancing scheduled [order=[ignite-sys-cache, ignite-atomics-sys-cache, connCache]]
+[19:32:07,891][INFO][exchange-worker-#27%null%][GridCachePartitionExchangeManager] Rebalancing started [top=AffinityTopologyVersion [topVer=2, minorTopVer=0], evt=NODE_JOINED, node=a97d5694-4ec4-4e3a-b388-1bb480d353ba]
+[19:32:07,891][INFO][exchange-worker-#27%null%][GridDhtPartitionDemander] <ignite-sys-cache> Starting rebalancing [mode=SYNC, fromNode=c923587e-42d0-4133-8a3b-357668948137, partitionsCount=100, topology=AffinityTopologyVersion [topVer=2, minorTopVer=0], updateSeq=1]
+[19:32:08,082][INFO][utility-#30%null%][GridDhtPartitionDemander] <ignite-sys-cache> Completed (final) rebalancing [fromNode=c923587e-42d0-4133-8a3b-357668948137, topology=AffinityTopologyVersion [topVer=2, minorTopVer=0], time=198 ms]
+[19:32:08,116][INFO][utility-#30%null%][GridDhtPartitionDemander] <ignite-atomics-sys-cache> Starting rebalancing [mode=SYNC, fromNode=c923587e-42d0-4133-8a3b-357668948137, partitionsCount=535, topology=AffinityTopologyVersion [topVer=2, minorTopVer=0], updateSeq=1]
+[19:32:08,364][INFO][sys-#32%null%][GridDhtPartitionDemander] <ignite-atomics-sys-cache> Completed (final) rebalancing [fromNode=c923587e-42d0-4133-8a3b-357668948137, topology=AffinityTopologyVersion [topVer=2, minorTopVer=0], time=241 ms]
+[19:32:08,379][INFO][sys-#32%null%][GridDhtPartitionDemander] <connCache> Starting rebalancing [mode=ASYNC, fromNode=c923587e-42d0-4133-8a3b-357668948137, partitionsCount=535, topology=AffinityTopologyVersion [topVer=2, minorTopVer=0], updateSeq=1]
+[19:32:08,542][INFO][sys-#33%null%][GridDhtPartitionDemander] <connCache> Completed (final) rebalancing [fromNode=c923587e-42d0-4133-8a3b-357668948137, topology=AffinityTopologyVersion [topVer=2, minorTopVer=0], time=153 ms]
+[19:32:08,982][INFO][pool-2-thread-1][IgniteKernal] Performance suggestions for grid  (fix if possible)
+[19:32:08,988][INFO][pool-2-thread-1][IgniteKernal] To disable, set -DIGNITE_PERFORMANCE_SUGGESTIONS_DISABLED=true
+[19:32:08,988][INFO][pool-2-thread-1][IgniteKernal]   ^-- Disable grid events (remove 'includeEventTypes' from configuration)
+[19:32:08,988][INFO][pool-2-thread-1][IgniteKernal]   ^-- Set max direct memory size if getting 'OOME: Direct buffer memory' (add '-XX:MaxDirectMemorySize=<size>[g|G|m|M|k|K]' to JVM options)
+[19:32:08,992][INFO][pool-2-thread-1][IgniteKernal] Refer to this page for more performance suggestions: https://apacheignite.readme.io/docs/jvm-and-system-tuning
+[19:32:08,993][INFO][pool-2-thread-1][IgniteKernal] 
+[19:32:08,994][INFO][pool-2-thread-1][IgniteKernal] To start Console Management & Monitoring run ignitevisorcmd.{sh|bat}
+[19:32:08,997][INFO][pool-2-thread-1][IgniteKernal] 
+[19:32:09,008][INFO][pool-2-thread-1][IgniteKernal] 
+
+>>> +----------------------------------------------------------------------+
+>>> Ignite ver. 2.0.0#20170430-sha1:d4eef3c68ff116ee34bc13648cd82c640b3ea072
+>>> +----------------------------------------------------------------------+
+>>> OS name: Linux 4.4.0-31-generic amd64
+>>> CPU(s): 1
+>>> Heap: 0.25GB
+>>> VM name: 7065@shravya-VirtualBox
+>>> Local node [ID=A97D5694-4EC4-4E3A-B388-1BB480D353BA, order=2, clientMode=false]
+>>> Local node addresses: [10.0.2.15/0:0:0:0:0:0:0:1%lo, /10.0.2.15, /127.0.0.1]
+>>> Local ports: TCP:11212 TCP:47101 UDP:47400 TCP:47501 
+
+[19:32:09,091][INFO][pool-2-thread-1][GridDiscoveryManager] Topology snapshot [ver=2, servers=2, clients=0, CPUs=1, heap=1.3GB]
+[19:32:10,936][INFO][exchange-worker-#27%null%][GridCachePartitionExchangeManager] Skipping rebalancing (nothing scheduled) [top=AffinityTopologyVersion [topVer=2, minorTopVer=1], evt=DISCOVERY_CUSTOM_EVT, node=c923587e-42d0-4133-8a3b-357668948137]
+[19:33:09,047][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=a97d5694, name=null, uptime=00:01:00:007]
+    ^-- H/N/C [hosts=1, nodes=2, CPUs=1]
+    ^-- CPU [cur=19.33%, avg=21.38%, GC=2.6%]
+    ^-- PageMemory [pages=2342]
+    ^-- Heap [used=34MB, free=86.34%, comm=159MB]
+    ^-- Non heap [used=57MB, free=-1%, comm=59MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=8, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[19:33:12,442][INFO][ignite-update-notifier-timer][GridUpdateNotifier] Update status is not available.
+[19:34:09,127][INFO][grid-timeout-worker-#15%null%][IgniteKernal] 
+Metrics for local node (to disable set 'metricsLogFrequency' to 0)
+    ^-- Node [id=a97d5694, name=null, uptime=00:02:00:145]
+    ^-- H/N/C [hosts=1, nodes=2, CPUs=1]
+    ^-- CPU [cur=16.67%, avg=20.07%, GC=0.83%]
+    ^-- PageMemory [pages=2342]
+    ^-- Heap [used=44MB, free=82.52%, comm=159MB]
+    ^-- Non heap [used=58MB, free=-1%, comm=59MB]
+    ^-- Public thread pool [active=0, idle=0, qSize=0]
+    ^-- System thread pool [active=0, idle=6, qSize=0]
+    ^-- Outbound messages queue [size=0]
+[19:35:04,771][INFO][Thread-13][G] Invoking shutdown hook...
