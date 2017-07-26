@@ -6,7 +6,7 @@ public class MakeCSV
 {
 	public static void main(String[] args) throws IOException
 	{
-		String csvfile = "/home/shravya/BEL/MessageMetadata.csv";
+		String csvfile = "/tmp/Kafka-Ignite/MessageMetadata.csv";
 		CSVWriter writer = new CSVWriter(new FileWriter(csvfile), ',', '\0', CSVWriter.NO_ESCAPE_CHARACTER);
 		
 		String[] head = {"\"MID\"", "\"MsgType\"", "\"Status\"", "\"Speed\"", "\"TimeStamp\"", "\"SType\"", "\"CallSign\""};
@@ -14,7 +14,7 @@ public class MakeCSV
 		writer.writeNext(head);
 		writer.close();
 		
-		csvfile = "/home/shravya/BEL/MessageData.csv";
+		csvfile = "/tmp/Kafka-Ignite/MessageData.csv";
 		writer = new CSVWriter(new FileWriter(csvfile), ',', '\0', CSVWriter.NO_ESCAPE_CHARACTER);
 		
 		String pad = "MSG000000";

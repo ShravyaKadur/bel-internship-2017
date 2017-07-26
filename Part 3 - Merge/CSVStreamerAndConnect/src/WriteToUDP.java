@@ -12,7 +12,7 @@ public class WriteToUDP
 		int port = 35352;
 		String s;
 		
-		String csvfile = "/home/shravya/BEL/MessageData.csv";
+		String csvfile = "/tmp/Kfka-Ignite/MessageData.csv";
 		//CSVReader csvReader = new CSVReader(new FileReader(csvfile));
 		BufferedReader br = new BufferedReader(new FileReader(csvfile));
 		//String[] row = null;
