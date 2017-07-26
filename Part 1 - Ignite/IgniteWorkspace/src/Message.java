@@ -5,10 +5,15 @@ public class Message implements Serializable
 {
 	@QuerySqlField
 	private String msgType;
+	@QuerySqlField
 	private int status;
+	@QuerySqlField
 	private int speed;
+	@QuerySqlField
 	private String timeStamp;
+	@QuerySqlField
 	private String sType;
+	@QuerySqlField
 	private String callSign;
 	
 	Message(String msgType, int status, int speed, String timeStamp, String sType, String callSign)

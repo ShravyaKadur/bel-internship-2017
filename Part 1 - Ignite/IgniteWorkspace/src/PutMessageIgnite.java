@@ -8,7 +8,7 @@ public class PutMessageIgnite
 {
 	public static void main(String args[])
 	{
-		Ignite ignite = Ignition.start("/home/shravya/workspace/IgniteWorkspace/beans.xml");
+		Ignite ignite = Ignition.start("/tmp/Ignite-Kafka/beans.xml");
 		 
 		// Get an instance of named cache.
 		

@@ -38,6 +38,18 @@
 	<property name="password" value="" />
   </bean>
   
+   <bean abstract="true" id="ignite.cfg" class="org.apache.ignite.configuration.IgniteConfiguration">
+   <property name="cacheConfiguration">
+        <bean class="org.apache.ignite.configuration.CacheConfiguration">
+           	<!-- Set a cache name. -->
+           	<property name="name" value="msgCache"/>
+            
+          	<!-- Set cache mode. -->
+    				<property name="cacheMode" value="REPLICATED"/>
+        </bean>
+     </property>
+     </bean>
+  
 	 <!-- create job-meta tables automatically 
   <jdbc:initialize-database data-source="dataSource">
 	<jdbc:script location="org/springframework/batch/core/schema-drop-mysql.sql" />
