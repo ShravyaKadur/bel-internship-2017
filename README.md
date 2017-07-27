@@ -35,3 +35,5 @@ More specifically, it loads the Messages generated in Part 1 into a CSV file, pa
 ### References
 
 This includes some of the reference material used in the course of this project.
+
+#### For any code, the bundled JAR along with its dependencies is stored in the "target" directory of each project. 
