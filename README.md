@@ -15,7 +15,7 @@ Generating a million messages and performing queries on them through Ignite make
 This section focuses on Kafka-Ignite connect.
 
 **KafkaConnectDocumentation.docx** contains the documentation for this part.
-**TestingKafka** contains basic commands to test the running of Kafka. For more, refer **apache_kafka_tutorial.pdf** under **References**.
+**TestingKafka.docx** contains basic commands to test the running of Kafka. For more, refer **apache_kafka_tutorial.pdf** under **References**.
 * **logs** contains all logs of Kafka, to debug errors faced while connecting. 
 * **myconfig** contains the configured connector properties.                      
 * **Dependencies** contains the classpath and the list of JARs used to connect without encountering errors.
