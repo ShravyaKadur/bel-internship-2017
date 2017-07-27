@@ -6,9 +6,9 @@ Generating a million messages and performing queries on them through Ignite make
 
 **IgniteWorkspace** contains all code and the **IgniteDocumentation.docx** contains the documentation.
 * Contains all main Java classes. 
-* PutMessageIgnite.java generates 1 million messages and puts into Ignite cache.
-* QueryMessages.class contains SQL queries performed using SqlQuery class on the cache data.
-* QueryMessages2.class contains queries with **SqlFieldsQuery** class.
+* **PutMessageIgnite.java** generates 1 million messages and puts into Ignite cache.
+* **QueryMessages.java** contains SQL queries performed using SqlQuery class on the cache data.
+* **QueryMessages2.java** contains queries with **SqlFieldsQuery** class.
                       
 #### Part 2
 
